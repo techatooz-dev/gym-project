@@ -10,8 +10,6 @@ import { useState } from "react";
 import Footer from "@/components/Footer";
 
 export default function Home() {
-  // Slightly taller than the viewport to guarantee full-screen cover on all devices
-  const sliderHeight = "calc(100vh + 6rem)";
   // Product data imported from centralized module.
 
   const [showAllProducts, setShowAllProducts] = useState(false);
@@ -20,22 +18,15 @@ export default function Home() {
 
   return (
     <main className="min-h-screen w-full bg-white">
-      {/* Fixed Slider (always visible, z-0) */}
-      <div
-        className="fixed top-0 left-0 w-full z-0"
-        style={{ height: sliderHeight }}
-      >
+      {/* Hero now flows with document */}
+      <div className="w-full h-[calc(100vh-4rem)] md:h-[80vh] max-h-[900px] min-h-[480px]">
         <HeroSlider />
       </div>
 
-      {/* Main Content starts below the slider */}
-      <div
-        className="relative z-10"
-        style={{ paddingTop: sliderHeight }}
-      >
-        <section className="text-center py-10 mt-18 bg-white">
+      <div className="relative z-10">
+        <section className="text-center py-10 mt-10 bg-white">
           <h2 className="text-blue-700 font-bold border-b-2 border-blue-700 inline-block mb-8 text-2xl tracking-wide">
-            OUR PRODUCTS
+            OUR SERVICES
           </h2>
           <div className="mt-10 grid gap-10 max-w-7xl mx-auto px-4 sm:px-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {visibleProducts.map((p) => (

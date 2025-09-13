@@ -37,7 +37,7 @@ export default function Footer() {
 
                 {/* Products (static list from screenshot) */}
                 <div>
-                    <h3 className="font-bold tracking-wide mb-3 text-white/90">OUR PRODUCTS</h3>
+                    <h3 className="font-bold tracking-wide mb-3 text-white/90">OUR SERVICES</h3>
                     <ul className="space-y-2 list-disc pl-5 marker:text-white/80">
                         <li>Finess training suit trouser</li>
                         <li>Fitness training suit shirt</li>
@@ -52,28 +52,27 @@ export default function Footer() {
                 {/* Contact */}
                 <div>
                     <h3 className="font-bold tracking-wide mb-3 text-white/90">GET IN TOUCH</h3>
-                    <ul className="space-y-2">
+                    <ul className="space-y-2 mb-4">
                         <li>Address</li>
                         <li>Structure gym gulberg Lahore</li>
                         <li>Omc hospital jail road Lahore</li>
                         <li><span className="font-semibold">By appointment only</span></li>
                         <li>Call us: <a href="tel:03310491220" className="font-semibold hover:underline">03310491220</a></li>
                     </ul>
-                </div>
-            </div>
-
-            {/* Bottom Bar */}
-            <div className="bg-black text-white text-xs">
-                <div className="mx-auto max-w-7xl px-6 py-4 flex flex-col md:flex-row items-center md:items-center gap-4 md:gap-6">
-                    {/* Mobile: icons first; Desktop: still second by reversing order classes */}
-                    <p className="flex-1 order-2 md:order-1 text-center md:text-left mt-2 md:mt-0">Copyright © 2025 Proemsfitness All Right Reserved.</p>
-                    <div className="flex order-1 md:order-2 items-center gap-4 text-lg">
+                    <div className="flex items-center gap-4 text-lg mt-2">
                         <SocialIcon href="https://facebook.com" label="Facebook" icon={<FacebookIcon />} />
                         <SocialIcon href="https://twitter.com" label="Twitter" icon={<TwitterIcon />} />
                         <SocialIcon href="https://linkedin.com" label="LinkedIn" icon={<LinkedInIcon />} />
                         <SocialIcon href="https://pinterest.com" label="Pinterest" icon={<PinterestIcon />} />
                         <SocialIcon href="https://instagram.com" label="Instagram" icon={<InstagramIcon />} />
                     </div>
+                </div>
+            </div>
+
+            {/* Bottom Bar */}
+            <div className="bg-black text-white text-xs">
+                <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-center md:justify-start">
+                    <p className="text-center md:text-left">Copyright © 2025 Proemsfitness All Right Reserved.</p>
                 </div>
             </div>
         </footer>
