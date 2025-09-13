@@ -6,22 +6,6 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { site } from "@/config/site";
 
-function CartIcon(props) {
-    return (
-        <svg
-            viewBox="0 0 24 24"
-            width="22"
-            height="22"
-            aria-hidden="true"
-            {...props}
-        >
-            <path
-                fill="currentColor"
-                d="M7 18a2 2 0 1 0 .001 3.999A2 2 0 0 0 7 18m10 0a2 2 0 1 0 .001 3.999A2 2 0 0 0 17 18M6.2 5h14.06a1 1 0 0 1 .98 1.2l-1.4 7a1 1 0 0 1-.98.8H9.02l-.2 1h9.66a1 1 0 1 1 0 2H7a1 1 0 0 1-.97-.76L3.3 3H2a1 1 0 1 1 0-2h2.7a1 1 0 0 1 .97.76L6.2 5Z"
-            />
-        </svg>
-    );
-}
 
 export default function Navbar() {
     const pathname = usePathname();
@@ -60,14 +44,7 @@ export default function Navbar() {
                             ))}
                         </nav>
 
-                        {/* Right actions */}
-                        <Link
-                            href="#cart"
-                            aria-label="Cart"
-                            className="hidden sm:inline-flex h-9 w-9 items-center justify-center rounded-full text-gray-700 hover:bg-black/5 dark:text-gray-200 dark:hover:bg-white/10"
-                        >
-                            <CartIcon />
-                        </Link>
+                        {/* Right actions (cart removed as requested) */}
                         <button
                             type="button"
                             aria-label="Toggle menu"

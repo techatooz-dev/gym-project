@@ -7,6 +7,7 @@ import MealPlans from "@/components/MealPlans";
 import ClientsCarousel from "@/components/ClientsCarousel";
 import { products } from "@/data/products";
 import { useState } from "react";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   // Slightly taller than the viewport to guarantee full-screen cover on all devices
@@ -36,7 +37,7 @@ export default function Home() {
           <h2 className="text-blue-700 font-bold border-b-2 border-blue-700 inline-block mb-8 text-2xl tracking-wide">
             OUR PRODUCTS
           </h2>
-          <div className="mt-10 grid gap-10 max-w-7xl mx-auto grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-10 max-w-7xl mx-auto px-4 sm:px-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {visibleProducts.map((p) => (
               <ProductCard
                 key={p.slug}
@@ -66,6 +67,7 @@ export default function Home() {
         <ClientsCarousel />
         <WhyChooseUsSection />
         <LatestArticles />
+     
       </div>
     </main>
   );

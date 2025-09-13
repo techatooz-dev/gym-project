@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 // Placeholder client logos (reuse existing public assets). Replace with real logos later.
 const clientLogos = [
@@ -71,21 +71,72 @@ export default function ClientsCarousel() {
     };
   }, []);
 
+  const [mobileIndex, setMobileIndex] = useState(0); // index of first logo in mobile view
+  const total = clientLogos.length;
+  const advance = (dir) => {
+    setMobileIndex((prev) => {
+      const next = (prev + dir + total) % total;
+      return next;
+    });
+  };
+
+  const mobileItems = [
+    clientLogos[mobileIndex],
+    clientLogos[(mobileIndex + 1) % total]
+  ];
+
   return (
     <section className="py-16 bg-white">
       <div className="text-center mb-10">
         <span className="block w-40 h-1 bg-blue-700 mx-auto mb-4" />
         <h2 className="text-blue-700 font-bold text-xl md:text-2xl tracking-wide">OUR HAPPY CLIENTS</h2>
       </div>
-      <div className="relative px-29 py-4">
-        {/* Optional gradient fades at edges */}
+      {/* Mobile (<= md) simplified pager */}
+      <div className="md:hidden">
+        <div className="flex justify-end items-center gap-2 pr-6 -mt-4 mb-4">
+          <button
+            type="button"
+            aria-label="Previous clients"
+            onClick={() => advance(-1)}
+            className="w-8 h-8 border border-gray-300 bg-white text-gray-600 hover:bg-gray-50 flex items-center justify-center text-sm"
+          >
+            &lt;
+          </button>
+          <button
+            type="button"
+            aria-label="Next clients"
+            onClick={() => advance(1)}
+            className="w-8 h-8 border border-gray-300 bg-white text-gray-600 hover:bg-gray-50 flex items-center justify-center text-sm"
+          >
+            &gt;
+          </button>
+        </div>
+        <div className="flex gap-4 px-6">
+          {mobileItems.map((logo, i) => (
+            <div
+              key={i + logo.src}
+              className="flex-1 h-32 bg-white border border-gray-200 shadow-sm flex items-center justify-center rounded"
+            >
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                className="max-w-[80%] max-h-[70%] object-contain"
+                draggable={false}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+  {/* Desktop / larger screens: original infinite horizontal scroll (padding reverted) */}
+  <div className="hidden md:block relative px-29 py-4">
         <div className="pointer-events-none absolute left-0 top-0 h-full w-12 bg-gradient-to-r from-white to-transparent" />
         <div className="pointer-events-none absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-white to-transparent" />
         <ul
           ref={containerRef}
           className="clients-carousel flex gap-6 overflow-x-auto scroll-smooth px-6 select-none cursor-grab active:cursor-grabbing"
           style={{ scrollbarWidth: "none" }}
-          aria-label="Client logos carousel"
+          aria-label="Client logos carousel (desktop)"
         >
           {items.map((logo, idx) => (
             <li
