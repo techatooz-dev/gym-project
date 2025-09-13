@@ -87,16 +87,16 @@ export default function LatestArticles() {
         />
       </div>
       <div className="p-4 md:p-6 flex flex-col flex-1">
-        <h3 className="font-semibold text-gray-900 leading-snug mb-3 text-lg line-clamp-2">
+        <h3 className="font-semibold text-gray-900 leading-snug mb-1 text-lg line-clamp-2">
           {a.title}
         </h3>
-        <p className="text-xs font-medium flex items-center gap-1 text-gray-700 mb-4">
+        <p className="text-xs font-medium flex items-center gap-1 text-gray-700 mb-1">
           <span role="img" aria-hidden="true">👤</span> {a.author}
         </p>
         <p className="text-sm text-gray-600 leading-relaxed line-clamp-4">
           {a.excerpt}
         </p>
-        <div className="mt-auto pt-4">
+        <div className="mt-auto ">
           <button className="text-blue-700 text-sm font-semibold hover:underline" type="button">
             Read More
           </button>
@@ -114,7 +114,7 @@ export default function LatestArticles() {
 
         {/* Mobile slider */}
         <div className="md:hidden">
-          <div className="flex justify-end items-center gap-2 -mt-6 mb-3 pr-1">
+          <div className="flex justify-end items-center gap-2 -mt-3 mb-3 pr-1">
             <button
               type="button"
               aria-label="Previous article"

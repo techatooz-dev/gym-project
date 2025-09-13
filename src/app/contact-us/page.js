@@ -19,7 +19,7 @@ export default function ContactUsPage() {
           </h1>
         </div>
       </section>
-      <main className="container mx-auto px-14 py-12">
+      <main className="container mx-auto sm:px-14 px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Section 1: Company Info */}
           <section aria-labelledby="contact-info" className="md:col-span-1">

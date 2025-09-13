@@ -5,9 +5,9 @@ import { site } from "@/config/site";
 export default function Footer() {
   return (
     <footer className="relative z-20 bg-[#0066A4] text-white text-sm">
-  <div className="mx-auto max-w-7xl px-6 py-10 grid gap-16 md:grid-cols-4">
+  <div className="mx-auto max-w-7xl px-6 py-10 grid  gap-6 sm:gap-16 md:grid-cols-4">
         {/* Brand / About */}
-        <div className="space-y-4 max-w-xs">
+        <div className="space-y-1 max-w-xs">
           <div className="flex items-center gap-2">
             <Image
               src={site.footerLogo?.src || site.logo.src}
@@ -23,9 +23,9 @@ export default function Footer() {
         </div>
 
         {/* Useful Links */}
-        <div className="ml-10 md:ml-12">
-          <h3 className="font-bold tracking-wide mb-3 text-white/90">USEFUL LINKS</h3>
-          <ul className="space-y-2 list-disc pl-5 marker:text-white/80">
+        <div className="mt-2 md:mt-0 ml-2 md:ml-12">
+          <h3 className="font-bold tracking-wide mb-2 md:mb-3 text-white/90">USEFUL LINKS</h3>
+          <ul className="space-y-1.5 md:space-y-2 list-disc pl-4 md:pl-5 marker:text-white/80">
             <li><Link href="/" className="hover:underline">Home</Link></li>
             <li><Link href="/why-choose-us" className="hover:underline">Why Choose Us</Link></li>
             <li><Link href="/classes" className="hover:underline">Classes</Link></li>
@@ -64,9 +64,10 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="bg-black text-white text-xs">
-        <div className="mx-auto max-w-7xl px-6 py-4 flex flex-col md:flex-row items-center gap-4 md:gap-6">
-          <p className="flex-1 text-center md:text-left">Copyright © 2025 Proemsfitness All Right Reserved.</p>
-          <div className="flex items-center gap-4 text-lg">
+        <div className="mx-auto max-w-7xl px-6 py-4 flex flex-col md:flex-row items-center md:items-center gap-4 md:gap-6">
+          {/* Mobile: icons first; Desktop: still second by reversing order classes */}
+          <p className="flex-1 order-2 md:order-1 text-center md:text-left mt-2 md:mt-0">Copyright © 2025 Proemsfitness All Right Reserved.</p>
+          <div className="flex order-1 md:order-2 items-center gap-4 text-lg">
             <SocialIcon href="https://facebook.com" label="Facebook" icon={<FacebookIcon />} />
             <SocialIcon href="https://twitter.com" label="Twitter" icon={<TwitterIcon />} />
             <SocialIcon href="https://linkedin.com" label="LinkedIn" icon={<LinkedInIcon />} />
