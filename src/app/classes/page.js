@@ -11,7 +11,7 @@ const classPrograms = [
     subtitle: 'For ladies, men & women',
     description:
       'Guided EMS training sessions tailored for every body. Improve strength, posture and conditioning with a certified coach ensuring proper form and safe progression.',
-    image: '/Slider-03.jpg',
+    image: '/COACH-1.jpg',
   },
   {
     id: 'wedding-package',
@@ -19,31 +19,31 @@ const classPrograms = [
     subtitle: '1‑month personalized program',
     description:
       'Personalized EMS workouts plus a supportive meal framework to help you shape up confidently for your special day while managing time-efficient sessions.',
-    image: '/Slider-02-3.jpg',
+    image: '/wedding1.webp',
   },
   {
     id: 'joint-pain',
-    title: 'Joint-Friendly EMS Class',
+    title: 'EMS fitness class for patient with joint pain',
     subtitle: 'Low impact / weight reduction',
     description:
-      'A gentle, low‑impact EMS routine assisting participants with joint discomfort to burn calories and activate muscles without heavy loads or harsh repetitive stress.',
-    image: '/Why_choose_us-1.jpg',
+      'EMS (Electrical Muscle Stimulation) training is a safe and effective solution for people who suffer from joint pain and cannot perform heavy gym workouts. With low-impact electrical impulses, EMS activates muscles without putting extra pressure on the joints. This makes it an ideal option for rehabilitation, pain relief, and overall fitness improvement.',
+    image: '/joint-pain.jpg',
   },
   {
     id: 'postpartum',
-    title: 'Postpartum EMS Training',
+    title: 'EMS fitness training After delivery',
     subtitle: 'Core & gradual toning',
     description:
-      'Supportive sessions focused on rebuilding core strength and reducing abdominal fat after delivery. Progressive intensity matched to your recovery stage.',
-    image: '/Slider-04-1.jpg',
+      'Post-pregnancy recovery can be challenging, especially when it comes to regaining strength and fitness. EMS (Electrical Muscle Stimulation) training provides a gentle yet effective way for new mothers to get back in shape. With its low-impact approach, EMS targets deep muscle groups, improves core stability, and supports pelvic floor recovery — all without putting stress on the joints or requiring long gym sessionsJust 20 minutes of EMS training can help boost metabolism, tone the body, and restore energy levels, making it a safe and time-efficient option for busy new moms.',
+    image: '/EMS-fitness-training.jpeg',
   },
   {
     id: 'pcos-support',
-    title: 'EMS Fitness For PCOS',
+    title: 'Fitness training for PCOS',
     subtitle: 'Metabolic & weight management',
     description:
-      'Targeted EMS workouts designed to enhance metabolic activity and assist with weight management goals often challenged by hormonal imbalance.',
-    image: '/Slider-01-2.jpg',
+      'Regular fitness training plays an important role in managing PCOS (Polycystic Ovary Syndrome). Exercise helps reduce insulin resistance, balance hormones, and manage weight effectively. Low-impact workouts, strength training, and cardio activities can improve metabolism, support fat loss, and boost energy levels.With a consistent fitness routine, women with PCOS can not only manage symptoms like weight gain and fatigue but also improve overall health and well-being.',
+    image: '/Fitness-training-for-PCOS.jpg',
   },
 ];
 
@@ -124,7 +124,7 @@ export default function ClassesPage() {
           </div>
         </section>
         {/* Featured Image Section */}
-        <section className="relative w-full mt-20 rounded-2xl overflow-hidden shadow-xl ring-1 ring-gray-200">
+        {/* <section className="relative w-full mt-20 rounded-2xl overflow-hidden shadow-xl ring-1 ring-gray-200">
           <img
             src="/Slider-03.jpg"
             alt="High intensity EMS session in progress"
@@ -147,7 +147,7 @@ export default function ClassesPage() {
               </button>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
     </>
   );

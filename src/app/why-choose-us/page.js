@@ -31,7 +31,7 @@ export default function WhyChooseUsPage() {
           </div>
           <div className="w-full aspect-[5/3] bg-gray-200 overflow-hidden rounded shadow-md">
             <img
-              src="/Slider-02-3.jpg"
+              src="/hdfg.png"
               alt="EMS training session"
               className="w-full h-full object-cover"
             />

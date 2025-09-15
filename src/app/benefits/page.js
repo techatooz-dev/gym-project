@@ -22,14 +22,13 @@ export default function BenefitsPage() {
 
       {/* Page content */}
       <main className="container mx-auto px-4 py-10">
-        <h2 className="text-2xl font-bold mb-8">Benefits</h2>
         {/* Two feature articles */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
           {/* Card 1 */}
           <article>
             <div className="w-full aspect-[16/11] rounded-xl overflow-hidden ring-1 ring-gray-200 shadow-sm mb-6">
               <img
-                src="/Slider-03.jpg"
+                src="/emsfitness.jpg"
                 alt="EMS training outdoors with masks during covid"
                 className="w-full h-full object-cover"
               />
@@ -44,7 +43,7 @@ export default function BenefitsPage() {
           <article>
             <div className="w-full aspect-[16/11] rounded-xl overflow-hidden ring-1 ring-gray-200 shadow-sm mb-6">
               <img
-                src="/Slider-02-3.jpg"
+                src="/imunity.jpg"
                 alt="Healthy juice and fruits for immunity boost"
                 className="w-full h-full object-cover"
               />
@@ -62,7 +61,7 @@ export default function BenefitsPage() {
           <article>
             <div className="w-full aspect-[16/11] rounded-xl overflow-hidden ring-1 ring-gray-200 shadow-sm mb-6">
               <img
-                src="/Slider-04-1.jpg"
+                src="/fit at older.jpg"
                 alt="Active seniors stretching in a fitness class"
                 className="w-full h-full object-cover"
               />
@@ -77,7 +76,7 @@ export default function BenefitsPage() {
           <article>
             <div className="w-full aspect-[16/11] rounded-xl overflow-hidden ring-1 ring-gray-200 shadow-sm mb-6">
               <img
-                src="/Slider-07-1.jpg"
+                src="/fitnessandsp.jpg"
                 alt="Athletes training with battle ropes in a gym"
                 className="w-full h-full object-cover"
               />

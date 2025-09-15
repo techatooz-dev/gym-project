@@ -72,8 +72,9 @@ export default function Footer() {
 
             {/* Bottom Bar */}
             <div className="bg-black text-white text-xs">
-                <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-center md:justify-start">
-                    <p className="text-center md:text-left">Copyright © 2025 Proemsfitness All Right Reserved.</p>
+                <div className="mx-auto max-w-7xl px-6 py-4 flex flex-col gap-1 md:flex-row md:items-center md:justify-between">
+                    <p className="text-center md:text-left">Copyright © 2025 Proemsfitness. All Rights Reserved.</p>
+                    <p className="text-center md:text-right">Made By <span className="text-red-500" aria-label="love">❤</span> <span className="font-semibold">Tech Solutionor</span></p>
                 </div>
             </div>
         </footer>

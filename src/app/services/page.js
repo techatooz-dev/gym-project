@@ -8,56 +8,56 @@ export default function ServicesPage() {
     {
       id: 'ems-sessions',
       title: 'EMS Sessions',
-      image: '/Slider-03.jpg',
+      image: '/EMS.jpg',
       accent: 'bg-sky-600',
       body: `At Pro EMS Fit, we offer specialized EMS sessions tailored to your needs. From fitness training with certified physiotherapists to personalized wedding fitness plans with diet guidance, we ensure effective results. For joint pain patients, our EMS programs provide safe, low-impact training without the heavy gym load.`
     },
     {
       id: 'sports-performance',
       title: 'Sports Performance Training',
-      image: '/Slider-02-3.jpg',
+      image: '/Sports.png',
       accent: 'bg-lime-500',
       body: `Specialized EMS-based training designed to improve strength, endurance, and flexibility for athletes and active individuals, while reducing the risk of injuries. These programs also enhance performance and support faster recovery, helping you stay at your best.`
     },
     {
       id: 'physiotherapy',
       title: 'Physiotherapy Sessions',
-      image: '/Slider-01-2.jpg',
+      image: '/Physiotherapy.png',
       accent: 'bg-cyan-600',
       body: `Pro EMS Fit provides expert care for a wide range of conditions, including musculoskeletal disorders such as frozen shoulder, neck or knee pain, and disc bulge. Our team also supports patients with neurological disorders like stroke, cerebral palsy, vertigo, and facial palsy. In addition, we offer specialized rehabilitation for sports injuries, from ACL tears to dislocations, ensuring safe recovery and improved performance.`
     },
     {
       id: 'wellness-programs',
       title: 'Wellness Programs',
-      image: '/Fitness-training.jpg',
+      image: '/Wellness.jpeg',
       accent: 'bg-emerald-500',
       body: `At Pro EMS Fit, our wellness programs are designed to support both physical fitness and overall well-being. Whether your goal is weight loss, body toning, posture correction, stress relief, or core strengthening, our customized sessions ensure safe and effective results. Beyond fitness, our focus is on long-term wellness. These programs help improve energy levels, mobility, and posture, while also reducing daily stress and strengthening your body from within.`
     },
     {
       id: 'pain-relief',
       title: 'Pain Relief with EMS',
-      image: '/Coldpack.jpg',
+      image: '/pain.png',
       accent: 'bg-orange-500',
       body: `EMS therapy provides safe and effective relief from conditions like tennis elbow, where continuous strain and repetitive movements cause pain, stiffness, and restricted mobility. Controlled electrical stimulation activates deep muscle fibers, improves circulation, decreases inflammation, and accelerates the healing process for better flexibility, strength and comfort.`
     },
     {
       id: 'sprained-ankle',
       title: 'Sprained Ankle Recovery',
-      image: '/Hallus-valgus.jpg',
+      image: '/spenal.jpg',
       accent: 'bg-indigo-500',
       body: `EMS sessions accelerate sprained ankle healing by reducing swelling, increasing circulation and reactivating weakened supporting muscles. This controlled approach restores balance, stability and joint function while preventing stiffness and reducing reinjury risk.`
     },
     {
       id: 'spinal-back',
       title: 'Spinal & Back Pain Management',
-      image: '/Structure_GYM-1-185x119.jpg',
+      image: '/backpain.jpeg',
       accent: 'bg-rose-500',
       body: `Back and neck pain from poor posture, long sitting or disc issues benefit from EMS stimulation that eases tension, engages deep stabilizers and supports improved alignment to reduce discomfort and prevent recurrence.`
     },
     {
       id: 'knee-shoulder',
       title: 'Knee & Shoulder Therapy',
-      image: '/Hand-exercise.jpg',
+      image: '/theripy.jpg',
       accent: 'bg-teal-600',
       body: `Joint pains like knee injuries or frozen shoulder limit daily movement. EMS provides controlled activation that enhances mobility, reduces stiffness and improves circulation. With physiotherapy guidance, recovery becomes faster, safer and longer lasting.`
     }

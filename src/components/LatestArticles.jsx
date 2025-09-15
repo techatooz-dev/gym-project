@@ -6,7 +6,7 @@ const articles = [
     slug: "keep-upholstery-stain-free",
     title: "How To Keep Upholstery Stain And Odour-Free",
     author: "Admin",
-    image: "/Slider-01-2.jpg",
+    image: "/Benefits.jpg",
     excerpt:
       "After a long day, you just want to kick back and rest. The worst thing ever is when you get to that point of the day, and there’s an unpleasant...",
   },
@@ -14,7 +14,7 @@ const articles = [
     slug: "benefits-of-antiviral-sanitisation",
     title: "Benefits Of Professional Antiviral Sanitisation",
     author: "Admin",
-    image: "/Slider-02-3.jpg",
+    image: "/wedding1.webp",
     excerpt:
       "With the current pandemic waging a germ war on us, you can’t be too clean! Now more than ever, antiviral sanitisation is a must when so many of us need to carry...",
   },
@@ -22,7 +22,7 @@ const articles = [
     slug: "tools-to-save-time",
     title: "9 Cool Tools To Get Things Done & Save You Loads Of Time!",
     author: "Admin",
-    image: "/Slider-03.jpg",
+    image: "/Fitness-training-for-PCOS.jpg",
     excerpt:
       "It’s truly an awesome time to be in business, especially if you market your business on the internet or use the internet for productivity within your business...",
   },

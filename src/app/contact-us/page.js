@@ -63,12 +63,39 @@ export default function ContactUsPage() {
                 <input id="phone" name="phone" type="tel" required placeholder="Phone number*" className="w-full h-12 px-4 rounded-md bg-gray-50 text-gray-800 placeholder-gray-500 border border-gray-200 focus:outline-none focus:ring-0 focus:border-gray-300" />
               </div>
 
-              {/* Row 3 */}
-              <div className="md:col-span-2">
-                <label htmlFor="country" className="sr-only">Country</label>
-                <input id="country" name="country" type="text" placeholder="Country" className="w-full h-12 px-4 rounded-md bg-gray-50 text-gray-800 placeholder-gray-500 border border-gray-200 focus:outline-none focus:ring-0 focus:border-gray-300" />
+              {/* Row 3: Date of Birth & Appointment Type (Country placed under DOB) */}
+              <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-1">
+                  <label htmlFor="dob" className="text-sm font-medium text-gray-700">Date of Birth</label>
+                  <input
+                    id="dob"
+                    name="dob"
+                    type="date"
+                    className="w-full h-12 px-4 rounded-md bg-gray-50 text-gray-800 border border-gray-200 focus:outline-none focus:border-gray-300 focus:ring-0 [color-scheme:light]"
+                  />
+                </div>
+                <div className="flex flex-col gap-1">
+              
+                  <input
+                    id="country"
+                    name="country"
+                    type="text"
+                    placeholder="Country"
+                    className="w-full h-12 px-4 rounded-md bg-gray-50 text-gray-800 placeholder-gray-500 border border-gray-200 focus:outline-none focus:border-gray-300"
+                  />
+                </div>
               </div>
-
+              <fieldset className="flex flex-col gap-2" aria-label="Appointment Type">
+                <legend className="text-sm font-medium text-gray-700 mb-1">Appointment Type</legend>
+                <label className="flex items-center gap-3 rounded-md border border-gray-200 bg-gray-50 h-12 px-3 cursor-pointer text-gray-800 text-sm md:text-base hover:border-gray-300 transition mb-2">
+                  <input type="radio" name="appointmentType" value="initial" className="accent-green-600" />
+                  <span className="leading-none">Initial consultation visit</span>
+                </label>
+                <label className="flex items-center gap-3 rounded-md border border-gray-200 bg-gray-50 h-12 px-3 cursor-pointer text-gray-800 text-sm md:text-base hover:border-gray-300 transition">
+                  <input type="radio" name="appointmentType" value="follow-up" className="accent-green-600" />
+                  <span className="leading-none">Follow-up visit</span>
+                </label>
+              </fieldset>
               {/* Row 4 */}
               <div className="md:col-span-2">
                 <label htmlFor="message" className="sr-only">Message</label>
