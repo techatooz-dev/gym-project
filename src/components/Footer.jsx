@@ -35,17 +35,18 @@ export default function Footer() {
                     </ul>
                 </div>
 
-                {/* Products (static list from screenshot) */}
+                {/* Services (derived from services page sections) */}
                 <div>
                     <h3 className="font-bold tracking-wide mb-3 text-white/90">OUR SERVICES</h3>
                     <ul className="space-y-2 list-disc pl-5 marker:text-white/80">
-                        <li>Finess training suit trouser</li>
-                        <li>Fitness training suit shirt</li>
-                        <li>Electrical Hot pack</li>
-                        <li>Coldpack</li>
-                        <li>Peanut ball</li>
-                        <li>Twister</li>
-                        <li>Trampoline</li>
+                        <li><Link href="/services#ems-sessions" className="hover:underline">EMS Sessions</Link></li>
+                        <li><Link href="/services#sports-performance" className="hover:underline">Sports Performance Training</Link></li>
+                        <li><Link href="/services#physiotherapy" className="hover:underline">Physiotherapy Sessions</Link></li>
+                        <li><Link href="/services#wellness-programs" className="hover:underline">Wellness Programs</Link></li>
+                        <li><Link href="/services#pain-relief" className="hover:underline">Pain Relief with EMS</Link></li>
+                        <li><Link href="/services#sprained-ankle" className="hover:underline">Sprained Ankle Recovery</Link></li>
+                        <li><Link href="/services#spinal-back" className="hover:underline">Spinal & Back Pain Management</Link></li>
+                        <li><Link href="/services#knee-shoulder" className="hover:underline">Knee & Shoulder Therapy</Link></li>
                     </ul>
                 </div>
 
