@@ -53,7 +53,7 @@ export default function ClassesPage() {
       {/* Hero Section */}
       <section className="relative w-full h-60 overflow-hidden">
         <img
-          src="/Slider-01-2.jpg"
+          src="/Slider-08.jpg"
           alt="People training with EMS equipment"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -66,12 +66,12 @@ export default function ClassesPage() {
       <main className="container mx-auto px-4 py-10">
         {/* Programs Section (Alternating layout, no cards) */}
         <section className="mb-8">
-          <div className="max-w-3xl mb-8">
+          {/* <div className="max-w-3xl mb-8">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Our EMS Class Programs</h2>
             <p className="text-gray-600 leading-relaxed">
               Explore specialized EMS training paths crafted for different life stages and goals. Scroll through or jump via the quick navigation below.
             </p>
-          </div>
+          </div> */}
           {/* Quick anchor navigation */}
           <nav className="flex gap-3 overflow-x-auto pb-4 mb-10 -mx-1" aria-label="Program quick navigation">
             {classPrograms.map(p => (
@@ -106,7 +106,7 @@ export default function ClassesPage() {
                   </div>
                   {/* Text */}
                   <div>
-                    <h3 className="text-xl md:text-2xl font-bold tracking-tight mb-2">{program.title}</h3>
+                    <h3 className="text-xl md:text-2xl font-bold tracking-tight mb-2 mt-4">{program.title}</h3>
                     <p className="text-sm uppercase tracking-wide text-blue-700 font-semibold mb-4">{program.subtitle}</p>
                     <p className="text-gray-600 leading-relaxed mb-6 text-sm md:text-base">{program.description}</p>
                     <div className="flex flex-wrap gap-3">
