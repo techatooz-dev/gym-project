@@ -7,9 +7,9 @@ export default function HeroSlider({ slides: slidesProp, interval = 4500, classN
   const slides = useMemo(
     () =>
       slidesProp ?? [
-        { src: "/slider-01-2.jpg", alt: "Slide 1" },
-        { src: "/slider-02-3.jpg", alt: "Slide 2" },
-        { src: "/slider-03.jpg", alt: "Slide 3" },
+        { src: "/Slider-01-2.jpg", alt: "Slide 1" },
+        { src: "/Slider-02-3.jpg", alt: "Slide 2" },
+        { src: "/Slider-03.jpg", alt: "Slide 3" },
       ],
     [slidesProp]
   );
