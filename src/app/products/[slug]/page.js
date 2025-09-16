@@ -1,5 +1,6 @@
 import { getProductBySlug, products } from "@/data/products";
 import ProductDetailClient from "./ProductDetailClient";
+import Link from "next/link";
 
 export default function ProductDetail({ params }) {
   const { slug } = params;
