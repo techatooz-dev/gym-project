@@ -1,22 +1,11 @@
 import React from 'react'
-import Page from './_components/mainpage'
-
 
 function page() {
   return (
     <div>
-      <Page/>
-     
+      <h1>Sprained Ankle Recovery</h1>
     </div>
   )
 }
 
 export default page
-
-
-
-
-
-
-
-

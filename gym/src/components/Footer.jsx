@@ -4,7 +4,7 @@ import { site } from "@/config/site";
 
 export default function Footer() {
     return (
-        <footer className="relative z-20 bg-[#0066A4] text-white text-sm">
+        <footer className="relative z-20 bg-[#1daadd] text-white text-sm">
             <div className="mx-auto max-w-7xl px-6 py-10 grid  gap-6 sm:gap-16 md:grid-cols-4">
                 {/* Brand / About */}
                 <div className="space-y-1 max-w-xs">
