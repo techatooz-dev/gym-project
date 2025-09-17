@@ -8,28 +8,28 @@ const FEATURES = [
         title: "Physio-Led EMS",
         desc: "Certified physiotherapists tailor every session for safe accelerated results.",
         icon: () => (
-            <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M12 6v6l4 2" /></svg>
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6v6l4 2" /></svg>
         )
     },
     {
         title: "Faster Fat Burn",
         desc: "Up to 20× workout efficiency with full‑body muscle activation.",
         icon: () => (
-            <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l3 3" /></svg>
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l3 3" /></svg>
         )
     },
     {
         title: "Joint Friendly",
         desc: "Low impact sessions ideal for recovery, mobility & long‑term health.",
         icon: () => (
-            <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M4 12h16" /><path d="M12 4v16" /></svg>
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16" /><path d="M12 4v16" /></svg>
         )
     },
     {
         title: "Personal Plans",
         desc: "Wedding prep, posture, weight loss, strength & wellness roadmaps.",
         icon: () => (
-            <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M3 6h18M3 12h12M3 18h6" /></svg>
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h12M3 18h6" /></svg>
         )
     }
 ];
