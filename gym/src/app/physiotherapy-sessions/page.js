@@ -1,11 +1,5 @@
-import React from 'react'
+import Physiotherapy from "@/components/physiotherapy";
 
-function page() {
-  return (
-    <div>
-      <h1>Physiotherapy Sessions</h1>
-    </div>
-  )
+export default function Page() {
+  return <Physiotherapy />;
 }
-
-export default page

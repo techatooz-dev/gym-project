@@ -1,0 +1,167 @@
+export default function Reviews({ reviews }) {
+  const SAMPLE = [
+    {
+      id: 1,
+      name: "Ayesha Khan",
+      rating: 5,
+      date: "Aug 2025",
+      verified: true,
+      featuredImage: "/gym2.jpg",
+      text: "Remarkable experience. The therapist explained everything clearly and my shoulder pain reduced in just two sessions.",
+    },
+    {
+      id: 2,
+      name: "Daniel Lee",
+      rating: 4,
+      date: "Jul 2025",
+      verified: true,
+      media: { thumb: "/EMS.jpg", title: "EMS session" },
+      text: "Professional staff and clean studio. The exercises were tailored to me and I could feel steady progress each week.",
+    },
+    {
+      id: 3,
+      name: "Maya Patel",
+      rating: 5,
+      date: "Jun 2025",
+      verified: true,
+      text: "I loved the structured plan. They focused on posture and mobility. I'm back to running without knee pain!",
+    },
+    {
+      id: 4,
+      name: "Omar Malik",
+      rating: 5,
+      date: "Jun 2025",
+      verified: true,
+      media: { thumb: "/Fitness-training.jpg", title: "Strength circuit" },
+      text: "Hands-on treatment plus a simple home routine worked wonders. Friendly team and clear guidance throughout.",
+    },
+    {
+      id: 5,
+      name: "Sara Ahmed",
+      rating: 4,
+      date: "May 2025",
+      verified: true,
+      text: "Great communication and measurable results.",
+    },
+    {
+      id: 6,
+      name: "Vikram Rao",
+      rating: 5,
+      date: "Apr 2025",
+      verified: true,
+      media: { thumb: "/gym1.webp", title: "Mobility work" },
+      text: "Came in with chronic back stiffness. Their approach addressed the root cause. I feel stronger and more mobile now.",
+    },
+  ];
+
+  const data = reviews && Array.isArray(reviews) && reviews.length ? reviews : SAMPLE;
+  const total = data.length;
+  const avg = data.reduce((s, r) => s + (r.rating || 0), 0) / total;
+  const dist = [1, 2, 3, 4, 5].map((n) => data.filter((r) => r.rating === n).length);
+
+  const Star = ({ filled, colorFilled = "text-yellow-400", colorEmpty = "text-stone-400" }) => (
+    <svg viewBox="0 0 24 24" aria-hidden className={`w-5 h-5 ${filled ? colorFilled : colorEmpty}`}>
+      {filled ? (
+        <path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+      ) : (
+        <path fill="none" stroke="currentColor" strokeWidth="2" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+      )}
+    </svg>
+  );
+
+  const Stars = ({ rating, colorFilled, colorEmpty }) => (
+    <div className="flex items-center gap-0.5" aria-label={`${rating} out of 5`}>
+      {Array.from({ length: 5 }).map((_, i) => (
+        <Star key={i} filled={i < Math.round(rating)} colorFilled={colorFilled} colorEmpty={colorEmpty} />
+      ))}
+    </div>
+  );
+
+  const Avatar = ({ name }) => {
+    const initials = name
+      .split(" ")
+      .map((p) => p[0])
+      .slice(0, 2)
+      .join("")
+      .toUpperCase();
+    return (
+      <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-sky-700 text-white font-semibold">
+        {initials}
+      </span>
+    );
+  };
+
+  return (
+    <section className="bg-white">
+      <div className="mx-auto max-w-7xl px-6 py-12">
+      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+        <div>
+          <h2 className="text-3xl sm:text-4xl font-extrabold leading-tight text-green-600">What our clients say</h2>
+          <p className="text-gray-600">Real experiences from people we’ve helped move better.</p>
+        </div>
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
+            <span className="text-3xl font-bold text-gray-600">{avg.toFixed(1)}</span>
+            <Stars rating={avg} colorFilled="text-yellow-400" colorEmpty="text-gray-600" />
+          </div>
+          <span className="text-gray-600 text-sm">{total} reviews</span>
+        </div>
+      </div>
+
+      <div className="mt-6 grid sm:grid-cols-5 gap-4">
+        {Array.from({ length: 5 }, (_, i) => 5 - i).map((stars, idx) => {
+          const count = dist[stars - 1];
+          const pct = total ? Math.round((count / total) * 100) : 0;
+          return (
+            <div key={stars} className="col-span-1 flex items-center gap-2">
+              <div className="w-12 flex items-center  gap-1">
+                <span className="text-sm text-gray-900">{stars}</span>
+                <svg viewBox="0 0 24 24" className="w-4 h-4 text-yellow-400" aria-hidden>
+                  <path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                </svg>
+              </div>
+              <div className="flex-1 h-2 rounded bg-gray-700 overflow-hidden">
+                <div className="h-full bg-yellow-400" style={{ width: pct + "%" }} />
+              </div>
+              <div className="w-10 text-right text-sm text-gray-900">{pct}%</div>
+            </div>
+          );
+        })}
+      </div>
+
+  {/* Masonry: variable heights based on content; text-only cards */}
+  <div className="mt-10 columns-1 sm:columns-2 lg:columns-3 xl:columns-4 2xl:columns-5 gap-5">
+        {data.map((r) => (
+          <div key={r.id} className="mb-5 break-inside-avoid">
+            <article className="border border-gray-300 bg-white p-4">
+              <div className="flex items-center gap-3">
+                <Avatar name={r.name} />
+                <div className="min-w-0">
+                  <div className="font-semibold text-gray-900 flex items-center gap-2">
+                    {r.name}
+                    {r.verified && (
+                      <span className="inline-flex items-center text-blue-600 text-xs">
+                        <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 mr-1"><path d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm-1.2-6.2l5-5-1.4-1.4-3.6 3.6-1.6-1.6-1.4 1.4 3 3z"/></svg>
+                        Verified
+                      </span>
+                    )}
+                  </div>
+                  <div className="text-xs text-gray-500">{r.date}</div>
+                </div>
+              </div>
+              <div className="mt-2"><Stars rating={r.rating} /></div>
+              <p className="mt-3 text-gray-900 leading-relaxed">{r.text}</p>
+            </article>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-8 flex justify-center">
+        <a href="/contact-us" className="inline-flex items-center px-6 py-3 rounded bg-white text-gray-900 font-semibold">
+          Write a Review
+        </a>
+      </div>
+      </div>
+    </section>
+  );
+}

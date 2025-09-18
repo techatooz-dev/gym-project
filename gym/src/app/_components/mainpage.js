@@ -10,7 +10,10 @@ import QandA from "@/components/QandA";
 import ImageSection from "@/components/imagesection";
 import { products } from "@/data/products";
 import { useState } from "react";
+import Physiotherapy from "@/components/physiotherapy";
 import Footer from "@/components/Footer";
+import Ourteam from "@/components/Ourteam";
+import Reviews from "@/components/Reviews";
 
 export default function Page() {
   // Product data imported from centralized module.
@@ -33,6 +36,9 @@ export default function Page() {
       <WhyChooseUsSection />
       <QandA />
       <ImageSection />
+      <Physiotherapy />
+      <Ourteam />
+      <Reviews />
       {/* <LatestArticles /> */}
       
     </main>

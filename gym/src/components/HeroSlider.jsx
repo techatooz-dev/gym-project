@@ -17,7 +17,6 @@ export default function HeroSlider({
         backgroundImage: `url('${background}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        transform: 'scale(1.05)',
       }}
     >
       {/* Enhanced Overlay */}
