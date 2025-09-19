@@ -1,19 +1,21 @@
 "use client";
-import HeroSlider from "@/components/HeroSlider";
-import OurServicesSection from "@/components/OurServicesSection";
+import HeroSlider from "@/components/Home/HeroSlider";
+import OurServicesSection from "@/components/Home/OurServicesSection";
 import ProductCard from "@/components/ProductCard";
-import WhyChooseUsSection from "@/components/WhyChooseUsSection";
+import WhyChooseUsSection from "@/components/Home/WhyChooseUsSection";
 import LatestArticles from "@/components/LatestArticles";
 import MealPlans from "@/components/MealPlans";
-import ClientsCarousel from "@/components/ClientsCarousel";
-import QandA from "@/components/QandA";
-import ImageSection from "@/components/imagesection";
+import ClientsCarousel from "@/components/Home/ClientsCarousel";
+import QandA from "@/components/Home/QandA";
+import ImageSection from "@/components/Home/imagesection";
 import { products } from "@/data/products";
 import { useState } from "react";
-import Physiotherapy from "@/components/physiotherapy";
+import Physiotherapy from "@/components/Home/physiotherapy";
 import Footer from "@/components/Footer";
-import Ourteam from "@/components/Ourteam";
-import Reviews from "@/components/Reviews";
+import Ourteam from "@/components/Home/Ourteam";
+import Reviews from "@/components/Home/Reviews";
+import ExpertCare from "@/components/Home/ExpertCare";
+import PowerEMS from "@/components/Home/PowerEMS";
 
 export default function Page() {
   // Product data imported from centralized module.
@@ -28,17 +30,19 @@ export default function Page() {
       <div className="w-full h-[calc(100vh-4rem)] md:h-[80vh] max-h-[900px] min-h-[480px]">
         <HeroSlider />
       </div>
-
-      <OurServicesSection />
+      <ExpertCare />
+      <PowerEMS />
+      {/* <OurServicesSection /> */}
       {/* Diet Meal Plans (below products) */}
       {/* <MealPlans /> */}
       <ClientsCarousel />
-      <WhyChooseUsSection />
-      <QandA />
       <ImageSection />
-      <Physiotherapy />
+      
+      <QandA />
+      <WhyChooseUsSection />
+      {/* <Physiotherapy />
       <Ourteam />
-      <Reviews />
+      <Reviews /> */}
       {/* <LatestArticles /> */}
       
     </main>

@@ -22,10 +22,10 @@ export default function HeroSlider({
       {/* Enhanced Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/40 to-transparent z-10" />
       {/* Floating shapes */}
-      <div className="absolute left-10 top-10 w-32 h-32 bg-green-400/30 rounded-full blur-2xl animate-pulse z-20" />
-      <div className="absolute right-10 bottom-20 w-24 h-24 bg-blue-400/30 rounded-full blur-2xl animate-pulse z-20" />
+      {/* <div className="absolute left-10 top-10 w-32 h-32 bg-green-400/30 rounded-full blur-2xl animate-pulse z-20" />
+      <div className="absolute right-10 bottom-20 w-24 h-24 bg-blue-400/30 rounded-full blur-2xl animate-pulse z-20" /> */}
       {/* Content */}
-      <div className="relative z-30 flex flex-col items-center justify-center text-center px-6 md:px-0 w-full">
+      {/* <div className="relative z-30 flex flex-col items-center justify-center text-center px-6 md:px-0 w-full">
         <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight animate-fade-in-up">
           <span className="block text-white drop-shadow-lg">
             {headline.split(/<br\s*\/>/i)[0]}
@@ -46,7 +46,7 @@ export default function HeroSlider({
           </a>
         )}
         {children}
-      </div>
+      </div> */}
       {/* Scroll cue */}
       {/* <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center animate-bounce">
         <span className="text-white/80 text-xs mb-1">Scroll</span>
