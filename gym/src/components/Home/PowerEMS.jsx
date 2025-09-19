@@ -1,12 +1,15 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import { Anton } from "next/font/google";
+
+const anton = Anton({ subsets: ["latin"], weight: "400" });
 
 function PowerEMS() {
   return (
     <section className="relative isolate">
-      {/* Cyan base stripe fills from mid to bottom */}
-      <div className="absolute left-0 right-0 top-1/2 bottom-0 z-0 bg-[#23A7D8]" />
+  {/* Cyan base stripe fills from mid to bottom (nudged lower for spacing) */}
+  <div className="absolute left-0 right-0 top-[58%] bottom-0 z-0 bg-[#23A7D8]" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 py-12 md:py-16">
         <div className="grid items-center gap-8 md:grid-cols-12">
@@ -26,7 +29,7 @@ function PowerEMS() {
 
           {/* Right copy */}
           <div className="md:col-span-6 mt-22">
-            <h2 className="text-[38px] font-black uppercase leading-[0.95] tracking-tight text-gray-900 md:text-[54px]">
+            <h2 className={`${anton.className} text-[56px] font-black uppercase leading-[0.95] tracking-tight text-gray-900 md:text-[96px]`}>
               <span className="block">Power of</span>
               <span className="block">EMS Training</span>
             </h2>
