@@ -1,5 +1,8 @@
 
 import React, { useState } from "react";
+import { Anton } from "next/font/google";
+
+const anton = Anton({ subsets: ["latin"], weight: "400" });
 
 const cards = [
   { color: "bg-[#23A7D8]", text: "MISSING PICS" },
@@ -31,10 +34,13 @@ export default function ClientsCarousel() {
   <section className="relative bg-white">
       {/* Green header band */}
   <div className="bg-[#7CC245] pt-10 pb-42">
-        <div className="mx-auto max-w-4xl px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-gray-900 mb-2">
-            <span className="inline-block border-b-4 border-white pb-1">OUR HAPPY CLIENTS</span>
-          </h2>
+          <div className="mx-auto max-w-4xl px-4 text-center">
+            <div className="flex flex-col items-center gap-1 md:gap-2">
+              <span className="h-1.5 w-16 md:w-24 bg-white rounded-full" />
+              <h2 className={`${anton.className} text-[44px] md:text-[80px] font-black uppercase leading-[0.95] tracking-tight text-gray-900`}>
+                OUR HAPPY CLIENTS
+              </h2>
+            </div>
           <p className="text-white text-sm md:text-base font-medium max-w-2xl mx-auto">
             At Pro EMS Fit, our clients’ happiness is our greatest achievement. From fitness enthusiasts to recovery patients, each success story reflects the impact of our EMS programs. Their positive feedback and lasting results inspire us to keep delivering safe, effective, and personalized solutions that truly make a difference.
           </p>
