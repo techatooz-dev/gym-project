@@ -1,4 +1,7 @@
 import React from "react";
+import { Anton } from "next/font/google";
+
+const anton = Anton({ subsets: ["latin"], weight: "400" });
 
 // Hardcoded image section: static heading, description and image.
 export default function ImageSection() {
@@ -6,10 +9,10 @@ export default function ImageSection() {
     <section className="relative py-12 md:py-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col gap-10">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-[36px] md:text-5xl font-extrabold tracking-tight text-green-600 mb-4">
+          <h2 className={`${anton.className} text-[42px] md:text-[84px] leading-[0.95] tracking-tight text-gray-900 mb-3`}>
             FAQ'S
           </h2>
-          <p className="text-sm  md:text-base text-gray-600 leading-relaxed">
+          <p className="text-sm md:text-base text-gray-600 leading-relaxed">
            Frequently Asked Questions
           </p>
         </div>
