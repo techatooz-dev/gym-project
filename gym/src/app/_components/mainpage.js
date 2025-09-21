@@ -17,6 +17,7 @@ import Reviews from "@/components/Home/Reviews";
 import ExpertCare from "@/components/Home/ExpertCare";
 import PowerEMS from "@/components/Home/PowerEMS";
 import DietMeal from "@/components/Home/DietMeal";
+import PainRelefe from "@/components/Home/PainRelefe";
 
 export default function Page() {
   // Product data imported from centralized module.
@@ -43,6 +44,7 @@ export default function Page() {
       <WhyChooseUsSection />
       <DietMeal />
        <Physiotherapy />
+      <PainRelefe />
       {/* <Ourteam />
       <Reviews />  */}
       {/* <LatestArticles /> */}
