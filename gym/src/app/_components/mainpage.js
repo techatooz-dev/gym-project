@@ -16,6 +16,7 @@ import Ourteam from "@/components/Home/Ourteam";
 import Reviews from "@/components/Home/Reviews";
 import ExpertCare from "@/components/Home/ExpertCare";
 import PowerEMS from "@/components/Home/PowerEMS";
+import DietMeal from "@/components/Home/DietMeal";
 
 export default function Page() {
   // Product data imported from centralized module.
@@ -40,6 +41,7 @@ export default function Page() {
       
       <QandA />
       <WhyChooseUsSection />
+      <DietMeal />
       {/* <Physiotherapy />
       <Ourteam />
       <Reviews /> */}
