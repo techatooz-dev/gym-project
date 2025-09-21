@@ -42,9 +42,9 @@ export default function Page() {
       <QandA />
       <WhyChooseUsSection />
       <DietMeal />
-      {/* <Physiotherapy />
-      <Ourteam />
-      <Reviews /> */}
+       <Physiotherapy />
+      {/* <Ourteam />
+      <Reviews />  */}
       {/* <LatestArticles /> */}
       
     </main>
