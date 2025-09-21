@@ -18,6 +18,7 @@ import ExpertCare from "@/components/Home/ExpertCare";
 import PowerEMS from "@/components/Home/PowerEMS";
 import DietMeal from "@/components/Home/DietMeal";
 import PainRelefe from "@/components/Home/PainRelefe";
+import Spraind from "@/components/Home/Spraind";
 
 export default function Page() {
   // Product data imported from centralized module.
@@ -45,6 +46,7 @@ export default function Page() {
       <DietMeal />
        <Physiotherapy />
       <PainRelefe />
+      <Spraind />
       {/* <Ourteam />
       <Reviews />  */}
       {/* <LatestArticles /> */}
