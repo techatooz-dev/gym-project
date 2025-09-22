@@ -4,6 +4,7 @@ import PhysioLed from '@/components/WhyChooseUs/PhysioLed';
 import Personalized from '@/components/WhyChooseUs/Personalized';
 import OurSuccess from '@/components/WhyChooseUs/OurSuccess';
 import ChooseHappy from '@/components/WhyChooseUs/ChooseHappy';
+import WhyHappy from '@/components/WhyChooseUs/WhyHappy';
 
 function page() {
   return (
@@ -11,6 +12,7 @@ function page() {
        <IntroSection />
        <OurSuccess />
        <ChooseHappy />
+       <WhyHappy />
       {/* <PhysioLed />
       
       <Personalized /> */}

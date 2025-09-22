@@ -26,7 +26,7 @@ export default function Footer() {
                 </div>
 
                 {/* Column 2: Useful Links */}
-                <div>
+                <div className="ml-12" >
                     <h3 className="font-semibold tracking-wide uppercase mb-3">Useful Links</h3>
                     <ul className="space-y-2 list-disc list-inside marker:text-white/90">
                         <li><FooterLink href="/">Home</FooterLink></li>
