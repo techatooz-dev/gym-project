@@ -32,9 +32,9 @@ export default function WhyChooseUsSection() {
 
           {/* Column 4: white panel with image */}
           <div className="md:col-span-1 bg-white">
-            <div className="relative mt-8 md:mt-12 lg:mt-16 mb-12 md:mb-12 lg:mb-16 -ml-8 md:-ml-20 lg:-ml-24 h-[300px] md:h-[360px] overflow-hidden z-10 shadow-[0_12px_24px_rgba(0,0,0,0.15)] rounded">
+            <div className="relative mt-8 md:mt-12 lg:mt-16 mb-12 md:mb-12 lg:mb-16 -ml-16 md:-ml-32 lg:-ml-40 w-[120%] md:w-[140%] lg:w-[165%] h-[300px] md:h-[360px] overflow-hidden z-10 shadow-[0_12px_24px_rgba(0,0,0,0.15)] rounded">
               <img
-                src="/Why_choose_us-1.jpg"
+                src="/3rd.jpg"
                 alt="Athlete training with EMS"
                 className="w-full h-full object-cover"
                 loading="lazy"
