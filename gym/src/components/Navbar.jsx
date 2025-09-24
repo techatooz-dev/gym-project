@@ -44,7 +44,7 @@ export default function Navbar() {
 
                     {/* Centered nav (desktop) */}
                     <div className="hidden md:flex flex-1 justify-center px-6">
-                        <div className="bg-green-500 rounded-sm flex items-stretch px-3">
+                        <div className="bg-[#76C043] rounded-sm flex items-stretch px-3">
                             <nav className="flex items-center gap-1">
                                 {site.nav.map((link) => {
                                     const active = isActive(link.href);
