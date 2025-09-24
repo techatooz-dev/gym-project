@@ -8,11 +8,11 @@ function IntroSection() {
         <div className="relative ">
           <div className="relative w-full aspect-[16/6]">
             <Image
-              src="/EMS-fitness-training.jpeg"
+              src="/2nd (5).png"
               alt="EMS training session in studio"
               fill
               priority
-              sizes="100vw"
+              sizes="full"
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-[#ffffff00] via-[#00000055] to-[#000000c8]" />

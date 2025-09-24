@@ -12,9 +12,9 @@ function OurSuccess() {
           Our Success Story
         </h2>
 
-        <div className="grid gap-10 md:grid-cols-12 items-start">
+        <div className="grid gap-10 md:grid-cols-12 items-stretch">
           {/* Left: copy */}
-          <div className="md:col-span-7 text-slate-700 leading-7 md:leading-8 space-y-5">
+          <div className="md:col-span-6 text-slate-700 leading-7 md:leading-8 space-y-5 h-full">
             <p>
               Since our inception in [2018], Pro EMS Fit has been dedicated to transforming lives
               through the power of advanced EMS (Electrical Muscle Stimulation) technology. What began
@@ -44,18 +44,18 @@ function OurSuccess() {
           </div>
 
           {/* Right: visual */}
-          <div className="md:col-span-5">
-            <div className="relative mx-auto w-full max-w-md md:max-w-none min-h-[380px] mt-22">
+          <div className="md:col-span-6 h-full">
+            <div className="relative mx-auto w-full max-w-md md:max-w-none min-h-[380px] md:h-full">
               {/* Green rounded shape behind */}
-              <div className="absolute bottom-0 right-0 h-56 w-64 md:h-72 md:w-96 bg-[#7AC943] rounded-tl-[56px] rounded-br-[56px] shadow-md" />
+              <div className="absolute bottom-0 right-0 h-56 w-64 md:h-72 md:w-96" />
               {/* Image */}
-              <div className="absolute -right-2 bottom-0 md:right-0">
+              <div className="absolute -right-2 bottom-0 md:right-0 ">
                 <Image
-                  src="/2nd (4).png"
+                  src="/1st (1).png"
                   alt="Athlete wearing EMS suit training beside EMS machine"
-                  width={520}
-                  height={520}
-                  className="h-auto w-[340px] md:w-[460px] object-contain drop-shadow-xl"
+                  width={620}
+                  height={720}
+                  className="h-auto  object-contain drop-shadow-xl"
                   priority
                 />
               </div>

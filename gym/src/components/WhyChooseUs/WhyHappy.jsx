@@ -6,7 +6,7 @@ function WhyHappy() {
   return (
     <section className="bg-white px-4 md:px-6 lg:px-8 py-10 md:py-16">
       <div className="mx-auto max-w-7xl">
-        <h2 className={`${anton.className} text-3xl md:text-6xl uppercase text-[#111827] mb-10`}>Why Our Clients Are Happy</h2>
+        <h2 className={`${anton.className} text-3xl md:text-7xl uppercase text-[#111827] mb-10`}>Why Our Clients Are Happy</h2>
 
         <div className="grid gap-6 md:gap-8 md:grid-cols-2">
           <HappyCard title="Life-Changing Results">

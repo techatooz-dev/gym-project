@@ -14,7 +14,7 @@ function ChooseHappy() {
       </div> */}
 
       <div className="mx-auto max-w-7xl text-center">
-        <h2 className={`${anton.className} text-4xl md:text-6xl uppercase text-[#111827] mb-2`}>Our Happy Clients</h2>
+        <h2 className={`${anton.className} text-4xl md:text-7xl uppercase text-[#111827] mb-2`}>Our Happy Clients</h2>
         <p className="mx-auto max-w-3xl text-sm md:text-base text-slate-600">
           At Pro EMS Fit, our clients’ happiness is our greatest success. Every journey is unique, but each one
           leads to the same result — healthier, stronger, and more confident individuals who trust us with their
@@ -22,7 +22,7 @@ function ChooseHappy() {
         </p>
 
         {/* Cards */}
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 place-items-center">
+  <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-y-6 justify-items-center">
           <PlaceholderCard color="#26A3D7" />
           <PlaceholderCard color="#7AC943" />
           <PlaceholderCard color="#26A3D7" />
@@ -42,7 +42,7 @@ function ChooseHappy() {
 function PlaceholderCard({ color }) {
   return (
     <div
-      className="h-56 w-60 md:h-64 md:w-64 rounded-[26px] shadow-xl flex items-center justify-center"
+      className="w-64 h-72 md:w-82 md:h-90 rounded-[26px] shadow-xl flex items-center justify-center"
       style={{ backgroundColor: color }}
     >
       <div className="text-white/90 text-xl md:text-2xl font-extrabold tracking-wide uppercase">
