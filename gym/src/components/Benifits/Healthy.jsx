@@ -3,7 +3,7 @@ import React from 'react'
 function Healthy() {
   return (
     <section className="w-full bg-white">
-      <div className="mx-auto max-w-7xl py-10 lg:py-16 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+      <div className="mx-auto max-w-8xl py-10 lg:py-16 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
         {/* Left: Image with blue arc ring */}
         <div className="lg:col-span-6">
           <div className="relative">
@@ -21,7 +21,7 @@ function Healthy() {
         </div>
 
         {/* Right: Heading + Copy */}
-        <div className="lg:col-span-6">
+        <div className="lg:col-span-6 mr-5">
           <h2 className="text-[#76C043] font-extrabold uppercase leading-[0.95] tracking-wide text-[40px] sm:text-[54px] lg:text-[64px]">
             Healthy Life
             <br />
