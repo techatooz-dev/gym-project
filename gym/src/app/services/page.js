@@ -8,16 +8,12 @@ export default function ServicesPage() {
     const isCenter = align === 'center';
     return (
       <div className={`relative ${isCenter ? 'text-center' : ''}`}>
-        <div className={`inline-block ${accent} text-white font-semibold rounded-sm px-4 py-1 mb-4`}>
-          {title}
-        </div>
-        <p className={`text-gray-700 leading-relaxed max-w-prose mb-5 ${isCenter ? 'mx-auto text-center' : ''}`}>
-          {body}
-        </p>
+        <div className={`inline-block ${accent} text-white font-semibold rounded-sm px-4 py-1 mb-4`}>{title}</div>
+        <p className={`text-gray-700 leading-relaxed max-w-prose mb-5 ${isCenter ? 'mx-auto text-center' : ''}`}>{body}</p>
         <img
           src={image}
           alt={title}
-          className={`w-full h-48 md:h-56 object-cover rounded-sm shadow ${isCenter ? 'mx-auto' : ''}`}
+          className={`w-full h-58 md:h-76 object-cover rounded-sm shadow ${isCenter ? 'mx-auto' : ''}`}
         />
       </div>
     );
@@ -48,45 +44,84 @@ export default function ServicesPage() {
           fitness training to help you recover faster, perform better, and live pain‑free. Explore our
           specialized services below.
         </p>
+
+
+
+        {/* arrow image section right after intro */}
+        <section className="my-6 md:my-8 flex justify-center">
+          <img src="/firstarro.png" alt="section arrow" className="w-80 md:w-142 h-auto" />
+        </section>
       </header>
+
+
+
 
       {/* Services in a clean grid (no lines) */}
       <section className="space-y-16">
-  <div className="grid md:grid-cols-2 gap-10 md:gap-14">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-14">
           <Card
             title="EMS Sessions"
             body="Experience the power of Electrical Muscle Stimulation (EMS), a modern fitness and recovery technique designed to activate deep muscle fibers, improve circulation, and boost strength in less time than traditional."
-            image="/EMS.jpg"
+            image="/first.png"
             align="center"
           />
           <Card
             title="Sports Performance Training"
             body="Enhance your athletic performance with customized EMS-based training programs. Our sessions focus on speed, agility, endurance, and strength—helping athletes reach their peak potential safely and effectively."
-            image="/Sports.png"
+            image="/second.png"
             align="center"
           />
         </div>
+
+
+
+
+
+
+        {/* arrow image section right after intro */}
+        <section className="my-6 md:my-8 flex justify-center">
+          <img src="/arro.png" alt="section arrow" className="w-80 md:w-142 h-auto" />
+        </section>
+
+
+
+
+
+
 
         <div className="max-w-3xl mx-auto text-center">
           <Card
             title="Physiotherapy Sessions"
             body="Recover with professional physiotherapy tailored to your needs. Our experts combine EMS with manual therapy to improve mobility, relieve stiffness, and accelerate the healing process."
-            image="/Physiotherapy.png"
+            image="/third.jpg"
             align="center"
           />
         </div>
+
+
+
+
+
+ {/* arrow image section right after intro */}
+        <section className="my-6 md:my-8 flex justify-center">
+          <img src="/firstarro.png" alt="section arrow" className="w-80 md:w-142 h-auto" />
+        </section>
+
+
+
+
 
         <div className="grid md:grid-cols-2 gap-10 md:gap-14">
           <Card
             title="Wellness Programs"
             body="Our holistic wellness plans combine EMS, physical therapy, and guided workouts to promote overall health, reduce stress, and maintain long-term body balance."
-            image="/Wellness.jpeg"
+            image="/forth.jpg"
             align="center"
           />
           <Card
             title="Pain Relief with EMS"
             body="Say goodbye to chronic pain! EMS therapy targets deep tissues to relieve discomfort caused by injuries, overuse, or medical conditions—restoring your comfort and mobility naturally."
-            image="/pain.png"
+            image="/fiveth.jpg"
             align="center"
           />
         </div>
@@ -95,14 +130,14 @@ export default function ServicesPage() {
           <Card
             title="Sprained Ankle Recovery"
             body="Specialized EMS sessions help reduce swelling, restore movement, and strengthen muscles around the ankle, speeding up your recovery and preventing future injuries."
-            image="/spenal.jpg"
+            image="/seven.png"
             align="center"
             accent="bg-sky-500"
           />
           <Card
             title="Spinal & Back Pain Management"
             body="Designed for individuals suffering from back pain, our EMS‑based therapy improves posture, reduces muscle tension, and supports spinal health with targeted muscle activation."
-            image="/backpain.jpeg"
+            image="/eight.jpg"
             align="center"
             accent="bg-sky-500"
           />
