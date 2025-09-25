@@ -2,17 +2,17 @@ export const site = {
   name: "ProEMSFitness",
   tagline: "save money and time with electronic muscle stimulation",
   logo: {
-    src: "/gymlogo.png", // located in /public
+    src: "/Logo-02.png", // located in /public
     alt: "ProEMSFitness logo",
-    width: 70,
-    height: 30,
+    width: 220,
+    height: 110,
   },
   // Separate footer logo (can be swapped independently of main logo)
   footerLogo: {
-    src: "/gymlogo.png",
+    src: "/footer_logo-01.png",
     alt: "ProEMSFitness footer logo",
-    width:100,
-    height: 40,
+    width:160,
+    height: 120,
   },
   nav: [
     { href: "/", label: "Home" },
