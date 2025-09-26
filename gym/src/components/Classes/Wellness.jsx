@@ -5,12 +5,12 @@ const anton = Anton({ subsets: ['latin'], weight: '400' })
 
 function Wellness() {
   return (
-    <section className="w-full bg-white px-4 md:px-6 lg:px-8 mb-14">
-      <div className="mx-auto max-w-7xl grid md:grid-cols-12 gap-12 items-center">
+    <section className="w-full bg-white  mb-14">
+      <div className="max-w-7xl grid md:grid-cols-12 gap-12 items-center">
         {/* Left: Image with blue backdrop */}
-        <div className="md:col-span-6 relative flex justify-center md:justify-start">
+        <div className="md:col-span-6 relative flex justify-center md:justify-start bg-black">
           {/* <div className="absolute -left-8 top-10 w-64 md:w-72 h-60 md:h-72 bg-[#14A7DF] rounded-tr-[12px] rounded-bl-[12px]" /> */}
-          <div className="relative bg-white  overflow-hidden w-full max-w-md">
+          <div className="relative bg-white  overflow-hidden w-full">
             <img
               src="/5.png"
               alt="Wellness EMS session"
