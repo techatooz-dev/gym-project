@@ -1,94 +1,118 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/config/site";
+import { useState } from "react";
 
 export default function Footer() {
+    const [email, setEmail] = useState("");
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        if (!email) return;
+        // Placeholder action – integrate with your backend / service (Mailchimp, etc.)
+        console.log("Newsletter signup:", email);
+        setEmail("");
+    }
+
     return (
-        <footer className="relative z-20 text-sm bg-[#26A3D7] text-white">
+    <footer className="relative z-20 text-[15px] leading-relaxed bg-[#23A7D8] text-white font-medium">
             {/* Main footer content */}
-            <div className="mx-auto max-w-7xl px-6 py-10 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
-                {/* Column 1: Logo + description */}
-                <div>
-                    <div className="mb-4">
+            <div className="mx-auto max-w-7xl px-6 py-14 grid gap-12 md:grid-cols-2 lg:grid-cols-[1.25fr_0.9fr_0.9fr_1fr]">
+                {/* Column 1: Logo + description + social + newsletter */}
+                <div className="flex flex-col">
+                    <div className="mb-5">
                         <Image
                             src={site.footerLogo?.src || site.logo.src}
                             alt={site.footerLogo?.alt || site.logo.alt}
-                            width={site.footerLogo?.width || 160}
-                            height={site.footerLogo?.height || 60}
+                            width={site.footerLogo?.width || 200}
+                            height={site.footerLogo?.height || 70}
                             className="h-auto w-auto"
                         />
                     </div>
-                    <p className="leading-relaxed max-w-xs/loose text-white/90">
-                        Electrical muscle stimulation is a revolutionary way of getting rid of extra fat
-                        it provides an integrated electro muscle stimulations that burns fat 20 times more
-                        efficiently than a regular workout routine.
-                    </p>
-                </div>
+                    {/* <p className="leading-relaxed text-white/85 max-w-sm mb-8">
+                        Electrical muscle stimulation is a revolutionary way of getting rid of extra fat – it provides
+                        integrated electro muscle stimulation that burns fat more efficiently than a regular workout routine.
+                    </p> */}
 
-                {/* Column 2: Useful Links */}
-                <div className="ml-12" >
-                    <h3 className="font-semibold tracking-wide uppercase mb-3">Useful Links</h3>
-                    <ul className="space-y-2 list-disc list-inside marker:text-white/90">
-                        <li><FooterLink href="/">Home</FooterLink></li>
-                        <li><FooterLink href="/why-choose-us">Why Choose Us</FooterLink></li>
-                        <li><FooterLink href="/classes">Classes</FooterLink></li>
-                        <li><FooterLink href="/services">Services</FooterLink></li>
-                        <li><FooterLink href="/benefits">Benefits</FooterLink></li>
-                        <li><FooterLink href="/contact-us">Contact Us</FooterLink></li>
-                    </ul>
-                </div>
-
-                {/* Column 3: Our Services */}
-                <div>
-                    <h3 className="font-semibold tracking-wide uppercase mb-3">Our Services</h3>
-                    <ul className="space-y-2 list-disc list-inside marker:text-white/90">
-                        <li><FooterLink href="/ems-sessions">EMS Sessions</FooterLink></li>
-                        <li><FooterLink href="/sports-performance-training">Sports Performance Training</FooterLink></li>
-                        <li><FooterLink href="/physiotherapy-sessions">Physiotherapy Sessions</FooterLink></li>
-                        <li><FooterLink href="/wellness-programs">Wellness Programs</FooterLink></li>
-                        <li><FooterLink href="/pain-reliefwith-ems">Pain Relief with EMS</FooterLink></li>
-                        <li><FooterLink href="/sprained-ankle-recovery">Sprained Ankle Recovery</FooterLink></li>
-                        <li><FooterLink href="/spinal-back-pain-management">Spinal & Back Pain Management</FooterLink></li>
-                        <li><FooterLink href="/knee-shoulder-therapy">Knee & Shoulder Therapy</FooterLink></li>
-                    </ul>
-                </div>
-
-                {/* Column 4: Contact + Social */}
-                <div className="space-y-4">
-                    <div className="flex items-start gap-3">
-                        <div className="mt-0.5"><PhoneIcon /></div>
-                        <p className="leading-relaxed">
-                            0321-7847385 , 0321-4980835
-                        </p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                        <div className="mt-0.5"><ClockIcon /></div>
-                        <p className="leading-relaxed">9 AM – 9 PM | Monday – Saturday</p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                        <div className="mt-0.5"><LocationIcon /></div>
-                        <p className="leading-relaxed">34-C Block, Bank Square, Model Town, Lahore</p>
-                    </div>
-                    <div>
-                        <p className="font-medium mb-2">Social:</p>
-                        <div className="flex items-center gap-2 text-white">
+                    <div className="mb-6">
+                        <SectionHeading small>Follow Us</SectionHeading>
+                        <div className="flex items-center gap-3 mt-3">
                             <SocialIcon href="https://facebook.com" label="Facebook" icon={<FacebookIcon />} />
                             <SocialIcon href="https://twitter.com" label="Twitter" icon={<TwitterIcon />} />
                             <SocialIcon href="https://instagram.com" label="Instagram" icon={<InstagramIcon />} />
                             <SocialIcon href="https://youtube.com" label="YouTube" icon={<YouTubeIcon />} />
                         </div>
                     </div>
+
+                    <div>
+                        <p className="text-sm md:text-base uppercase tracking-wide text-white font-semibold mb-3">Stay updated with our latest news and offers</p>
+                        <form onSubmit={handleSubmit} className="flex w-full max-w-md rounded-md overflow-hidden border border-white/10 bg-white/5 focus-within:border-emerald-400 transition">
+                            <label htmlFor="newsletter-email" className="sr-only">Email address</label>
+                            <input
+                                id="newsletter-email"
+                                type="email"
+                                required
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                placeholder="Enter your email"
+                                className="flex-1 bg-transparent px-4 py-3 text-base placeholder:text-base placeholder:text-white/50 focus:outline-none"
+                            />
+                            <button
+                                type="submit"
+                                className="group bg-white hover:bg-white active:bg-emerald-500 px-6 flex items-center justify-center gap-1 text-sm font-semibold text-gray-900 transition"
+                                aria-label="Subscribe"
+                            >
+                                <ArrowIcon className="group-hover:translate-x-0.5 transition-transform" />
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                {/* Column 2: Useful Links */}
+                <div>
+                    <SectionHeading>Useful Links</SectionHeading>
+                    <ul className="mt-5 space-y-2">
+                        <BulletItem><FooterLink href="/">Home</FooterLink></BulletItem>
+                        <BulletItem><FooterLink href="/why-choose-us">Why Choose Us</FooterLink></BulletItem>
+                        <BulletItem><FooterLink href="/classes">Classes</FooterLink></BulletItem>
+                        <BulletItem><FooterLink href="/services">Services</FooterLink></BulletItem>
+                        <BulletItem><FooterLink href="/benefits">Benefits</FooterLink></BulletItem>
+                        <BulletItem><FooterLink href="/contact-us">Contact Us</FooterLink></BulletItem>
+                    </ul>
+                </div>
+
+                {/* Column 3: Our Services */}
+                <div>
+                    <SectionHeading>Our Services</SectionHeading>
+                    <ul className="mt-5 space-y-2">
+                        <BulletItem><FooterLink href="/ems-sessions">EMS Sessions</FooterLink></BulletItem>
+                        <BulletItem><FooterLink href="/sports-performance-training">Sports Performance Training</FooterLink></BulletItem>
+                        <BulletItem><FooterLink href="/physiotherapy-sessions">Physiotherapy Sessions</FooterLink></BulletItem>
+                        <BulletItem><FooterLink href="/wellness-programs">Wellness Programs</FooterLink></BulletItem>
+                        <BulletItem><FooterLink href="/pain-reliefwith-ems">Pain Relief with EMS</FooterLink></BulletItem>
+                        <BulletItem><FooterLink href="/sprained-ankle-recovery">Sprained Ankle Recovery</FooterLink></BulletItem>
+                        <BulletItem><FooterLink href="/spinal-back-pain-management">Spinal & Back Pain Management</FooterLink></BulletItem>
+                        <BulletItem><FooterLink href="/knee-shoulder-therapy">Knee & Shoulder Therapy</FooterLink></BulletItem>
+                    </ul>
+                </div>
+
+                {/* Column 4: Contact */}
+                <div>
+                    <SectionHeading>Get In Touch</SectionHeading>
+                    <ul className="mt-5 space-y-5 text-white text-[16px] md:text-[17px] leading-relaxed font-semibold">
+                        <li className="flex items-start gap-3"><span className="mt-0.5 text-white"><PhoneIcon /></span> <p>0321-7847385 , 0321-4980835</p></li>
+                        <li className="flex items-start gap-3"><span className="mt-0.5 text-white"><ClockIcon /></span> <p>9 AM – 9 PM | Monday – Saturday</p></li>
+                        <li className="flex items-start gap-3"><span className="mt-0.5 text-white"><LocationIcon /></span> <p>34-C Block, Bank Square, Model Town,<br /> Lahore</p></li>
+                    </ul>
                 </div>
             </div>
 
             {/* Bottom Bar */}
-            <div className="bg-[#1E8FBE]">
-                <div className="mx-auto max-w-7xl px-6 py-4 flex flex-col gap-2 md:flex-row md:items-center md:justify-between text-xs">
+            <div className="bg-[#1B8FC0] border-t border-white/10">
+                <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col gap-2 md:flex-row md:items-center md:justify-between text-xs text-white">
                     <p>Copyright © 2025 Proemsfitness. All Rights Reserved.</p>
-                    <div className="flex items-center gap-3">
-                        <span aria-hidden>•</span>
-                        <p>Made with <span className="" aria-label="love">❤</span> by <span className="font-semibold">Tech Solutionor</span></p>
-                    </div>
+                    <p>Made with <span aria-label="love">❤</span> by <span className="font-semibold text-white">Tech Solutionor</span></p>
                 </div>
             </div>
         </footer>
@@ -97,9 +121,27 @@ export default function Footer() {
 
 function FooterLink({ href, children }) {
     return (
-        <Link href={href} className="hover:underline underline-offset-2">
+        <Link
+            href={href}
+            className="relative inline-block px-2 py-1 -mx-2 rounded-sm text-white font-semibold tracking-wide hover:text-white/90 focus:text-white/90 focus:outline-none focus:ring-2 focus:ring-white/30 transition-colors duration-150"
+        >
             {children}
         </Link>
+    );
+}
+
+function SectionHeading({ children, small = false }) {
+    return (
+        <h3 className={`font-bold tracking-wide ${small ? "text-[12px]" : "text-[15px]"} uppercase text-white pb-2 relative after:absolute after:left-0 after:bottom-0 after:h-[3px] after:w-56 after:max-w-full after:bg-white/70`}>{children}</h3>
+    );
+}
+
+function BulletItem({ children }) {
+    return (
+        <li className="flex gap-3 items-start group leading-snug">
+            <span className="mt-2 h-2 w-2 rounded-full bg-white ring-1 ring-white/40 group-hover:scale-125 transition-transform" />
+            <span className="text-white">{children}</span>
+        </li>
     );
 }
 
@@ -108,12 +150,20 @@ function SocialIcon({ href, label, icon }) {
         <Link
             href={href}
             aria-label={label}
-            className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white/15 hover:bg-white/25 transition"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-white/15 hover:bg-white/25 transition text-white border border-white/30 shadow-sm hover:shadow focus:outline-none focus:ring-2 focus:ring-white/50"
             target="_blank"
             rel="noopener noreferrer"
         >
             {icon}
         </Link>
+    );
+}
+
+function ArrowIcon(props) {
+    return (
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden {...props}>
+            <path d="M5 12.75h10.19l-4.72 4.72a.75.75 0 1 0 1.06 1.06l6-6a.75.75 0 0 0 0-1.06l-6-6a.75.75 0 1 0-1.06 1.06l4.72 4.72H5a.75.75 0 0 0 0 1.5Z" />
+        </svg>
     );
 }
 
