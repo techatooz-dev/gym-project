@@ -8,14 +8,14 @@ export default function ImageSection() {
   return (
     <section className="relative py-12 md:py-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col gap-10">
-        <div className="max-w-3xl mx-auto text-center">
+        {/* <div className="max-w-3xl mx-auto text-center">
           <h2 className={`${anton.className} text-[42px] md:text-[84px] leading-[0.95] tracking-tight text-gray-900 mb-3`}>
             FAQ'S
           </h2>
           <p className="text-sm md:text-base text-gray-600 leading-relaxed">
            Frequently Asked Questions
           </p>
-        </div>
+        </div> */}
 
         <div className="relative w-full max-w-6xl mx-auto">
           {/* Use asymmetrical rounding: modest on left, fully pill / semicircle on right */}

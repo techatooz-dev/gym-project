@@ -7,7 +7,7 @@ const anton = Anton({ subsets: ["latin"], weight: "400" });
 
 export default function Spraind() {
   return (
-    <section className="relative py-14 md:py-20 bg-white">
+    <section className="relative py-10 md:py-10 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         {/* Small sky bar at top-left */}
         <div className="mb-4">

@@ -66,7 +66,7 @@ export default function ClientsCarousel() {
             type="button"
             aria-label="Previous"
             onClick={() => advance(-1)}
-            className="h-10 w-10 rounded-full border border-gray-400 bg-white text-gray-700 flex items-center justify-center shadow hover:bg-gray-100"
+            className="h-10 w-10 rounded-full border border-[#23A7D8] bg-white text-gray-700 flex items-center justify-center shadow hover:bg-blue-300"
           >
             <span className="text-2xl">&#60;</span>
           </button>
@@ -74,7 +74,7 @@ export default function ClientsCarousel() {
             type="button"
             aria-label="Next"
             onClick={() => advance(1)}
-            className="h-10 w-10 rounded-full border border-gray-400 bg-white text-gray-700 flex items-center justify-center shadow hover:bg-gray-100"
+            className="h-10 w-10 rounded-full border border-[#7CC245] bg-white text-gray-700 flex items-center justify-center shadow hover:bg-[#7CC245]"
           >
             <span className="text-2xl">&#62;</span>
           </button>

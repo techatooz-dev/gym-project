@@ -8,7 +8,7 @@ const anton = Anton({ subsets: ["latin"], weight: "400" });
 function ExpertCare() {
   return (
     <section className="relative isolate">
-      <div className="mx-auto max-w-7xl px-4 py-12 md:py-16">
+      <div className="mx-auto max-w-7xl px-4 mt-8">
         {/* Top Ribbon */}
         <div className="mx-auto mb-8 w-full rounded-full bg-[#7CC245] px-4 py-2 text-center text-sm font-semibold text-white md:text-base">
           <div className="mx-auto flex items-center justify-center gap-3">

@@ -45,19 +45,24 @@ export default function Physiotherapy() {
               knee pain, and disc bulge. With advanced EMS therapy and personalized treatment plans, we focus on
               reducing pain, restoring mobility, and improving overall wellness. Our approach ensures lasting
               results and better quality of life.
+                 We also provide rehabilitation for neurological disorders like stroke, cerebral palsy, vertigo, and
+            facial palsy, as well as recovery programs for sports injuries including ACL tears and dislocations.
+            Our goal is to ensure safe recovery, prevent future injuries, and enhance performance. With expert
+            guidance, we help patients regain strength and confidence.
+          
             </p>
           </div>
         </div>
 
         {/* Row 2: Full-width paragraph */}
-        <div className="mt-10">
+        {/* <div className="mt-10">
           <p className="text-slate-700">
             We also provide rehabilitation for neurological disorders like stroke, cerebral palsy, vertigo, and
             facial palsy, as well as recovery programs for sports injuries including ACL tears and dislocations.
             Our goal is to ensure safe recovery, prevent future injuries, and enhance performance. With expert
             guidance, we help patients regain strength and confidence.
           </p>
-        </div>
+        </div> */}
       </div>
     </section>
   );

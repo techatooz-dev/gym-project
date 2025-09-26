@@ -11,7 +11,7 @@ function PowerEMS() {
   {/* Cyan base stripe fills from mid to bottom (nudged lower for spacing) */}
   <div className="absolute left-0 right-0 top-[58%] bottom-0 z-0 bg-[#23A7D8]" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 py-12 md:py-16">
+      <div className="relative z-10 mx-auto max-w-7xl px-4">
         <div className="grid items-center gap-8 md:grid-cols-12">
           {/* Left image card */}
           <div className="md:col-span-6">

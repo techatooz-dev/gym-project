@@ -1,5 +1,8 @@
 "use client";
 import React from "react";
+import { Anton } from "next/font/google";
+
+const anton = Anton({ subsets: ["latin"], weight: "400" });
 
 const faqs = [
   {
@@ -26,23 +29,39 @@ const faqs = [
 
 export default function QandA() {
   return (
-    <section className="relative py-10 md:py-14 bg-white">
+    <section className="relative bg-white">
+      
+
+
+      <div className="max-w-3xl mx-auto text-center mb-8">
+          <h2 className={`${anton.className} text-[42px] md:text-[84px] leading-[0.95] tracking-tight text-gray-900 mb-3`}>
+            FAQ'S
+          </h2>
+          <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+           Frequently Asked Questions
+          </p>
+        </div>
+
+
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
         {/* 2x2 FAQ cards, matching screenshot styling */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
           {faqs.slice(0, 4).map((item, i) => {
-            const color = i % 2 === 0 ? "bg-[#23A7D8]" : "bg-[#7CC245]";
-            const qNumber = i + 1;
+            const isBlue = i % 2 === 0;
+            const headerColor = isBlue ? "bg-[#23A7D8]" : "bg-[#7CC245]";
+            const hoverBorder = isBlue
+              ? "hover:border-[#23A7D8] focus-within:border-[#23A7D8]"
+              : "hover:border-[#7CC245] focus-within:border-[#7CC245]";
             return (
-              <div key={item.q} className="rounded-md">
-                {/* Ribbon header */}
-                <div className={`${color} text-white rounded-md px-5 py-3 font-semibold text-base md:text-lg`}>{`Q${qNumber}: ${item.q}`}</div>
-                {/* Answer body */}
+              <div
+                key={item.q}
+                className={`group rounded-md border border-gray-200 bg-white/60 backdrop-blur-sm transition-all duration-200 hover:shadow-lg focus-within:shadow-lg ${hoverBorder}`}
+              >
+                {/* Header */}
+                <div className={`${headerColor} text-white rounded-t-md px-5 py-3 font-semibold text-base md:text-lg transition-colors group-hover:brightness-105`}>{item.q}</div>
+                {/* Body */}
                 <div className="px-5 py-4 text-sm md:text-base leading-relaxed">
-                  <p>
-                    <span className="font-semibold text-gray-900">A: </span>
-                    <span className="text-gray-700">{item.a}</span>
-                  </p>
+                  <p className="text-gray-700">{item.a}</p>
                 </div>
               </div>
             );

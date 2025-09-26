@@ -6,7 +6,7 @@ const anton = Anton({ subsets: ["latin"], weight: "400" });
 
 export default function PainRelefe() {
   return (
-    <section className="relative py-12 md:py-16 bg-white">
+    <section className="relative bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         {/* Row 1: Image (left), Title (center), Blue info (right) */}
         <div className="grid gap-4 md:gap-6 md:grid-cols-12 items-stretch">

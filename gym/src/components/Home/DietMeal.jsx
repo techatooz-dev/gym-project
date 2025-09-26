@@ -6,7 +6,7 @@ const anton = Anton({ subsets: ["latin"], weight: "400" });
 
 export default function DietMeal() {
   return (
-    <section className="relative z-10 py-16 md:py-20">
+    <section className="relative z-10 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10 md:mb-14">
           <h2 className={`${anton.className}  text-[96px] md-text-[46px] font-extrabold tracking-tight text-gray-900`}>
@@ -16,7 +16,7 @@ export default function DietMeal() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {/* 1. Weight Loss */}
-          <div className="p-6 md:p-7 shadow-lg text-white h-full min-h-[220px] flex flex-col" style={{ backgroundColor: "#25B7E6" }}>
+          <div className="p-6 md:p-7 shadow-lg text-white h-full min-h-[220px] flex flex-col rounded-sm transition-all duration-300 ease-out transform-gpu hover:scale-[1.05] hover:-translate-y-3 hover:shadow-2xl hover:z-10 focus-within:scale-[1.05] focus-within:-translate-y-3" style={{ backgroundColor: "#25B7E6" }}>
             <h3 className="text-xl md:text-2xl font-extrabold mb-3">
               1. Weight Loss Meal Plan
             </h3>
@@ -28,7 +28,7 @@ export default function DietMeal() {
           </div>
 
           {/* 2. Muscle Gain */}
-          <div className="p-6 md:p-7 shadow-lg text-white h-full min-h-[220px] flex flex-col" style={{ backgroundColor: "#8BC34A" }}>
+          <div className="p-6 md:p-7 shadow-lg text-white h-full min-h-[220px] flex flex-col rounded-sm transition-all duration-300 ease-out transform-gpu hover:scale-[1.05] hover:-translate-y-3 hover:shadow-2xl hover:z-10 focus-within:scale-[1.05] focus-within:-translate-y-3" style={{ backgroundColor: "#8BC34A" }}>
             <h3 className="text-xl md:text-2xl font-extrabold mb-3">
               2. Muscle Gain Meal Plan
             </h3>
@@ -40,7 +40,7 @@ export default function DietMeal() {
           </div>
 
           {/* 3. Wellness & Maintenance */}
-          <div className="p-6 md:p-7 shadow-lg text-white h-full min-h-[220px] flex flex-col" style={{ backgroundColor: "#25B7E6" }}>
+          <div className="p-6 md:p-7 shadow-lg text-white h-full min-h-[220px] flex flex-col rounded-sm transition-all duration-300 ease-out transform-gpu hover:scale-[1.05] hover:-translate-y-3 hover:shadow-2xl hover:z-10 focus-within:scale-[1.05] focus-within:-translate-y-3" style={{ backgroundColor: "#25B7E6" }}>
             <h3 className="text-xl md:text-2xl font-extrabold mb-3">
               3. Wellness & Maintenance Meal Plan
             </h3>
