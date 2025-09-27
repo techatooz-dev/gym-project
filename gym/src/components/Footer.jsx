@@ -104,8 +104,9 @@ export default function Footer() {
                 <div>
                     <SectionHeading>Get In Touch</SectionHeading>
                     <ul className="mt-5 space-y-5 text-white text-[16px] md:text-[17px] leading-relaxed font-semibold">
+                         <li className="flex items-start gap-3"><span className="mt-0.5 text-white"><ClockIcon /></span> <p>9 AM – 9 PM | Monday – Saturday</p></li>
                         <li className="flex items-start gap-3"><span className="mt-0.5 text-white"><PhoneIcon /></span> <p>0321-7847385 , 0321-4980835</p></li>
-                        <li className="flex items-start gap-3"><span className="mt-0.5 text-white"><ClockIcon /></span> <p>9 AM – 9 PM | Monday – Saturday</p></li>
+                        <li className="flex items-start gap-3"><span className="mt-0.5 text-white"><EmailIcon /></span> <p><a href="mailto:info@proemsfit.com" className="hover:underline">info@proemsfit.com</a></p></li>
                         <li className="flex items-start gap-3"><span className="mt-0.5 text-white"><LocationIcon /></span> <p>34-C Block, Bank Square, Model Town,<br /> Lahore</p></li>
                     </ul>
                 </div>
@@ -115,7 +116,7 @@ export default function Footer() {
             <div className="bg-[#1B8FC0] border-t border-white/10">
                 <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col gap-2 md:flex-row md:items-center md:justify-between text-xs text-white">
                     <p>Copyright © 2025 Proemsfitness. All Rights Reserved.</p>
-                    <p>Made with <span aria-label="love">❤</span> by <span className="font-semibold text-white">Tech Solutionor</span></p>
+                    <p>Made<span aria-label="love"></span> by <span className="font-semibold text-white">Tech Solutionor</span></p>
                 </div>
             </div>
         </footer>
@@ -182,6 +183,14 @@ function ClockIcon() {
     return (
         <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden>
             <path d="M12 1.75A10.25 10.25 0 112 12 10.25 10.25 0 0112 1.75zm0 1.5A8.75 8.75 0 1020.75 12 8.75 8.75 0 0012 3.25zm.75 4a.75.75 0 10-1.5 0v5.06c0 .2.08.39.22.53l3.38 3.38a.75.75 0 101.06-1.06l-3.16-3.16V7.25z"/>
+        </svg>
+    );
+}
+
+function EmailIcon() {
+    return (
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden>
+            <path d="M3 5.5A2.5 2.5 0 0 1 5.5 3h13A2.5 2.5 0 0 1 21 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 18.5v-13Zm2.2-.5 6.82 5.11a.75.75 0 0 0 .96 0L19.8 5h-14.6Zm14.8 2.31-5.76 4.32a3.25 3.25 0 0 1-3.96 0L4.5 7.31v11.19c0 .55.45 1 1 1h13c.55 0 1-.45 1-1V7.31Z" />
         </svg>
     );
 }
