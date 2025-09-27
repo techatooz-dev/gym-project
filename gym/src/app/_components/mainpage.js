@@ -19,6 +19,7 @@ import PowerEMS from "@/components/Home/PowerEMS";
 import DietMeal from "@/components/Home/DietMeal";
 import PainRelefe from "@/components/Home/PainRelefe";
 import Spraind from "@/components/Home/Spraind";
+import Vedio from "@/components/Home/Vedio";
 
 export default function Page() {
   // Product data imported from centralized module.
@@ -39,8 +40,8 @@ export default function Page() {
       {/* Diet Meal Plans (below products) */}
       {/* <MealPlans /> */}
       <ClientsCarousel />
-      <ImageSection />
-      
+      {/* <ImageSection /> */}
+      <Vedio />
       <QandA />
       <WhyChooseUsSection />
       <DietMeal />
