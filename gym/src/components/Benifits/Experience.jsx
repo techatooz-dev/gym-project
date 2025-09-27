@@ -1,34 +1,15 @@
 import React from 'react';
+import { FaClock, FaClipboardList, FaUserMd, FaHeartbeat } from 'react-icons/fa';
 
 const Icon = ({ name, className = '' }) => {
-  switch (name) {
-    case 'clock':
-      return (
-        <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-          <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 10.59V7a1 1 0 0 0-2 0v6a1 1 0 0 0 .29.71l3 3a1 1 0 1 0 1.42-1.42z" />
-        </svg>
-      );
-    case 'clipboard':
-      return (
-        <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-          <path d="M9 2a2 2 0 0 0-2 2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1a2 2 0 0 0-2-2zm0 2h6v2H9z" />
-        </svg>
-      );
-    case 'advice':
-      return (
-        <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-          <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm-7 8a7 7 0 0 1 14 0v1H5z" />
-        </svg>
-      );
-    case 'recovery':
-      return (
-        <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-          <path d="M12 2a10 10 0 1 0 10 10h-2A8 8 0 1 1 12 4V2zm1 5h-2v6h6v-2h-4z" />
-        </svg>
-      );
-    default:
-      return null;
-  }
+  const map = {
+    clock: FaClock,
+    clipboard: FaClipboardList,
+    advice: FaUserMd,
+    recovery: FaHeartbeat,
+  };
+  const Comp = map[name];
+  return Comp ? <Comp className={className} /> : null;
 };
 
 function Experience() {
