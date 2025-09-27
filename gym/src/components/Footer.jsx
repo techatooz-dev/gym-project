@@ -116,7 +116,7 @@ export default function Footer() {
             <div className="bg-[#1B8FC0] border-t border-white/10">
                 <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col gap-2 md:flex-row md:items-center md:justify-between text-xs text-white">
                     <p>Copyright © 2025 Proemsfitness. All Rights Reserved.</p>
-                    <p>Made<span aria-label="love"></span> by <span className="font-semibold text-white">Tech Solutionor</span></p>
+                    <p className="text-sm md:text-base">Made<span aria-label="love"></span> by <span className="font-semibold text-white">Tech Solutionor</span></p>
                 </div>
             </div>
         </footer>

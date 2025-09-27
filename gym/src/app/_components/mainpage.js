@@ -47,8 +47,8 @@ export default function Page() {
        <Physiotherapy />
       <PainRelefe />
       <Spraind />
-      {/* <Ourteam />
-      <Reviews />  */}
+       {/* <Ourteam /> */}
+      <Reviews />  
       {/* <LatestArticles /> */}
       
     </main>

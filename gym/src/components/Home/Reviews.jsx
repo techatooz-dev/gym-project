@@ -52,9 +52,27 @@ export default function Reviews({ reviews }) {
       media: { thumb: "/gym1.webp", title: "Mobility work" },
       text: "Came in with chronic back stiffness. Their approach addressed the root cause. I feel stronger and more mobile now.",
     },
+    {
+      id: 7,
+      name: "Hina Tariq",
+      rating: 5,
+      date: "Mar 2025",
+      verified: true,
+      text: "Super friendly trainers and very systematic progress tracking. I regained core strength faster than expected.",
+    },
+    {
+      id: 8,
+      name: "Jonathan Cruz",
+      rating: 4,
+      date: "Feb 2025",
+      verified: true,
+      text: "Solid program structure and clean facility. A fifth star once weekend slots expand, otherwise excellent experience.",
+    },
   ];
 
-  const data = reviews && Array.isArray(reviews) && reviews.length ? reviews : SAMPLE;
+  // Source data (fallback to SAMPLE) then constrain to 8 for display
+  const dataAll = reviews && Array.isArray(reviews) && reviews.length ? reviews : SAMPLE;
+  const data = dataAll.slice(0, 8);
   const total = data.length;
   const avg = data.reduce((s, r) => s + (r.rating || 0), 0) / total;
   const dist = [1, 2, 3, 4, 5].map((n) => data.filter((r) => r.rating === n).length);
@@ -85,7 +103,7 @@ export default function Reviews({ reviews }) {
       .join("")
       .toUpperCase();
     return (
-      <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-sky-700 text-white font-semibold">
+      <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-600 text-white font-semibold">
         {initials}
       </span>
     );
@@ -129,30 +147,28 @@ export default function Reviews({ reviews }) {
         })}
       </div>
 
-  {/* Masonry: variable heights based on content; text-only cards */}
-  <div className="mt-10 columns-1 sm:columns-2 lg:columns-3 xl:columns-4 2xl:columns-5 gap-5">
+      {/* Grid: fixed 4x2 layout */}
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {data.map((r) => (
-          <div key={r.id} className="mb-5 break-inside-avoid">
-            <article className="border border-gray-300 bg-white p-4">
-              <div className="flex items-center gap-3">
-                <Avatar name={r.name} />
-                <div className="min-w-0">
-                  <div className="font-semibold text-gray-900 flex items-center gap-2">
-                    {r.name}
-                    {r.verified && (
-                      <span className="inline-flex items-center text-blue-600 text-xs">
-                        <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 mr-1"><path d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm-1.2-6.2l5-5-1.4-1.4-3.6 3.6-1.6-1.6-1.4 1.4 3 3z"/></svg>
-                        Verified
-                      </span>
-                    )}
-                  </div>
-                  <div className="text-xs text-gray-500">{r.date}</div>
+          <article key={r.id} className="border border-gray-300 bg-white p-5 h-full flex flex-col">
+            <div className="flex items-center gap-3">
+              <Avatar name={r.name} />
+              <div className="min-w-0">
+                <div className="font-semibold text-gray-900 flex items-center gap-2">
+                  {r.name}
+                  {r.verified && (
+                    <span className="inline-flex items-center text-green-600 text-xs font-semibold">
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 mr-1"><path d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm-1.2-6.2 5-5-1.4-1.4-3.6 3.6-1.6-1.6-1.4 1.4 3 3z"/></svg>
+                      Verified
+                    </span>
+                  )}
                 </div>
+                <div className="text-xs text-gray-500">{r.date}</div>
               </div>
-              <div className="mt-2"><Stars rating={r.rating} /></div>
-              <p className="mt-3 text-gray-900 leading-relaxed">{r.text}</p>
-            </article>
-          </div>
+            </div>
+            <div className="mt-2"><Stars rating={r.rating} /></div>
+            <p className="mt-3 text-gray-900 leading-relaxed text-sm">{r.text}</p>
+          </article>
         ))}
       </div>
 
