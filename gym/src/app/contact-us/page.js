@@ -7,11 +7,11 @@ import GetInTouch from '@/components/Contact/GetInTouch'
 function page() {
   return (
     <div>
-      {/* <IntroSection /> */}
-      {/* <Burn /> */}
-      {/* <ImageSection /> */}
-      {/* <Safe />   */}
-      {/* <GetInTouch />  */}
+      <IntroSection />
+      <Burn />
+      <ImageSection />
+      <Safe />  
+      <GetInTouch /> 
     </div>
   )
 }
