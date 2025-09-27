@@ -47,10 +47,10 @@ export default function Page() {
                 <Stat value="2x" label="Faster strength gains" />
                 <Stat value="1" label="Certified trainer" />
               </div>
-              <div className="mt-10 flex gap-4">
+              {/* <div className="mt-10 flex gap-4">
                 <a href="#pricing" className="rounded-full bg-black text-white text-sm font-medium px-6 py-3 hover:bg-black/80 transition-colors">View Plans</a>
                 <a href="#how" className="rounded-full border border-black/20 text-sm font-medium px-6 py-3 hover:bg-black/5 transition-colors">How It Works</a>
-              </div>
+              </div> */}
             </div>
             <div className="flex-1 w-full">
               <div className="rounded-[40px] overflow-hidden shadow-xl bg-white/10">
@@ -64,7 +64,7 @@ export default function Page() {
       {/* What is EMS */}
       <section className="relative -mt-12">
         <div className="max-w-6xl mx-auto px-6 md:px-10">
-          <div className="bg-white rounded-tr-[48px] shadow-lg ring-1 ring-black/5 px-8 md:px-14 py-12 md:py-14 leading-7 text-sm md:text-base">
+          <div className="bg-white rounded-tr-[48px] px-8 md:px-14 py-12 md:py-14 leading-7 text-sm md:text-base">
             <h2 className={`${anton.className} text-4xl md:text-5xl lg:text-6xl uppercase leading-[0.95] mb-6`}>What is EMS?</h2>
             <p className="text-black/80">EMS (Electrical Muscle Stimulation) is a modern training method that uses low‑frequency electrical impulses to activate your muscles. This enhances strength, endurance, and recovery in a safe and effective way.</p>
           </div>
@@ -97,8 +97,38 @@ export default function Page() {
                 ))}
               </ul>
             </div>
-            <div className="flex-1 rounded-3xl overflow-hidden bg-black/5 min-h-[320px] flex items-center justify-center p-6">
-              <img src="/EMS.jpg" alt="EMS equipment" className="w-full h-full object-cover rounded-2xl" />
+            {/* Expanded benefit categories replacing image */}
+            <div className="flex-1 rounded-3xl bg-white shadow-sm ring-1 ring-black/10 p-8 md:p-10 flex flex-col">
+              <h3 className={`${anton.className} text-2xl md:text-3xl uppercase leading-tight mb-4`}>Core Benefit Pillars</h3>
+              <p className="text-black/70 text-sm md:text-base leading-6 mb-6">EMS sessions accelerate adaptation by recruiting deep muscle fibers and improving neuromuscular efficiency in a highly time‑efficient format.</p>
+              <div className="grid sm:grid-cols-2 gap-5 text-sm md:text-base">
+                {[{
+                  title: 'Performance',
+                  points: ['Strength & power boost','Improved muscular endurance','Enhanced core stability']
+                },{
+                  title: 'Body Composition',
+                  points: ['Supports fat reduction','Tones & defines muscles','Elevates metabolic demand']
+                },{
+                  title: 'Posture & Back',
+                  points: ['Balances weak areas','Reduces back discomfort','Improves alignment']
+                },{
+                  title: 'Efficiency',
+                  points: ['High impact in 20 min','Low joint stress','Trainer-guided precision']
+                }].map(group => (
+                  <div key={group.title} className="rounded-2xl border border-black/10 p-4 bg-white/60 backdrop-blur-sm">
+                    <p className="font-semibold text-black mb-2">{group.title}</p>
+                    <ul className="space-y-1.5 text-black/75 text-xs md:text-sm">
+                      {group.points.map(p => (
+                        <li key={p} className="flex gap-2 items-start">
+                          <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#76C043]" />
+                          <span>{p}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-6 text-xs md:text-sm text-black/60">Consistent weekly sessions compound neuromuscular gains while supporting recovery and structural balance.</p>
             </div>
           </div>
         </div>
@@ -120,8 +150,25 @@ export default function Page() {
                 ))}
               </div>
             </div>
-            <div className="rounded-3xl overflow-hidden shadow-lg bg-white ring-1 ring-black/5">
-              <img src="/EMS-fitness-training.jpeg" alt="How EMS works" className="w-full h-full object-cover" />
+            {/* Detailed Warm-up & Suit Setup points box (replaces image) */}
+            <div className="rounded-3xl bg-white shadow-sm ring-1 ring-black/10 p-8 md:p-10 flex flex-col">
+              <h3 className={`${anton.className} text-2xl md:text-3xl uppercase leading-tight mb-4`}>Warm-up & Suit Setup</h3>
+              <p className="text-black/75 text-sm md:text-base leading-6 mb-5">The session begins with focused preparation to ensure safety, comfort and optimal muscle activation before the guided movements start.</p>
+              <ul className="space-y-3 text-sm md:text-base text-black/80">
+                {[
+                  'Quick posture & goal check',
+                  'Light mobility & activation (2–3 min)',
+                  'Suit fitted & electrodes moistened',
+                  'Intensity individually calibrated',
+                  'Safety, breathing & core cues explained'
+                ].map(point => (
+                  <li key={point} className="flex items-start gap-3">
+                    <span className="mt-1 h-2.5 w-2.5 rounded-full bg-[#76C043]" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-6 text-xs md:text-sm text-black/60">Proper setup maximizes muscle fiber recruitment while keeping the experience comfortable.</p>
             </div>
           </div>
         </div>
