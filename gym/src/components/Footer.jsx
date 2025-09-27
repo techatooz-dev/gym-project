@@ -45,6 +45,9 @@ export default function Footer() {
                         </div>
                     </div>
 
+
+
+
                     <div>
                         <p className="text-sm md:text-base uppercase tracking-wide text-white font-semibold mb-3">Stay updated with our latest news and offers</p>
                         <form onSubmit={handleSubmit} className="flex w-full max-w-md rounded-md overflow-hidden border border-white/10 bg-white/5 focus-within:border-emerald-400 transition">
