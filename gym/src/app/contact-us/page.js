@@ -9,6 +9,7 @@ function page() {
     <div>
       <IntroSection />
       <Burn />
+      
       <ImageSection />
       <Safe />  
       <GetInTouch /> 
