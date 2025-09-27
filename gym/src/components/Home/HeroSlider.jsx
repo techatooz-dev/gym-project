@@ -20,7 +20,7 @@ export default function HeroSlider({
       }}
     >
       {/* Enhanced Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/40 to-transparent z-10" />
+      {/* <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/40 to-transparent z-10" /> */}
       {/* Floating shapes */}
       {/* <div className="absolute left-10 top-10 w-32 h-32 bg-green-400/30 rounded-full blur-2xl animate-pulse z-20" />
       <div className="absolute right-10 bottom-20 w-24 h-24 bg-blue-400/30 rounded-full blur-2xl animate-pulse z-20" /> */}
