@@ -39,7 +39,7 @@ export default function Page() {
         <div className="max-w-8xl   pb-24 md:pb-32">
           <div className="bg-[#76C043]  px-8 md:px-14 py-14 md:py-20 flex flex-col lg:flex-row gap-10 lg:gap-16 items-start lg:items-center">
             <div className="flex-1">
-              <h1 className={`${anton.className} uppercase leading-[0.9] tracking-wide text-[52px] sm:text-[72px] lg:text-[96px]`}>EMS Sessions</h1>
+              <h1 className={`${anton.className}  text-white uppercase leading-[0.9] tracking-wide text-[52px] sm:text-[72px] lg:text-[96px]`}>EMS Sessions</h1>
               <p className="mt-6 max-w-xl text-black/80 text-sm sm:text-base leading-7 md:leading-8">High‑efficiency training using Electric Muscle Stimulation to activate deep muscle fibers, improve performance, balance the body and save time.</p>
               <div className="mt-8 grid grid-cols-2 sm:flex gap-8 sm:gap-12">
                 <Stat value="90%" label="Muscle fibers activated" />
@@ -163,7 +163,7 @@ export default function Page() {
       </section>
 
       {/* Pricing */}
-      <section className="pt-28 md:pt-36" id="pricing">
+      {/* <section className="pt-28 md:pt-36" id="pricing">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
           <div className="flex flex-col items-start gap-8 mb-10">
             <h2 className={`${anton.className} text-4xl md:text-5xl lg:text-6xl uppercase leading-[0.95]`}>Session Plans & Pricing</h2>
@@ -176,10 +176,10 @@ export default function Page() {
             <PriceCard title="Premium Plan" price="$399" period="/ unlimited">Unlimited guided EMS access for maximum transformation.</PriceCard>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA */}
-      <section className="pt-28 md:pt-40 pb-32" id="book">
+      {/* <section className="pt-28 md:pt-40 pb-32" id="book">
         <div className="max-w-4xl mx-auto px-6 md:px-10 text-center">
           <h2 className={`${anton.className} text-4xl md:text-5xl lg:text-6xl uppercase leading-[0.95] mb-8`}>Book Your Session</h2>
           <p className="text-black/75 text-sm md:text-base leading-7 md:leading-8 max-w-2xl mx-auto mb-10">Ready to experience the future of fitness? Book your EMS session today and transform your body with just 20 minutes a week!</p>
@@ -188,7 +188,7 @@ export default function Page() {
             <a href="tel:+1234567890" className="group inline-flex items-center justify-center rounded-full bg-[#76C043] text-white text-sm font-medium px-8 py-4 hover:bg-[#66a838] transition-colors">Call Now<span className="ml-2 text-base">📞</span></a>
           </div>
         </div>
-      </section>
+      </section> */}
     </main>
   )
 }

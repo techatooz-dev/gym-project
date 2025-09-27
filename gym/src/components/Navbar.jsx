@@ -17,7 +17,8 @@ export default function Navbar() {
 
     const services = [
         { href: "/ems-sessions", label: "EMS Sessions" },
-        { href: "/sports-performance-training", label: "Sports Performance Training" },
+        // { href: "/sports-performance-training", label: "Sports Performance Training" },
+        { href: "/power-of-ems-training", label: "Power of EMS Training" },
         { href: "/physiotherapy-sessions", label: "Physiotherapy Sessions" },
         { href: "/wellness-programs", label: "Wellness Programs" },
         { href: "/pain-reliefwith-ems", label: "Pain Relief with EMS" },

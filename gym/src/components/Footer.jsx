@@ -90,7 +90,7 @@ export default function Footer() {
                     <SectionHeading>Our Services</SectionHeading>
                     <ul className="mt-5 space-y-2">
                         <BulletItem><FooterLink href="/ems-sessions">EMS Sessions</FooterLink></BulletItem>
-                        <BulletItem><FooterLink href="/sports-performance-training">Sports Performance Training</FooterLink></BulletItem>
+                        <BulletItem><FooterLink href="/power-of-ems-training">Power EMS Training</FooterLink></BulletItem>
                         <BulletItem><FooterLink href="/physiotherapy-sessions">Physiotherapy Sessions</FooterLink></BulletItem>
                         <BulletItem><FooterLink href="/wellness-programs">Wellness Programs</FooterLink></BulletItem>
                         <BulletItem><FooterLink href="/pain-reliefwith-ems">Pain Relief with EMS</FooterLink></BulletItem>
