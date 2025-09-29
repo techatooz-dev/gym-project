@@ -127,7 +127,7 @@ function FooterLink({ href, children }) {
     return (
         <Link
             href={href}
-            className="relative inline-block px-2 py-1 -mx-2 rounded-sm text-white font-semibold tracking-wide hover:text-white/90 focus:text-white/90 focus:outline-none focus:ring-2 focus:ring-white/30 transition-colors duration-150"
+            className="relative inline-block px-2 py-1 -mx-2 rounded-sm text-white font-semibold tracking-wide hover:text-white/90 focus:text-white/90 focus:outline-none transition-colors duration-150"
         >
             {children}
         </Link>
