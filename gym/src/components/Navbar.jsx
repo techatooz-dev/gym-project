@@ -17,15 +17,16 @@ export default function Navbar() {
     const [servicesOpen, setServicesOpen] = useState(false);
     const servicesCloseTimer = useRef(null);
 
+    // Original service pages with concise descriptions for grid menu
     const services = [
-        { href: "/ems-sessions", label: "EMS Sessions", icon: <FaBolt className="text-[#76C043]" /> },
-        { href: "/power-of-ems-training", label: "Power EMS Training", icon: <FaHeartbeat className="text-[#76C043]" /> },
-        { href: "/physiotherapy-sessions", label: "Physiotherapy Sessions", icon: <FaHandsHelping className="text-[#76C043]" /> },
-        { href: "/wellness-programs", label: "Wellness Programs", icon: <FaSpa className="text-[#76C043]" /> },
-        { href: "/pain-reliefwith-ems", label: "Pain Relief with EMS", icon: <FaHandHoldingHeart className="text-[#76C043]" /> },
-        { href: "/sprained-ankle-recovery", label: "Sprained Ankle Recovery", icon: <FaRunning className="text-[#76C043]" /> },
-        { href: "/spinal-back-pain-management", label: "Spinal & Back Pain Mgmt", icon: <FaBone className="text-[#76C043]" /> },
-        { href: "/knee-shoulder-therapy", label: "Knee & Shoulder Therapy", icon: <FaChartLine className="text-[#76C043]" /> },
+        { href: "/ems-sessions", label: "EMS Sessions", desc: "Guided electro muscle training", icon: <FaBolt /> },
+        { href: "/power-of-ems-training", label: "Power EMS Training", desc: "High‑intensity EMS strength work", icon: <FaHeartbeat /> },
+        { href: "/physiotherapy-sessions", label: "Physiotherapy Sessions", desc: "Recovery & mobility therapy", icon: <FaHandsHelping /> },
+        { href: "/wellness-programs", label: "Wellness Programs", desc: "Holistic lifestyle planning", icon: <FaSpa /> },
+        { href: "/pain-reliefwith-ems", label: "Pain Relief with EMS", desc: "Targeted pain management", icon: <FaHandHoldingHeart /> },
+        { href: "/sprained-ankle-recovery", label: "Sprained Ankle Recovery", desc: "Accelerated ankle rehab", icon: <FaRunning /> },
+        { href: "/spinal-back-pain-management", label: "Spinal & Back Pain Mgmt", desc: "Postural & spine support", icon: <FaBone /> },
+        { href: "/knee-shoulder-therapy", label: "Knee & Shoulder Therapy", desc: "Joint stability sessions", icon: <FaChartLine /> },
     ];
 
     return (
@@ -89,50 +90,32 @@ export default function Navbar() {
                                                     id="services-menu"
                                                     role="menu"
                                                     aria-label="Services"
-                                                    className={`absolute left-0 top-full mt-1 w-[420px] rounded-xl border border-green-200/60 bg-white/95 backdrop-blur-sm shadow-xl z-50 transition-all ${servicesOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-1"}`}
+                                                    className={`absolute left-1/2 top-full mt-2 -translate-x-1/2 w-[940px] max-w-[94vw] rounded-xl border border-green-200/60 bg-white shadow-xl z-50 transition-all ${servicesOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-1"}`}
                                                 >
-                                                    <div className="absolute -top-2 left-7 w-4 h-4 bg-white rotate-45 border-t border-l border-green-200/60" />
-                                                    <ul className="py-2 flex flex-col divide-y divide-green-100/60">
-                                                        {services.map((s, idx) => (
-                                                            <li key={s.href} className="first:pt-0 last:pb-0" role="none">
+                                                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white rotate-45 border-t border-l border-green-200/60" />
+                                                    <div className="p-6 grid grid-cols-3 gap-x-12 gap-y-8" data-grid>
+                                                        {services.map((s, idx) => {
+                                                            const activeItem = isActive(s.href);
+                                                            return (
                                                                 <Link
+                                                                    key={`${s.href}-${idx}`}
                                                                     href={s.href}
                                                                     role="menuitem"
-                                                                    data-menu-item
                                                                     tabIndex={-1}
-                                                                    className={`flex items-center gap-3 px-4 py-2.5 text-[13px] leading-snug group rounded-md mx-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#76C043]/40 transition-colors ${isActive(s.href) ? "bg-green-50/80" : "hover:bg-green-50"}`}
-                                                                    onMouseEnter={() => {
-                                                                        if (servicesCloseTimer.current) clearTimeout(servicesCloseTimer.current);
-                                                                        setServicesOpen(true);
-                                                                    }}
-                                                                    onKeyDown={(e) => {
-                                                                        const items = Array.from(document.querySelectorAll('#services-menu [data-menu-item]'));
-                                                                        const currentIndex = items.indexOf(e.currentTarget);
-                                                                        if (e.key === 'ArrowDown') {
-                                                                            e.preventDefault();
-                                                                            const next = items[currentIndex + 1] || items[0];
-                                                                            next.focus();
-                                                                        } else if (e.key === 'ArrowUp') {
-                                                                            e.preventDefault();
-                                                                            const prev = items[currentIndex - 1] || items[items.length - 1];
-                                                                            prev.focus();
-                                                                        } else if (e.key === 'Home') {
-                                                                            e.preventDefault();
-                                                                            items[0].focus();
-                                                                        } else if (e.key === 'End') {
-                                                                            e.preventDefault();
-                                                                            items[items.length - 1].focus();
-                                                                        } else if (e.key === 'Escape') {
-                                                                            setServicesOpen(false);
-                                                                        }
-                                                                    }}
+                                                                    data-menu-item
+                                                                    data-index={idx}
+                                                                    className={`group flex items-start gap-4 rounded-lg p-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#76C043]/40 transition-colors ${activeItem ? "bg-[#76C043]" : "hover:bg-[#76C043]"}`}
                                                                 >
-                                                                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-[#76C043]/10 ring-1 ring-[#76C043]/30 text-base shrink-0 group-hover:bg-[#76C043]/15 group-focus:bg-[#76C043]/15">{s.icon}</span>
-                                                                    <span className={`flex-1 pr-2 ${isActive(s.href) ? "text-gray-900 font-semibold" : "text-gray-700 group-hover:text-gray-900"}`}>{s.label}</span>
+                                                                    <span className={`inline-flex h-10 w-10 items-center justify-center rounded-md text-lg shrink-0 ring-1 ring-[#76C043]/40 transition-colors
+                                                                        ${activeItem ? "bg-white text-[#76C043]" : "bg-[#76C043] text-white group-hover:bg-[#5ea932]"}`}>{s.icon}</span>
+                                                                    <span className="flex flex-col pr-2 -mt-0.5">
+                                                                        <span className={`text-[14px] font-semibold tracking-tight transition-colors ${activeItem ? "text-white" : "text-gray-900 group-hover:text-gray-900"}`}>{s.label}</span>
+                                                                        <span className={`text-[11px] leading-snug mt-1 transition-colors ${activeItem ? "text-white" : "text-gray-500 group-hover:text-gray-600"}`}>{s.desc}</span>
+                                                                    </span>
                                                                 </Link>
-                                                            </li>
-                                                        ))}
-                                                    </ul>
+                                                            );
+                                                        })}
+                                                    </div>
                                                 </div>
                                             </div>
                                         );
@@ -195,9 +178,9 @@ export default function Navbar() {
                             </Link>
                             {link.href === "/services" && (
                                 <div className="pl-4">
-                                    {services.map((s) => (
+                                    {services.map((s, idx) => (
                                         <Link
-                                            key={s.href}
+                                            key={`${s.href}-${idx}`}
                                             href={s.href}
                                             onClick={() => setOpen(false)}
                                             className="block px-3 py-2 rounded-md text-sm tracking-wide text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white"
