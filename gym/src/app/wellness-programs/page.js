@@ -59,6 +59,20 @@ export default function Page() {
         </div>
       </section>
 
+      {/* Hero Image (added) */}
+      <section className="-mt-8 md:-mt-12 mb-10">
+        <div className="max-w-7xl mx-auto px-6 md:px-10">
+          <figure className="rounded-[40px] overflow-hidden shadow-xl ring-1 ring-black/10 bg-white/40 backdrop-blur-sm">
+            <img
+              src="/Wellness.jpeg"
+              alt="Holistic wellness program activities"
+              className="w-full h-[340px] md:h-[440px] object-cover"
+              loading="lazy"
+            />
+          </figure>
+        </div>
+      </section>
+
       {/* Pillars */}
       <section className="" id="pillars">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
