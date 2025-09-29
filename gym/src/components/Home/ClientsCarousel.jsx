@@ -1,15 +1,18 @@
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { Anton } from "next/font/google";
 
 const anton = Anton({ subsets: ["latin"], weight: "400" });
 
+// Replace placeholder cards with client images. Adjust /public image filenames as needed.
+// Keep colors as subtle gradient overlays for consistency; can be removed if not desired.
 const cards = [
-  { color: "bg-[#23A7D8]", text: "MISSING PICS" },
-  { color: "bg-[#7CC245]", text: "MISSING PICS" },
-  { color: "bg-[#23A7D8]", text: "MISSING PICS" },
-  { color: "bg-[#7CC245]", text: "MISSING PICS" },
-  { color: "bg-[#23A7D8]", text: "MISSING PICS" },
+  { src: "/EMS_workout.webp", alt: "Client training session 1" },
+  // { src: "/happy2jpg.jpg", alt: "Client training session 2" },
+  { src: "/happy5.webp", alt: "Client training session 3" },
+  { src: "/happy3.webp", alt: "EMS workout" },
+  // { src: "/Fitness-training.jpg", alt: "Fitness guidance" },
 ];
 
 export default function ClientsCarousel() {
@@ -49,13 +52,22 @@ export default function ClientsCarousel() {
 
       {/* Cards row straddling the boundary */}
       <div className="mx-auto max-w-5xl px-4">
-        <div className="-mt-20 md:-mt-32 flex justify-center items-end gap-8 md:gap-10 min-h-[300px]">
+        <div className="-mt-20 md:-mt-32 flex justify-center items-end gap-8 md:gap-10">
           {getVisible().map((card, i) => (
             <div
               key={i}
-              className={`flex flex-col items-center justify-center rounded-[28px] shadow-[0_14px_28px_rgba(0,0,0,0.18)] ${card.color} w-[220px] h-[300px] md:w-[240px] md:h-[320px] text-center text-white text-2xl font-bold select-none`}
+              className={`relative overflow-hidden rounded-[28px] shadow-[0_14px_28px_rgba(0,0,0,0.18)] w-[220px] md:w-[240px] aspect-[3/4] select-none`}
             >
-              {card.text}
+              <Image
+                src={card.src}
+                alt={card.alt}
+                fill
+                sizes="(max-width:768px) 220px, 240px"
+                className="object-cover will-change-transform"
+                // Slightly higher quality for better clarity (default is 75)
+                quality={85}
+                priority={i === 1}
+              />
             </div>
           ))}
         </div>
