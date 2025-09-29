@@ -8,14 +8,15 @@ import React, { useEffect, useMemo, useRef } from 'react';
 export default function Vedio({
   title = 'Inside Our EMS Training Session',
   description = 'A quick look at how a structured EMS workout and guided physiotherapy flow inside our studio.',
-  src = '/pro ems fit.mp4', // default placeholder path (ensure the file exists in public/)
+  // Encode spaces in default filename to avoid some browsers treating it oddly in network request
+  src = '/pro%20ems%20fit.mp4',
   poster = '/',
   autoPlay = true,
-  loop = false,
+  // Loop by default per requirement to restart automatically
+  loop = true,
   muted = true,
-  // We default to no visible native controls per request; can be overridden if ever needed
   controls = false,
-  embedUrl, // e.g. 'https://www.youtube.com/embed/VIDEO_ID?rel=0'
+  embedUrl,
 }) {
   const isEmbed = Boolean(embedUrl);
 
@@ -48,31 +49,32 @@ export default function Vedio({
 
   // Programmatic play attempt for browsers that block attribute-only autoplay until play() is called.
   useEffect(() => {
-    if (isEmbed) return; // iframe handled via URL params
-    if (!autoPlay) return;
+    if (isEmbed) return;
     const el = videoRef.current;
     if (!el) return;
+    if (!autoPlay) return;
     const attemptPlay = () => {
-      const p = el.play();
-      if (p && typeof p.then === 'function') {
-        p.catch(() => {
-          // If it fails (rare with muted), retry once shortly after.
-          setTimeout(() => {
-            const p2 = el.play();
-            if (p2 && typeof p2.then === 'function') {
-              p2.catch(() => {/* give up silently */});
-            }
-          }, 400);
+      const playPromise = el.play();
+      if (playPromise && typeof playPromise.then === 'function') {
+        playPromise.catch(() => {
+          // Retry sequence a few times with backoff before giving up silently
+            let retries = 2;
+            const retry = () => {
+              if (retries <= 0) return;
+              retries -= 1;
+              const p2 = el.play();
+              if (p2 && typeof p2.then === 'function') {
+                p2.catch(() => setTimeout(retry, 400));
+              }
+            };
+            setTimeout(retry, 300);
         });
       }
     };
-    // If metadata already loaded, play immediately; else wait
     if (el.readyState >= 2) {
       attemptPlay();
     } else {
-      const onCanPlay = () => {
-        attemptPlay();
-      };
+      const onCanPlay = () => attemptPlay();
       el.addEventListener('canplay', onCanPlay, { once: true });
       return () => el.removeEventListener('canplay', onCanPlay);
     }
@@ -108,13 +110,21 @@ export default function Vedio({
                 src={src}
                 poster={poster}
                 ref={videoRef}
-                {...(autoPlay ? { autoPlay: true } : {})}
-                {...(loop ? { loop: true } : {})}
-                {...(muted ? { muted: true } : {})}
-                // Intentionally omitting native controls. To restore, pass controls={true} when using component.
-                {...(controls ? { controls: true } : {})}
-                preload="auto"
+                // Always set these attributes explicitly for reliability
+                autoPlay={autoPlay}
+                muted={muted}
+                loop={loop}
                 playsInline
+                preload="auto"
+                onEnded={(e) => {
+                  // Fallback in case loop is interrupted (some mobile browsers glitches)
+                  if (!loop) return;
+                  try {
+                    e.currentTarget.currentTime = 0;
+                    e.currentTarget.play();
+                  } catch {}
+                }}
+                {...(controls ? { controls: true } : {})}
               >
                 Sorry, your browser does not support embedded videos.
               </video>
