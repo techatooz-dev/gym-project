@@ -1,0 +1,159 @@
+.splitHero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 80vh;
+  background: linear-gradient(90deg, #f8f9fa 50%, #76c043 50%);
+}
+
+.heroLeft {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.heroLeft h1 {
+  font-size: 4rem;
+  color: #333;
+  line-height: 1.1;
+}
+
+.accentText {
+  font-size: 3.5rem;
+  color: #76c043;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.heroRight {
+  padding: 4rem;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.heroRight p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 20px;
+}
+
+.expertiseSection {
+  margin: 4rem 0;
+}
+
+.expertiseGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.expertiseCard {
+  padding: 2rem;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.expertiseCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #76c043;
+  transition: width 0.3s ease;
+}
+
+.expertiseCard:hover {
+  transform: translateY(-5px);
+}
+
+.expertiseCard:hover::before {
+  width: 100%;
+  opacity: 0.1;
+}
+
+.benefitsWrapper {
+  background: #f8f9fa;
+  padding: 4rem 0;
+  margin: 6rem 0;
+}
+
+.benefitsList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.benefitItem {
+  text-align: center;
+}
+
+.benefitItem h3 {
+  font-size: 2.5rem;
+  color: #76c043;
+  margin-bottom: 1rem;
+}
+
+.ctaContainer {
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.ctaBox {
+  background: linear-gradient(135deg, #76c043, #5a9c2f);
+  padding: 4rem 2rem;
+  border-radius: 20px;
+  color: white;
+}
+
+.ctaButton {
+  background: white;
+  color: #76c043;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+  .splitHero {
+    grid-template-columns: 1fr;
+    background: linear-gradient(180deg, #f8f9fa 50%, #76c043 50%);
+  }
+  
+  .heroLeft h1 {
+    font-size: 2.5rem;
+  }
+  
+  .accentText {
+    font-size: 2rem;
+  }
+  
+  .benefitsList {
+    grid-template-columns: 1fr;
+  }
+}
