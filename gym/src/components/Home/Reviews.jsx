@@ -172,11 +172,11 @@ export default function Reviews({ reviews }) {
         ))}
       </div>
 
-      <div className="mt-8 flex justify-center">
+      {/* <div className="mt-8 flex justify-center">
         <a href="/contact-us" className="inline-flex items-center px-6 py-3 rounded bg-white text-gray-900 font-semibold">
           Write a Review
         </a>
-      </div>
+      </div> */}
       </div>
     </section>
   );
