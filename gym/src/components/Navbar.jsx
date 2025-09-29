@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useRef } from "react";
+// Using FontAwesome (fa) icon pack for broad compatibility (fa6 names caused undefined runtime error)
+import { FaBolt, FaHeartbeat, FaSpa, FaHandsHelping, FaRunning, FaChartLine, FaBone, FaHandHoldingHeart } from "react-icons/fa";
 import { site } from "@/config/site";
 
 
@@ -16,15 +18,14 @@ export default function Navbar() {
     const servicesCloseTimer = useRef(null);
 
     const services = [
-        { href: "/ems-sessions", label: "EMS Sessions" },
-        // { href: "/sports-performance-training", label: "Sports Performance Training" },
-        { href: "/power-of-ems-training", label: "Power of EMS Training" },
-        { href: "/physiotherapy-sessions", label: "Physiotherapy Sessions" },
-        { href: "/wellness-programs", label: "Wellness Programs" },
-        { href: "/pain-reliefwith-ems", label: "Pain Relief with EMS" },
-        { href: "/sprained-ankle-recovery", label: "Sprained Ankle Recovery" },
-        { href: "/spinal-back-pain-management", label: "Spinal & Back Pain Management" },
-        { href: "/knee-shoulder-therapy", label: "Knee & Shoulder Therapy" },
+        { href: "/ems-sessions", label: "EMS Sessions", icon: <FaBolt className="text-[#76C043]" /> },
+        { href: "/power-of-ems-training", label: "Power EMS Training", icon: <FaHeartbeat className="text-[#76C043]" /> },
+        { href: "/physiotherapy-sessions", label: "Physiotherapy Sessions", icon: <FaHandsHelping className="text-[#76C043]" /> },
+        { href: "/wellness-programs", label: "Wellness Programs", icon: <FaSpa className="text-[#76C043]" /> },
+        { href: "/pain-reliefwith-ems", label: "Pain Relief with EMS", icon: <FaHandHoldingHeart className="text-[#76C043]" /> },
+        { href: "/sprained-ankle-recovery", label: "Sprained Ankle Recovery", icon: <FaRunning className="text-[#76C043]" /> },
+        { href: "/spinal-back-pain-management", label: "Spinal & Back Pain Mgmt", icon: <FaBone className="text-[#76C043]" /> },
+        { href: "/knee-shoulder-therapy", label: "Knee & Shoulder Therapy", icon: <FaChartLine className="text-[#76C043]" /> },
     ];
 
     return (
@@ -64,27 +65,70 @@ export default function Navbar() {
                                             >
                                                 <Link
                                                     href={link.href}
-                                                    className={`px-4 py-3 inline-flex items-center gap-1 text-[13px] uppercase text-white/95 hover:text-white transition relative`}
+                                                    className={`px-4 py-3 inline-flex items-center gap-1 text-[13px] uppercase text-white/95 hover:text-white transition relative focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 rounded-sm`}
+                                                    aria-haspopup="true"
+                                                    aria-expanded={servicesOpen}
+                                                    onKeyDown={(e) => {
+                                                        if (["Enter", " ", "ArrowDown"].includes(e.key)) {
+                                                            e.preventDefault();
+                                                            setServicesOpen(true);
+                                                            // focus first item after open
+                                                            const first = document.querySelector('#services-menu [data-menu-item]');
+                                                            first && first.focus();
+                                                        } else if (e.key === "Escape") {
+                                                            setServicesOpen(false);
+                                                        }
+                                                    }}
                                                 >
                                                     {link.label}
                                                     <svg className="w-3.5 h-3.5 text-white transition-transform duration-200 group-hover:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                                                         <path d="M6 9l6 6 6-6" />
                                                     </svg>
                                                 </Link>
-                                                <div className={`absolute left-0 top-full mt-1 w-72 rounded-md border border-green-200 bg-white shadow-lg z-50 ${servicesOpen ? "block" : "hidden"}`}>
-                                                    <div className="absolute -top-2 left-6 w-4 h-4 bg-white rotate-45 border-t border-l border-green-200" />
-                                                    <ul className="py-2">
-                                                        {services.map((s) => (
-                                                            <li key={s.href}>
+                                                <div
+                                                    id="services-menu"
+                                                    role="menu"
+                                                    aria-label="Services"
+                                                    className={`absolute left-0 top-full mt-1 w-[420px] rounded-xl border border-green-200/60 bg-white/95 backdrop-blur-sm shadow-xl z-50 transition-all ${servicesOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-1"}`}
+                                                >
+                                                    <div className="absolute -top-2 left-7 w-4 h-4 bg-white rotate-45 border-t border-l border-green-200/60" />
+                                                    <ul className="py-2 flex flex-col divide-y divide-green-100/60">
+                                                        {services.map((s, idx) => (
+                                                            <li key={s.href} className="first:pt-0 last:pb-0" role="none">
                                                                 <Link
                                                                     href={s.href}
-                                                                    className={`block px-4 py-2 text-sm ${isActive(s.href) ? "text-blue-600 font-semibold" : "text-gray-800"} hover:bg-blue-600 hover:text-white`}
+                                                                    role="menuitem"
+                                                                    data-menu-item
+                                                                    tabIndex={-1}
+                                                                    className={`flex items-center gap-3 px-4 py-2.5 text-[13px] leading-snug group rounded-md mx-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#76C043]/40 transition-colors ${isActive(s.href) ? "bg-green-50/80" : "hover:bg-green-50"}`}
                                                                     onMouseEnter={() => {
                                                                         if (servicesCloseTimer.current) clearTimeout(servicesCloseTimer.current);
                                                                         setServicesOpen(true);
                                                                     }}
+                                                                    onKeyDown={(e) => {
+                                                                        const items = Array.from(document.querySelectorAll('#services-menu [data-menu-item]'));
+                                                                        const currentIndex = items.indexOf(e.currentTarget);
+                                                                        if (e.key === 'ArrowDown') {
+                                                                            e.preventDefault();
+                                                                            const next = items[currentIndex + 1] || items[0];
+                                                                            next.focus();
+                                                                        } else if (e.key === 'ArrowUp') {
+                                                                            e.preventDefault();
+                                                                            const prev = items[currentIndex - 1] || items[items.length - 1];
+                                                                            prev.focus();
+                                                                        } else if (e.key === 'Home') {
+                                                                            e.preventDefault();
+                                                                            items[0].focus();
+                                                                        } else if (e.key === 'End') {
+                                                                            e.preventDefault();
+                                                                            items[items.length - 1].focus();
+                                                                        } else if (e.key === 'Escape') {
+                                                                            setServicesOpen(false);
+                                                                        }
+                                                                    }}
                                                                 >
-                                                                    {s.label}
+                                                                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-md bg-[#76C043]/10 ring-1 ring-[#76C043]/30 text-base shrink-0 group-hover:bg-[#76C043]/15 group-focus:bg-[#76C043]/15">{s.icon}</span>
+                                                                    <span className={`flex-1 pr-2 ${isActive(s.href) ? "text-gray-900 font-semibold" : "text-gray-700 group-hover:text-gray-900"}`}>{s.label}</span>
                                                                 </Link>
                                                             </li>
                                                         ))}
