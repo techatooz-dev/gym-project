@@ -49,7 +49,7 @@ function Page() {
               </div>
             </div>
             <div className="relative rounded-[40px] overflow-hidden shadow-xl ring-1 ring-black/10 bg-white">
-              <img src="/EMS-fitness-training.jpeg" alt="EMS training" className="w-full h-[520px] object-cover" />
+              <img src="/training.png" alt="EMS training" className="w-full h-[520px] object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
               <div className="absolute bottom-5 left-5 flex gap-2 flex-wrap text-[11px] uppercase tracking-wide">
                 {['Efficient','Deep Activation','Low Impact','Adaptive'].map(t => (

@@ -104,16 +104,16 @@ export default function Footer() {
                 <div>
                     <SectionHeading>Get In Touch</SectionHeading>
                     <ul className="mt-5 space-y-5 text-white text-[16px] md:text-[17px] leading-relaxed font-semibold">
-                         <li className="flex items-start gap-3"><span className="mt-0.5 text-white"><ClockIcon /></span> <p>9 AM – 9 PM | Monday – Saturday</p></li>
-                        <li className="flex items-start gap-3"><span className="mt-0.5 text-white"><PhoneIcon /></span> <p>0321-7847385 , 0321-4980835</p></li>
-                        <li className="flex items-start gap-3"><span className="mt-0.5 text-white"><EmailIcon /></span> <p><a href="mailto:info@proemsfit.com" className="hover:underline">info@proemsfit.com</a></p></li>
-                        <li className="flex items-start gap-3"><span className="mt-0.5 text-white"><LocationIcon /></span> <p>34-C Block, Bank Square, Model Town,<br /> Lahore</p></li>
+                         <li className="flex items-start gap-3"><span className="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-md bg-[#76C043] text-white"><ClockIcon /></span> <p>9 AM – 9 PM | Monday – Saturday</p></li>
+                        <li className="flex items-start gap-3"><span className="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-md bg-[#76C043] text-white"><PhoneIcon /></span> <p>0321-7847385 , 0321-4980835</p></li>
+                        <li className="flex items-start gap-3"><span className="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-md bg-[#76C043] text-white"><EmailIcon /></span> <p><a href="mailto:info@proemsfit.com" className="hover:underline">info@proemsfit.com</a></p></li>
+                        <li className="flex items-start gap-3"><span className="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-md bg-[#76C043] text-white"><LocationIcon /></span> <p>34-C Block, Bank Square, Model Town, Lahore</p></li>
                     </ul>
                 </div>
             </div>
 
             {/* Bottom Bar */}
-            <div className="bg-[#1B8FC0] border-t border-white/10">
+            <div className="bg-[#23A7D8] border-t border-white/10">
                 <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col gap-2 md:flex-row md:items-center md:justify-between text-xs text-white">
                     <p>Copyright © 2025 Proemsfitness. All Rights Reserved.</p>
                     <p className="text-sm md:text-base">Made<span aria-label="love"></span> by <span className="font-semibold text-white">Tech Solutionor</span></p>
@@ -154,7 +154,7 @@ function SocialIcon({ href, label, icon }) {
         <Link
             href={href}
             aria-label={label}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-white/15 hover:bg-white/25 transition text-white border border-white/30 shadow-sm hover:shadow focus:outline-none focus:ring-2 focus:ring-white/50"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-[#76C043] hover:bg-[#5fa239] transition-colors text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-white/40"
             target="_blank"
             rel="noopener noreferrer"
         >

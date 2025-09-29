@@ -126,6 +126,17 @@ export default function Page() {
               </ul>
             </NumberStep>
           </div>
+          {/* Added illustrative image (bottom of process section) */}
+          <div className="mt-14">
+            <figure className="rounded-3xl overflow-hidden shadow-lg ring-1 ring-black/10 bg-white/50 backdrop-blur-sm">
+              <img
+                src="/proccess.webp"
+                alt="Physiotherapy guided hand exercise session"
+                className="w-full h-64 md:h-80 object-cover"
+                loading="lazy"
+              />
+            </figure>
+          </div>
         </div>
       </section>
 
