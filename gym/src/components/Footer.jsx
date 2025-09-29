@@ -104,10 +104,10 @@ export default function Footer() {
                 <div>
                     <SectionHeading>Get In Touch</SectionHeading>
                     <ul className="mt-5 space-y-5 text-white text-[16px] md:text-[17px] leading-relaxed font-semibold">
-                         <li className="flex items-start gap-3"><span className="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-md bg-[#76C043] text-white"><ClockIcon /></span> <p>9 AM – 9 PM | Monday – Saturday</p></li>
-                        <li className="flex items-start gap-3"><span className="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-md bg-[#76C043] text-white"><PhoneIcon /></span> <p>0321-7847385 , 0321-4980835</p></li>
-                        <li className="flex items-start gap-3"><span className="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-md bg-[#76C043] text-white"><EmailIcon /></span> <p><a href="mailto:info@proemsfit.com" className="hover:underline">info@proemsfit.com</a></p></li>
-                        <li className="flex items-start gap-3"><span className="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-md bg-[#76C043] text-white"><LocationIcon /></span> <p>34-C Block, Bank Square, Model Town, Lahore</p></li>
+                        <li className="flex items-start gap-3"><span className="contact-icon mt-0.5 inline-flex h-10 w-10 flex-none shrink-0 items-center justify-center rounded-md bg-[#76C043] text-white"><ClockIcon /></span> <p>9 AM – 9 PM | Monday – Saturday</p></li>
+                        <li className="flex items-start gap-3"><span className="contact-icon mt-0.5 inline-flex h-10 w-10 flex-none shrink-0 items-center justify-center rounded-md bg-[#76C043] text-white"><PhoneIcon /></span> <p>0321-7847385 , 0321-4980835</p></li>
+                        <li className="flex items-start gap-3"><span className="contact-icon mt-0.5 inline-flex h-10 w-10 flex-none shrink-0 items-center justify-center rounded-md bg-[#76C043] text-white"><EmailIcon /></span> <p><a href="mailto:info@proemsfit.com" className="hover:underline">info@proemsfit.com</a></p></li>
+                        <li className="flex items-start gap-3"><span className="contact-icon mt-0.5 inline-flex h-10 w-10 flex-none shrink-0 items-center justify-center rounded-md bg-[#76C043] text-white"><LocationIcon /></span> <p>34-C Block, Bank Square, Model Town, Lahore</p></li>
                     </ul>
                 </div>
             </div>
