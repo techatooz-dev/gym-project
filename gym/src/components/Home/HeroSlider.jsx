@@ -12,13 +12,14 @@ export default function HeroSlider({
 }) {
   return (
     <section
-      className={`relative w-full h-[calc(100vh-4rem)] md:h-[80vh] max-h-[900px] min-h-[480px] flex items-center justify-center overflow-hidden ${className}`}
+      className={`relative w-full flex items-center justify-center overflow-hidden bg-no-repeat bg-cover ${className} 
+      h-[52vh] sm:h-[60vh] md:h-[80vh] max-h-[900px] min-h-0 md:min-h-[480px] bg-top md:bg-center`}
       style={{
         backgroundImage: `url('${background}')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
       }}
     >
+      {/* Subtle overlay for better mobile readability */}
+      <div className="absolute inset-0 bg-black/15 md:bg-black/5 pointer-events-none" />
       {/* Enhanced Overlay */}
       {/* <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/40 to-transparent z-10" /> */}
       {/* Floating shapes */}

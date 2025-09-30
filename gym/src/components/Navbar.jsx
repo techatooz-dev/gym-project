@@ -12,6 +12,7 @@ import { site } from "@/config/site";
 export default function Navbar() {
     const pathname = usePathname();
     const [open, setOpen] = useState(false);
+    const [mobileServicesOpen, setMobileServicesOpen] = useState(false); // mobile Services closed by default
 
     const isActive = (href) => (href === "/" ? pathname === "/" : pathname?.startsWith(href));
     const [servicesOpen, setServicesOpen] = useState(false);
@@ -141,18 +142,24 @@ export default function Navbar() {
                         </Link>
                     </div>
 
-                    {/* Mobile menu toggle (unchanged) */}
+                    {/* Mobile menu toggle */}
                     <button
                         type="button"
-                        aria-label="Toggle menu"
+                        aria-label={open ? "Close menu" : "Open menu"}
                         className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md hover:bg-black/5 dark:hover:bg-white/10"
-                        onClick={() => setOpen((v) => !v)}
+                        onClick={() => { setMobileServicesOpen(false); setOpen((v) => !v); }}
                         aria-expanded={open}
                         aria-controls="mobile-menu"
                     >
-                        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden>
-                            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                        </svg>
+                        {open ? (
+                            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden>
+                                <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                            </svg>
+                        ) : (
+                            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden>
+                                <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                            </svg>
+                        )}
                     </button>
                 </div>
             </div>
@@ -165,30 +172,70 @@ export default function Navbar() {
                 <nav className="px-4 py-3 space-y-1 bg-white/90 dark:bg-black/40 backdrop-blur">
                     {site.nav.map((link) => (
                         <div key={link.href}>
-                            <Link
-                                href={link.href}
-                                onClick={() => setOpen(false)}
-                                aria-current={isActive(link.href) ? "page" : undefined}
-                                className={`block px-3 py-2 rounded-md text-sm font-semibold uppercase tracking-wide hover:bg-transparent focus:bg-transparent ${isActive(link.href)
-                                    ? "text-gray-900 dark:text-white bg-black/5 dark:bg-white/10"
-                                    : "text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white"
-                                    }`}
-                            >
-                                {link.label}
-                            </Link>
-                            {link.href === "/services" && (
-                                <div className="pl-4">
-                                    {services.map((s, idx) => (
+                            {link.href === "/services" ? (
+                                <>
+                                    <div className="relative">
                                         <Link
-                                            key={`${s.href}-${idx}`}
-                                            href={s.href}
+                                            href={link.href}
                                             onClick={() => setOpen(false)}
-                                            className="block px-3 py-2 rounded-md text-sm tracking-wide text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white"
+                                            aria-current={isActive(link.href) ? "page" : undefined}
+                                            className={`block px-3 py-2 pr-12 rounded-md text-sm font-semibold uppercase tracking-wide hover:bg-transparent focus:bg-transparent ${isActive(link.href)
+                                                ? "text-gray-900 dark:text-white bg-black/5 dark:bg-white/10"
+                                                : "text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white"
+                                                }`}
                                         >
-                                            {s.label}
+                                            {link.label}
                                         </Link>
-                                    ))}
-                                </div>
+                                        <button
+                                            type="button"
+                                            aria-label="Toggle Services submenu"
+                                            onClick={() => setMobileServicesOpen((v) => !v)}
+                                            aria-expanded={mobileServicesOpen}
+                                            aria-controls="mobile-services-dropdown"
+                                            className="absolute right-2 inset-y-0 my-auto inline-flex h-9 w-9 items-center justify-center rounded-md text-[#76C043] hover:bg-black/5 dark:hover:bg-white/10"
+                                        >
+                                            <svg
+                                                className={`w-5 h-5 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`}
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                strokeWidth="2"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                aria-hidden
+                                            >
+                                                <path d="M6 9l6 6 6-6" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div
+                                        id="mobile-services-dropdown"
+                                        className={mobileServicesOpen ? "pl-4 pt-2" : "hidden pl-4 pt-2"}
+                                    >
+                                        {services.map((s, idx) => (
+                                            <Link
+                                                key={`${s.href}-${idx}`}
+                                                href={s.href}
+                                                onClick={() => setOpen(false)}
+                                                className="block px-3 py-2 rounded-md text-sm tracking-wide text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white"
+                                            >
+                                                {s.label}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </>
+                            ) : (
+                                <Link
+                                    href={link.href}
+                                    onClick={() => setOpen(false)}
+                                    aria-current={isActive(link.href) ? "page" : undefined}
+                                    className={`block px-3 py-2 rounded-md text-sm font-semibold uppercase tracking-wide hover:bg-transparent focus:bg-transparent ${isActive(link.href)
+                                        ? "text-gray-900 dark:text-white bg-black/5 dark:bg-white/10"
+                                        : "text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white"
+                                        }`}
+                                >
+                                    {link.label}
+                                </Link>
                             )}
                         </div>
                     ))}

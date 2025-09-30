@@ -30,10 +30,8 @@ export default function Page() {
 
   return (
     <main className="min-h-screen w-full bg-white">
-      {/* Hero now flows with document */}
-      <div className="w-full h-[calc(100vh-4rem)] md:h-[80vh] max-h-[900px] min-h-[480px]">
-        <HeroSlider />
-      </div>
+      {/* Hero section (let component control its own responsive height) */}
+      <HeroSlider />
       <ExpertCare />
       <PowerEMS />
       {/* <OurServicesSection /> */}
