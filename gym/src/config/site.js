@@ -9,7 +9,7 @@ export const site = {
   },
   // Separate footer logo (can be swapped independently of main logo)
   footerLogo: {
-    src: "/Logo-023 white.png",
+    src: "/white 2.png",
     alt: "ProEMSFitness footer logo",
     width:160,
     height: 120,

@@ -11,7 +11,7 @@ export default function Reviews({ reviews }) {
     },
     {
       id: 2,
-      name: "Daniel Lee",
+      name: "Bilal Hassan",
       rating: 4,
       date: "Jul 2025",
       verified: true,
@@ -20,7 +20,7 @@ export default function Reviews({ reviews }) {
     },
     {
       id: 3,
-      name: "Maya Patel",
+      name: "Fatima Iqbal",
       rating: 5,
       date: "Jun 2025",
       verified: true,
@@ -45,7 +45,7 @@ export default function Reviews({ reviews }) {
     },
     {
       id: 6,
-      name: "Vikram Rao",
+      name: "Zain Ul Abidin",
       rating: 5,
       date: "Apr 2025",
       verified: true,
@@ -62,7 +62,7 @@ export default function Reviews({ reviews }) {
     },
     {
       id: 8,
-      name: "Jonathan Cruz",
+      name: "Usman Farooq",
       rating: 4,
       date: "Feb 2025",
       verified: true,
@@ -148,17 +148,20 @@ export default function Reviews({ reviews }) {
       </div>
 
       {/* Grid: fixed 4x2 layout */}
-      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+  <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {data.map((r) => (
-          <article key={r.id} className="border border-gray-300 bg-white p-5 h-full flex flex-col">
+          <article
+            key={r.id}
+            className="group relative bg-gray-50 py-6 px-4 h-full flex flex-col ring-1 ring-gray-200 shadow-sm hover:shadow-md transition duration-200"
+          >
             <div className="flex items-center gap-3">
               <Avatar name={r.name} />
               <div className="min-w-0">
                 <div className="font-semibold text-gray-900 flex items-center gap-2">
                   {r.name}
                   {r.verified && (
-                    <span className="inline-flex items-center text-green-600 text-xs font-semibold">
-                      <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 mr-1"><path d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm-1.2-6.2 5-5-1.4-1.4-3.6 3.6-1.6-1.6-1.4 1.4 3 3z"/></svg>
+                    <span className="inline-flex items-center text-blue-600 text-xs font-semibold">
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 mr-1 text-blue-600"><path d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm-1.2-6.2 5-5-1.4-1.4-3.6 3.6-1.6-1.6-1.4 1.4 3 3z"/></svg>
                       Verified
                     </span>
                   )}
@@ -167,16 +170,23 @@ export default function Reviews({ reviews }) {
               </div>
             </div>
             <div className="mt-2"><Stars rating={r.rating} /></div>
-            <p className="mt-3 text-gray-900 leading-relaxed text-sm">{r.text}</p>
+            <p className="mt-3 text-gray-900 leading-relaxed text-sm">
+              {r.text}
+            </p>
+            {/* Removed hover ring for border effect */}
           </article>
         ))}
       </div>
 
-      {/* <div className="mt-8 flex justify-center">
-        <a href="/contact-us" className="inline-flex items-center px-6 py-3 rounded bg-white text-gray-900 font-semibold">
+      <div className="mt-8 flex justify-center">
+        <a
+          href="/contact-us"
+          aria-label="Write a Review"
+          className="inline-flex items-center px-7 py-3 bg-[#76C043] text-white font-semibold shadow-sm hover:bg-[#5ea932] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#76C043] focus-visible:ring-offset-white transition"
+        >
           Write a Review
         </a>
-      </div> */}
+      </div>
       </div>
     </section>
   );
