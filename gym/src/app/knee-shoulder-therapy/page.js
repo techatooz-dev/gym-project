@@ -41,37 +41,34 @@ function KneeShoulderTherapy() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#76c043] to-[#5a9c2f] text-white py-20">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Knee & Shoulder Therapy
+      <section className="w-full bg-[#76C043] text-white py-20 flex items-center justify-center">
+        <div className="max-w-2xl w-full text-center">
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
+            <span className="text-white px-2 py-1 rounded">Knee & Shoulder Therapy</span>
           </h1>
-          <p className="text-xl opacity-90">
-            Specialized Treatment for Joint Recovery and Performance
-          </p>
+          <p className="text-xl opacity-90 mb-2">Specialized Treatment for Joint Recovery and Performance</p>
         </div>
       </section>
 
-      <div className="container mx-auto px-4 py-12">
+      <div className="max-w-6xl mx-auto px-4 py-12">
         {/* Conditions Grid */}
-        <section className="grid md:grid-cols-2 gap-8 mb-16">
+  <section className="grid md:grid-cols-2 gap-8 mb-16">
           <div className="bg-white rounded-xl shadow-lg p-8">
-            <h2 className="text-2xl font-bold mb-6 text-[#76c043] flex items-center">
-            <GiKneeCap className='mr-5 text-[#76c043]'/> Knee Conditions
+            <h2 className="text-2xl font-bold mb-6 flex items-center text-[#0d3b23]">
+              <GiKneeCap className='mr-5 text-[#76c043]'/> Knee Conditions
             </h2>
             <ul className="space-y-3">
               {kneeConditions.map((condition, index) => (
                 <li key={index} className="flex items-center">
                   <span className="text-[#76c043] mr-2">•</span>
                   <span>{condition}</span>
-                  
                 </li>
               ))}
             </ul>
           </div>
 
           <div className="bg-white rounded-xl shadow-lg p-8">
-            <h2 className="text-2xl font-bold mb-6 text-[#76c043] flex items-center">
+            <h2 className="text-2xl font-bold mb-6 flex items-center text-[#0d3b23]">
               <LuBicepsFlexed className='mr-5 text-[#76c043]'/> Shoulder Conditions
             </h2>
             <ul className="space-y-3">
@@ -87,7 +84,7 @@ function KneeShoulderTherapy() {
 
         {/* Treatment Methods */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center">Our Treatment Approach</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center text-[#0d3b23]">Our Treatment Approach</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {treatmentMethods.map((method, index) => (
               <div key={index} className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
@@ -101,7 +98,7 @@ function KneeShoulderTherapy() {
 
         {/* Recovery Timeline */}
         <section className="bg-white rounded-xl shadow-lg p-8 mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center">Recovery Timeline</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center text-[#0d3b23]">Recovery Timeline</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             { [
               {
@@ -122,7 +119,7 @@ function KneeShoulderTherapy() {
               }
             ].map((item, index) => (
               <div key={index} className="text-center p-4 border-l-4 border-[#76c043]">
-                <h3 className="font-semibold mb-2">{item.condition}</h3>
+                <h3 className="font-semibold mb-2 text-[#0d3b23]">{item.condition}</h3>
                 <p className="text-[#76c043]">{item.time}</p>
               </div>
             ))}
@@ -131,23 +128,22 @@ function KneeShoulderTherapy() {
 
         {/* Benefits */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center">Benefits</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center text-[#0d3b23]">Benefits</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {benefits.map((benefit, index) => (
               <div key={index} className="bg-white rounded-lg p-6 shadow-lg flex items-center">
                 <span className="text-[#76c043] mr-3">✓</span>
-                <span>{benefit}</span>
+                <span className="text-[#0d3b23]">{benefit}</span>
               </div>
             ))}
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="bg-[#76c043] text-white rounded-xl p-8 text-center">
+        <section className="bg-[#76C043] text-white rounded-xl p-8 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Start Your Recovery?</h2>
           <p className="mb-8 text-lg">Schedule a consultation with our therapy specialists</p>
-          <button className="bg-white text-[#76c043] px-8 py-3 rounded-lg font-semibold 
-                           hover:bg-gray-100 transition-all duration-300">
+          <button className="bg-white text-[#76C043] px-8 py-3 rounded-lg font-semibold shadow hover:bg-[#e6f7d6] transition-all duration-300">
             Book Appointment
           </button>
         </section>
