@@ -16,7 +16,7 @@ export default function Footer() {
     }
 
     return (
-    <footer className="relative z-20 text-[15px] leading-relaxed bg-[#23A7D8] text-white font-medium">
+    <footer className="relative z-20 text-[14px] md:text-[15px] leading-relaxed bg-[#23A7D8] text-white font-normal">
             {/* Main footer content */}
             <div className="mx-auto max-w-7xl px-6 py-14 grid gap-12 md:grid-cols-2 lg:grid-cols-[1.25fr_0.9fr_0.9fr_1fr]">
                 {/* Column 1: Logo + description + social + newsletter */}
@@ -36,7 +36,7 @@ export default function Footer() {
                     </p> */}
 
                     <div className="mb-6">
-                        <SectionHeading small>Follow Us</SectionHeading>
+                        <SectionHeading>Follow Us</SectionHeading>
                         <div className="flex items-center gap-3 mt-3">
                             <SocialIcon href="https://facebook.com" label="Facebook" icon={<FacebookIcon />} />
                             <SocialIcon href="https://twitter.com" label="Twitter" icon={<TwitterIcon />} />
@@ -49,8 +49,8 @@ export default function Footer() {
 
 
                     <div>
-                        <p className="text-sm md:text-base uppercase tracking-wide text-white font-semibold mb-3">Stay updated with our latest news and offers</p>
-                        <form onSubmit={handleSubmit} className="flex w-full max-w-md rounded-md overflow-hidden border border-white/10 bg-white/5 focus-within:border-emerald-400 transition">
+                        <p className="mb-3 text-[14px] md:text-[15px]">Stay updated with our latest news and offers</p>
+                        <form onSubmit={handleSubmit} className="flex w-full max-w-md rounded-md overflow-hidden border border-white bg-white/5 focus-within:border-white focus-within:ring-2 focus-within:ring-white/70 transition">
                             <label htmlFor="newsletter-email" className="sr-only">Email address</label>
                             <input
                                 id="newsletter-email"
@@ -59,7 +59,7 @@ export default function Footer() {
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 placeholder="Enter your email"
-                                className="flex-1 bg-transparent px-4 py-3 text-base placeholder:text-base placeholder:text-white/50 focus:outline-none"
+                                className="flex-1 bg-transparent px-4 py-3 text-base placeholder:text-base placeholder:text-white/60 focus:outline-none"
                             />
                             <button
                                 type="submit"
@@ -103,7 +103,7 @@ export default function Footer() {
                 {/* Column 4: Contact */}
                 <div>
                     <SectionHeading>Get In Touch</SectionHeading>
-                    <ul className="mt-5 space-y-5 text-white text-[16px] md:text-[17px] leading-relaxed font-semibold">
+                    <ul className="mt-5 space-y-5 leading-relaxed">
                         <li className="flex items-start gap-3"><span className="contact-icon mt-0.5 inline-flex h-10 w-10 flex-none shrink-0 items-center justify-center rounded-md bg-[#76C043] text-white"><ClockIcon /></span> <p>9 AM – 9 PM | Monday – Saturday</p></li>
                         <li className="flex items-start gap-3"><span className="contact-icon mt-0.5 inline-flex h-10 w-10 flex-none shrink-0 items-center justify-center rounded-md bg-[#76C043] text-white"><PhoneIcon /></span> <p>0321-7847385 , 0321-4980835</p></li>
                         <li className="flex items-start gap-3"><span className="contact-icon mt-0.5 inline-flex h-10 w-10 flex-none shrink-0 items-center justify-center rounded-md bg-[#76C043] text-white"><EmailIcon /></span> <p><a href="mailto:info@proemsfit.com" className="hover:underline">info@proemsfit.com</a></p></li>
@@ -114,9 +114,9 @@ export default function Footer() {
 
             {/* Bottom Bar */}
             <div className="bg-[#23A7D8] border-t border-white/10">
-                <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col gap-2 md:flex-row md:items-center md:justify-between text-xs text-white">
-                    <p>Copyright © 2025 Proemsfitness. All Rights Reserved.</p>
-                    <p className="text-sm md:text-base">Made<span aria-label="love"></span> by <span className="font-semibold text-white">Tech Solutionor</span></p>
+                <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col gap-2 md:flex-row md:items-center md:justify-between text-white">
+                    <p>© 2025 Proemsfitness. All Rights Reserved.</p>
+                    <p>Developed<span aria-label="love"></span> by <span className="font-semibold text-white">Tech Solutionor</span></p>
                 </div>
             </div>
         </footer>
@@ -127,16 +127,16 @@ function FooterLink({ href, children }) {
     return (
         <Link
             href={href}
-            className="relative inline-block px-2 py-1 -mx-2 rounded-sm text-white font-semibold tracking-wide hover:text-white/90 focus:text-white/90 focus:outline-none transition-colors duration-150"
+            className="relative inline-block px-2 py-1 -mx-2 rounded-sm hover:text-white/90 focus:text-white/90 focus:outline-none transition-colors duration-150"
         >
             {children}
         </Link>
     );
 }
 
-function SectionHeading({ children, small = false }) {
+function SectionHeading({ children }) {
     return (
-        <h3 className={`font-bold tracking-wide ${small ? "text-[12px]" : "text-[15px]"} uppercase text-white pb-2 relative after:absolute after:left-0 after:bottom-0 after:h-[3px] after:w-56 after:max-w-full after:bg-white/70`}>{children}</h3>
+        <h3 className="font-semibold tracking-wide text-[15px] md:text-[16px] uppercase pb-2 relative after:absolute after:left-0 after:bottom-0 after:h-[3px] after:w-56 after:max-w-full after:bg-white/70">{children}</h3>
     );
 }
 
