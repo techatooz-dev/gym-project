@@ -2,7 +2,7 @@ export const site = {
   name: "ProEMSFitness",
   tagline: "save money and time with electronic muscle stimulation",
   logo: {
-    src: "/Logo-023.png", // located in /public
+    src: "/color.png", // located in /public
     alt: "ProEMSFitness logo",
     width: 220,
     height: 110,
