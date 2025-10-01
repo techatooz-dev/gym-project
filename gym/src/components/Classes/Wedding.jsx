@@ -5,11 +5,11 @@ const anton = Anton({ subsets: ['latin'], weight: '400' })
 
 function Wedding() {
   return (
-    <section className="w-full bg-white  py-14 md:py-10">
+    <section className="w-full bg-white pt-7">
       <div className="max-w-8xl grid md:grid-cols-12 gap-10 items-start">
         {/* Left: Text */}
-        <div className="md:col-span-6 ml-5 px-8">
-          <h2 className={`${anton.className} text-5xl md:text-6xl lg:text-7xl font-bold uppercase leading-[0.9] tracking-[0.04em] text-black mb-6`}> 
+        <div className="md:col-span-6 md:ml-5 px-5 md:px-8">
+          <h2 className={`${anton.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase leading-[0.9] tracking-[0.04em] text-black mb-6`}> 
             Wedding Fitness
             <br />
             Program
@@ -20,7 +20,7 @@ function Wedding() {
         </div>
 
         {/* Right: Image with blue background shape */}
-        <div className="md:col-span-6 relative ">
+        <div className="md:col-span-6 relative hidden md:block">
           {/* Blue background card */}
           {/* <div className="hidden md:block absolute top-1/2 -translate-y-1/2 right-0 bg-[#15A7DF] rounded-[56px]" /> */}
           <div className="relative rounded-[40px] overflow-hidden bg-white w-full">

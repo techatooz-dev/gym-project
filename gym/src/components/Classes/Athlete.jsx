@@ -9,7 +9,7 @@ function Athlete() {
       <div className="mx-auto max-w-8xl">
         <div className="relative">
           <div
-            className="relative bg-[#76C043] text-black grid md:grid-cols-12 gap-10 md:gap-12 pt-14 md:pt-20 pb-32 md:pb-40 px-6 sm:px-10 lg:px-14 overflow-hidden"
+            className="relative -mt-px bg-[#76C043] text-black grid md:grid-cols-12 gap-10 md:gap-12  pb-32 md:pb-40 px-6 sm:px-10 lg:px-14 overflow-hidden"
             style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 85%)' }}
           >
             {/* Full-width slanted decorative line & dot */}
@@ -19,7 +19,7 @@ function Athlete() {
               </div>
             </div> */}
             {/* Left Text Content */}
-            <div className="md:col-span-6 flex flex-col justify-start mt-30">
+            <div className="md:col-span-6 flex flex-col justify-start mt-6 md:mt-30">
               <h3 className={`${anton.className} text-4xl sm:text-5xl lg:text-6xl xl:text-8xl font-bold uppercase leading-[0.95] tracking-[0.04em] mb-8`}>
                 Athlete
                 <br />

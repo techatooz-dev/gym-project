@@ -4,9 +4,9 @@ const anton = Anton({ subsets: ["latin"], weight: "400" });
 
 function WhyHappy() {
   return (
-    <section className="bg-white px-4 md:px-6 lg:px-8 py-10 md:py-16">
+    <section className="bg-white px-4 md:px-6 lg:px-8 py-6 md:py-16">
       <div className="mx-auto max-w-7xl">
-        <h2 className={`${anton.className} text-3xl md:text-7xl uppercase text-[#111827] mb-10`}>Why Our Clients Are Happy</h2>
+        <h2 className={`${anton.className} text-3xl md:text-7xl uppercase text-[#111827] mb-6 md:mb-10`}>Why Our Clients Are Happy</h2>
 
         <div className="grid gap-6 md:gap-8 md:grid-cols-2">
           <HappyCard title="Life-Changing Results">
@@ -40,7 +40,7 @@ function WhyHappy() {
 
 function HappyCard({ title, children }) {
   return (
-    <article className="relative  bg-white p-5 ">
+    <article className="relative  bg-white px-2 md:p-4">
       <div className="mb-4 inline-block bg-[#7AC943] px-3 py-2 text-base md:text-lg font-semibold text-[#15410B]">
         {title}
       </div>

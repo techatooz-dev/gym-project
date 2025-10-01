@@ -56,7 +56,7 @@ function Experience() {
         </div>
 
         {/* Grid of cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 px-5">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 px-3 md:px-5">
           {items.map((it, idx) => (
             <div
               key={idx}

@@ -10,23 +10,23 @@ function Post() {
         {/* Slanted Green Split Container */}
         <div className="relative mt-4 md:mt-0">
           <div
-            className="relative bg-[#76C043] text-black grid md:grid-cols-12 gap-10 md:gap-12 pt-10 md:pt-16 pb-16 md:pb-24 px-6 sm:px-10 lg:px-14"
+            className="relative bg-[#76C043] text-black grid md:grid-cols-12 gap-10 md:gap-12 pt-10 md:pt-16 pb-6 md:pb-0 px-6 sm:px-10 lg:px-14"
             style={{ clipPath: 'polygon(0 6%, 100% 20%, 100% 100%, 0 100%)' }}
           >
             {/* Left Image Cluster */}
             <div className="md:col-span-6 flex items-start">
               {/* Straight outer container; only the image inside is slanted */}
-              <div className="w-full max-w-xl mt-12 rounded-sm overflow-hidden">
+              <div className="w-full max-w-xl pt-22 md:pt-0 mt-0 md:mt-12 rounded-sm overflow-hidden">
                 <img
                   src="/3.png"
                   alt="Post delivery EMS recovery training"
-                  className="w-full object-cover -rotate-2 scale-110 origin-center"
+                  className="w-full object-cover origin-center md:-rotate-2 md:scale-110"
                 />
               </div>
             </div>
 
             {/* Right Text Content */}
-            <div className="md:col-span-6 flex flex-col justify-start mt-60 ">
+            <div className="md:col-span-6 flex flex-col justify-start mt-6 md:mt-60 ">
               <h3 className={`${anton.className} text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold uppercase leading-[0.95] tracking-[0.04em] mb-8`}> 
                 Post-Delivery
                 <br />

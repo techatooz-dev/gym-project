@@ -21,15 +21,15 @@ function Healthy() {
         </div>
 
         {/* Right: Heading + Copy */}
-        <div className="lg:col-span-6 mr-5">
-          <h2 className="text-[#76C043] font-extrabold uppercase leading-[0.95] tracking-wide text-[40px] sm:text-[54px] lg:text-[64px]">
+        <div className="lg:col-span-6 lg:mr-5 text-center lg:text-left px-[16px] py-[8px] lg:px-0 lg:py-0">
+          <h2 className="text-[#76C043] font-extrabold uppercase leading-[0.95] tracking-wide text-3xl sm:text-[54px] lg:text-[64px]">
             Healthy Life
             <br />
             &amp; Long-Term
             <br />
             Maintenance
           </h2>
-          <p className="mt-6 text-slate-700 text-sm sm:text-base leading-7 max-w-2xl">
+          <p className="mt-6 text-slate-700 text-sm sm:text-base leading-7 max-w-2xl mx-auto">
             Fitness is not just about short-term transformation. With Pro EMS Fit, you gain the
             tools to maintain a healthy lifestyle long after your sessions. We focus on sustainable
             fitness routines that fit seamlessly into your daily life, making it easier to stay

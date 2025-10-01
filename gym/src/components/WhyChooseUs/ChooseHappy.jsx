@@ -4,7 +4,7 @@ const anton = Anton({ subsets: ["latin"], weight: "400" });
 
 function ChooseHappy() {
   return (
-    <section className="relative bg-white px-4 md:px-6 lg:px-8 py-12 md:py-16">
+    <section className="relative bg-white px-4 md:px-6 lg:px-8  md:py-16">
       {/* Decorative dashed arrow on the left */}
       {/* <div className="pointer-events-none absolute left-4 top-6 hidden md:block">
         <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-black">
@@ -42,7 +42,7 @@ function ChooseHappy() {
 function PlaceholderCard({ color }) {
   return (
     <div
-      className="w-64 h-72 md:w-82 md:h-90 rounded-[26px] shadow-xl flex items-center justify-center"
+      className="w-72 h-80 md:w-82 md:h-90 rounded-[26px] shadow-xl flex items-center justify-center"
       style={{ backgroundColor: color }}
     >
       <div className="text-white/90 text-xl md:text-2xl font-extrabold tracking-wide uppercase">

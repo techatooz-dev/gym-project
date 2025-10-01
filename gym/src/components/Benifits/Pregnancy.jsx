@@ -3,16 +3,16 @@ import React from 'react'
 function Pregnancy() {
   return (
     <section className="w-full bg-white">
-      <div className="mx-auto max-w-8xl  py-10 lg:py-16 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+      <div className="mx-auto max-w-8xl  lg:py-16 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
         {/* Left: Heading + Copy */}
-        <div className="lg:col-span-7 ml-12">
-          <h2 className="text-[#76C043] font-extrabold uppercase leading-[0.95] tracking-wide text-[40px] sm:text-[54px] lg:text-[64px]">
+        <div className="lg:col-span-7 lg:ml-12 text-center lg:text-left px-[16px] py-[8px] lg:px-0 lg:py-0">
+          <h2 className="text-[#76C043] font-extrabold uppercase text-3xl sm:text-[44px] lg:text-[64px] tracking-normal sm:tracking-wide leading-tight sm:leading-[0.95]">
             Pregnancy Diet
             <br />
             &amp; Body Shaping
           </h2>
 
-          <p className="mt-6 text-slate-700 text-sm sm:text-base leading-7 max-w-2xl">
+          <p className="mt-6 text-slate-700 text-sm sm:text-base leading-7 max-w-2xl ">
             We provide specialized pregnancy diet plans and safe body-shaping programs to keep
             mothers healthy, active, and confident. Our focus is on ensuring fitness and well-being
             during pregnancy and helping women restore strength and body shape after childbirth —
