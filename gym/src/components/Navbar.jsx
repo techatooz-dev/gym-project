@@ -5,7 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useRef } from "react";
 // Using FontAwesome (fa) icon pack for broad compatibility (fa6 names caused undefined runtime error)
-import { FaBolt, FaHeartbeat, FaSpa, FaHandsHelping, FaRunning, FaChartLine, FaBone, FaHandHoldingHeart } from "react-icons/fa";
+import { FaBolt, FaHeartbeat, FaSpa, FaHandsHelping, FaRunning, FaChartLine, FaBone, FaHandHoldingHeart, FaCalendarAlt } from "react-icons/fa";
 import { site } from "@/config/site";
 
 
@@ -33,9 +33,28 @@ export default function Navbar() {
     return (
         <header className="sticky top-0 z-50 bg-white  border-b border-black/5">
             <div className="mx-auto max-w-7xl px-4 md:px-8 lg:px-10  py-3">
-                <div className="flex h-16 items-center justify-between w-full">
+                <div className="flex h-16 items-center justify-between w-full relative">
+                    {/* Mobile menu toggle (left) */}
+                    <button
+                        type="button"
+                        aria-label={open ? "Close menu" : "Open menu"}
+                        className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md hover:bg-black/5 dark:hover:bg-white/10"
+                        onClick={() => { setMobileServicesOpen(false); setOpen((v) => !v); }}
+                        aria-expanded={open}
+                        aria-controls="mobile-menu"
+                    >
+                        {open ? (
+                            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden>
+                                <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                            </svg>
+                        ) : (
+                            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden>
+                                <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                            </svg>
+                        )}
+                    </button>
                     {/* Brand */}
-                    <Link href="/" className="flex items-center gap-3 shrink-0">
+                    <Link href="/" className="flex items-center gap-3 shrink-0 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:static md:translate-x-0 md:translate-y-0">
                         <Image
                             src={site.logo.src}
                             alt={site.logo.alt}
@@ -142,25 +161,17 @@ export default function Navbar() {
                         </Link>
                     </div>
 
-                    {/* Mobile menu toggle */}
-                    <button
-                        type="button"
-                        aria-label={open ? "Close menu" : "Open menu"}
-                        className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md hover:bg-black/5 dark:hover:bg-white/10"
-                        onClick={() => { setMobileServicesOpen(false); setOpen((v) => !v); }}
-                        aria-expanded={open}
-                        aria-controls="mobile-menu"
-                    >
-                        {open ? (
-                            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden>
-                                <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                            </svg>
-                        ) : (
-                            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden>
-                                <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                            </svg>
-                        )}
-                    </button>
+                    {/* Mobile action (right): Book */}
+                    <div className="md:hidden flex items-center gap-2 ml-auto">
+                        <Link
+                            href="/contact-us"
+                            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-md bg-sky-500 hover:bg-sky-600 text-white text-xs font-semibold shadow-sm"
+                            aria-label="Book Appointment"
+                        >
+                            <FaCalendarAlt className="h-4 w-4" />
+                            {/* <span>Book</span> */}
+                        </Link>
+                    </div>
                 </div>
             </div>
 
@@ -179,8 +190,8 @@ export default function Navbar() {
                                             href={link.href}
                                             onClick={() => setOpen(false)}
                                             aria-current={isActive(link.href) ? "page" : undefined}
-                                            className={`block px-3 py-2 pr-12 rounded-md text-sm font-semibold uppercase tracking-wide hover:bg-transparent focus:bg-transparent ${isActive(link.href)
-                                                ? "text-gray-900 dark:text-white bg-black/5 dark:bg-white/10"
+                                            className={`block px-3 py-2 pr-12 rounded-md text-sm font-semibold uppercase tracking-wide ${isActive(link.href)
+                                                ? "bg-[#76C043] text-white"
                                                 : "text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white"
                                                 }`}
                                         >
@@ -192,7 +203,7 @@ export default function Navbar() {
                                             onClick={() => setMobileServicesOpen((v) => !v)}
                                             aria-expanded={mobileServicesOpen}
                                             aria-controls="mobile-services-dropdown"
-                                            className="absolute right-2 inset-y-0 my-auto inline-flex h-9 w-9 items-center justify-center rounded-md text-[#76C043] hover:bg-black/5 dark:hover:bg-white/10"
+                                            className={`absolute right-2 inset-y-0 my-auto inline-flex h-9 w-9 items-center justify-center rounded-md hover:bg-black/5 dark:hover:bg-white/10 ${isActive(link.href) ? "text-white" : "text-[#76C043]"}`}
                                         >
                                             <svg
                                                 className={`w-5 h-5 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`}
@@ -217,7 +228,7 @@ export default function Navbar() {
                                                 key={`${s.href}-${idx}`}
                                                 href={s.href}
                                                 onClick={() => setOpen(false)}
-                                                className="block px-3 py-2 rounded-md text-sm tracking-wide text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white"
+                                                className={`block px-3 py-2 rounded-md text-sm tracking-wide ${isActive(s.href) ? "bg-[#76C043] text-white" : "text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white"}`}
                                             >
                                                 {s.label}
                                             </Link>
@@ -229,8 +240,8 @@ export default function Navbar() {
                                     href={link.href}
                                     onClick={() => setOpen(false)}
                                     aria-current={isActive(link.href) ? "page" : undefined}
-                                    className={`block px-3 py-2 rounded-md text-sm font-semibold uppercase tracking-wide hover:bg-transparent focus:bg-transparent ${isActive(link.href)
-                                        ? "text-gray-900 dark:text-white bg-black/5 dark:bg-white/10"
+                                    className={`block px-3 py-2 rounded-md text-sm font-semibold uppercase tracking-wide ${isActive(link.href)
+                                        ? "bg-[#76C043] text-white"
                                         : "text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white"
                                         }`}
                                 >
