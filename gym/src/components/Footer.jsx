@@ -21,7 +21,7 @@ export default function Footer() {
             <div className="mx-auto max-w-7xl px-6 py-14 grid gap-12 md:grid-cols-2 lg:grid-cols-[1.25fr_0.9fr_0.9fr_1fr]">
                 {/* Column 1: Logo + description + social + newsletter */}
                 <div className="flex flex-col">
-                    <div className="mb-5">
+                    <div className="mb-5 md:-ml-2 lg:-ml-4">
                         <Image
                             src={site.footerLogo?.src || site.logo.src}
                             alt={site.footerLogo?.alt || site.logo.alt}
