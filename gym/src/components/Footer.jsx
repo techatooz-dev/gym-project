@@ -63,7 +63,7 @@ export default function Footer() {
                             />
                             <button
                                 type="submit"
-                                className="group bg-white hover:bg-white active:bg-emerald-500 px-6 flex items-center justify-center gap-1 text-sm font-semibold text-gray-900 transition"
+                                className="group bg-white hover:bg-white active:bg-[#76C043] px-6 flex items-center justify-center gap-1 text-sm font-semibold text-gray-900 transition"
                                 aria-label="Subscribe"
                             >
                                 <ArrowIcon className="group-hover:translate-x-0.5 transition-transform" />
