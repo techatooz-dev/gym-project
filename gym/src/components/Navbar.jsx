@@ -39,7 +39,20 @@ export default function Navbar() {
                         type="button"
                         aria-label={open ? "Close menu" : "Open menu"}
                         className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md hover:bg-black/5 dark:hover:bg-white/10"
-                        onClick={() => { setMobileServicesOpen(false); setOpen((v) => !v); }}
+                        onClick={() => {
+                            setOpen((v) => {
+                                const next = !v;
+                                if (next) {
+                                    // opening menu: open Services submenu if current route is a Services page
+                                    const isAnyService = services.some((s) => isActive(s.href)) || isActive("/services");
+                                    setMobileServicesOpen(isAnyService);
+                                } else {
+                                    // closing menu
+                                    setMobileServicesOpen(false);
+                                }
+                                return next;
+                            });
+                        }}
                         aria-expanded={open}
                         aria-controls="mobile-menu"
                     >
@@ -188,7 +201,7 @@ export default function Navbar() {
                                     <div className="relative">
                                         <Link
                                             href={link.href}
-                                            onClick={() => setOpen(false)}
+                                            onClick={() => { setOpen(false); setMobileServicesOpen(false); }}
                                             aria-current={isActive(link.href) ? "page" : undefined}
                                             className={`block px-3 py-2 pr-12 rounded-md text-sm font-semibold uppercase tracking-wide ${isActive(link.href)
                                                 ? "bg-[#76C043] text-white"
@@ -227,7 +240,7 @@ export default function Navbar() {
                                             <Link
                                                 key={`${s.href}-${idx}`}
                                                 href={s.href}
-                                                onClick={() => setOpen(false)}
+                                                onClick={() => { setOpen(false); setMobileServicesOpen(false); }}
                                                 className={`block px-3 py-2 rounded-md text-sm tracking-wide ${isActive(s.href) ? "bg-[#76C043] text-white" : "text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white"}`}
                                             >
                                                 {s.label}
@@ -238,7 +251,7 @@ export default function Navbar() {
                             ) : (
                                 <Link
                                     href={link.href}
-                                    onClick={() => setOpen(false)}
+                                    onClick={() => { setOpen(false); setMobileServicesOpen(false); }}
                                     aria-current={isActive(link.href) ? "page" : undefined}
                                     className={`block px-3 py-2 rounded-md text-sm font-semibold uppercase tracking-wide ${isActive(link.href)
                                         ? "bg-[#76C043] text-white"
