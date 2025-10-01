@@ -216,7 +216,11 @@ export default function Navbar() {
                                             onClick={() => setMobileServicesOpen((v) => !v)}
                                             aria-expanded={mobileServicesOpen}
                                             aria-controls="mobile-services-dropdown"
-                                            className={`absolute right-2 inset-y-0 my-auto inline-flex h-9 w-9 items-center justify-center rounded-md hover:bg-black/5 dark:hover:bg-white/10 ${isActive(link.href) ? "text-white" : "text-[#76C043]"}`}
+                                            className={`absolute right-2 inset-y-0 my-auto inline-flex h-9 w-9 items-center justify-center rounded-md transition-colors ${
+                                                isActive(link.href)
+                                                    ? "text-white bg-[#76C043]"
+                                                    : "text-white bg-[#76C043] hover:bg-[#76C043]/20"
+                                            }`}
                                         >
                                             <svg
                                                 className={`w-5 h-5 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`}
