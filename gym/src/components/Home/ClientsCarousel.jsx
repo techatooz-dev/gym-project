@@ -1,5 +1,6 @@
 
-import React, { useState } from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Anton } from "next/font/google";
 
@@ -17,11 +18,15 @@ const cards = [
 
 export default function ClientsCarousel() {
   const [index, setIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const total = cards.length;
 
   // Show 3 cards at a time, center active
   const getVisible = () => {
-    // Always 3 cards, center is index
+    // On mobile show only active card; on desktop show 3 (prev, active, next)
+    if (isMobile) {
+      return [cards[index % total]];
+    }
     return [
       cards[(index + total - 1) % total],
       cards[index % total],
@@ -32,6 +37,23 @@ export default function ClientsCarousel() {
   const advance = (dir) => {
     setIndex((prev) => (prev + dir + total) % total);
   };
+
+  // Watch viewport to toggle mobile/desktop rendering
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mq = window.matchMedia("(max-width: 767px)");
+    const onChange = (e) => setIsMobile(e.matches);
+    // Initialize and subscribe
+    setIsMobile(mq.matches);
+    try {
+      mq.addEventListener("change", onChange);
+      return () => mq.removeEventListener("change", onChange);
+    } catch {
+      // Safari fallback
+      mq.addListener(onChange);
+      return () => mq.removeListener(onChange);
+    }
+  }, []);
 
   return (
   <section className="relative bg-white">
@@ -44,7 +66,7 @@ export default function ClientsCarousel() {
                 OUR HAPPY CLIENTS
               </h2>
             </div>
-          <p className="text-white text-sm md:text-base font-medium max-w-2xl mx-auto">
+          <p className="mt-4 md:mt-0 text-white text-sm md:text-base font-medium max-w-2xl mx-auto">
             At Pro EMS Fit, our clients’ happiness is our greatest achievement. From fitness enthusiasts to recovery patients, each success story reflects the impact of our EMS programs. Their positive feedback and lasting results inspire us to keep delivering safe, effective, and personalized solutions that truly make a difference.
           </p>
         </div>
@@ -52,21 +74,21 @@ export default function ClientsCarousel() {
 
       {/* Cards row straddling the boundary */}
       <div className="mx-auto max-w-5xl px-4">
-        <div className="-mt-20 md:-mt-32 flex justify-center items-end gap-8 md:gap-10">
+        <div className="-mt-30 md:-mt-32 flex justify-center items-end gap-8 md:gap-10">
           {getVisible().map((card, i) => (
             <div
               key={i}
-              className={`relative overflow-hidden rounded-[28px] shadow-[0_14px_28px_rgba(0,0,0,0.18)] w-[220px] md:w-[240px] aspect-[3/4] select-none`}
+              className={`relative overflow-hidden rounded-[28px] shadow-[0_14px_28px_rgba(0,0,0,0.18)] w-[min(88vw,260px)] md:w-[240px] aspect-[3/4] select-none`}
             >
               <Image
                 src={card.src}
                 alt={card.alt}
                 fill
-                sizes="(max-width:768px) 220px, 240px"
+                sizes="(max-width: 767px) 88vw, 240px"
                 className="object-cover will-change-transform"
                 // Slightly higher quality for better clarity (default is 75)
                 quality={85}
-                priority={i === 1}
+                priority={isMobile ? i === 0 : i === 1}
               />
             </div>
           ))}

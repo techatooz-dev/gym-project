@@ -81,10 +81,10 @@ export default function Vedio({
   }, [isEmbed, autoPlay, src]);
 
   return (
-    <section className="relative bg-white py-16" aria-labelledby="video-heading">
+    <section className="relative bg-white md:py-16" aria-labelledby="video-heading">
       <div className="mx-auto max-w-7xl px-6">
         <div className="max-w-3xl mb-8">
-          <h2 id="video-heading" className="text-3xl sm:text-4xl font-extrabold text-green-600 tracking-tight">
+          <h2 id="video-heading" className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-green-600 tracking-tight">
             {title}
           </h2>
           <p className="mt-3 text-slate-600 leading-relaxed text-sm sm:text-base">
@@ -92,7 +92,7 @@ export default function Vedio({
           </p>
         </div>
 
-        <div className="relative group rounded-xl overflow-hidden shadow-lg ring-1 ring-slate-200 bg-black">
+        <div className="mb-6 relative group rounded-xl overflow-hidden shadow-lg ring-1 ring-slate-200 bg-black">
           {/* 16:9 aspect ratio wrapper */}
           <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
             {isEmbed ? (
@@ -136,7 +136,7 @@ export default function Vedio({
           </div>
         </div>
 
-        <div className="mt-6 flex flex-wrap items-center gap-4 text-xs text-slate-500">
+        <div className="mt-6  hidden sm:flex flex-wrap items-center gap-4 text-xs text-slate-500">
           <span>High-Intensity • Low Impact • Certified Trainers</span>
           <span className="hidden sm:inline-block">|</span>
           <span>Real Client Sessions</span>

@@ -114,7 +114,7 @@ export default function Footer() {
 
             {/* Bottom Bar */}
             <div className="bg-[#23A7D8] border-t border-white/10">
-                <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col gap-2 md:flex-row md:items-center md:justify-between text-white">
+                <div className="text-center mx-auto max-w-7xl px-6 py-5 flex flex-col-reverse gap-2 md:flex-row md:items-center md:justify-between text-white">
                     <p>© 2025 Proemsfitness. All Rights Reserved.</p>
                     <p>Developed<span aria-label="love"></span> by <span className="font-semibold text-white">Tech Solutionor</span></p>
                 </div>

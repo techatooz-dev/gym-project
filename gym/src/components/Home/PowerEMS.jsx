@@ -28,12 +28,12 @@ function PowerEMS() {
           </div>
 
           {/* Right copy */}
-          <div className="md:col-span-6 mt-22">
+          <div className="md:col-span-6 md:mt-22  mt-6  md:py-0">
             <h2 className={`${anton.className} text-[56px] font-black uppercase leading-[0.95] tracking-tight text-gray-900 md:text-[96px]`}>
               <span className="block">Power of</span>
               <span className="block">EMS Training</span>
             </h2>
-            <p className="mt-16 max-w-md text-sm text-white md:text-base">
+            <p className=" pb-2 md:mt-16 max-w-md text-sm text-white md:text-base">
               EMS (Electro Muscle Stimulation) unlocks the full potential of your body by activating up to 95% of muscle fibers — more than
               traditional workouts. In just 20-minute sessions, twice a week, you can achieve visible improvements in strength, endurance,
               and overall fitness. This advanced technology accelerates fat loss, tones muscles, and shapes the body while saving valuable

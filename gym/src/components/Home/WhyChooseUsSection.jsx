@@ -9,7 +9,7 @@ export default function WhyChooseUsSection() {
     <section className="relative py-10 md:py-14 bg-white overflow-hidden">
   <div className="max-w-7xl">
         {/* Big heading */}
-        <h2 className={`relative z-20 ml-16 text-start text-[48px] md:text-[96px] font-black leading-none tracking-[0.01em] text-black uppercase -mb-10 md:-mb-14 lg:-mb-16 ${anton.className}`}>
+        <h2 className={`relative z-20 ml-6 md:ml-16 text-start text-[48px] md:text-[96px] font-black leading-none tracking-[0.01em] text-black uppercase -mb-10 md:-mb-14 lg:-mb-16 ${anton.className}`}>
           WHY CHOOSE US
         </h2>
 
@@ -32,7 +32,7 @@ export default function WhyChooseUsSection() {
 
           {/* Column 4: white panel with image */}
           <div className="md:col-span-1 bg-white">
-            <div className="relative mt-8 md:mt-12 lg:mt-16 mb-12 md:mb-12 lg:mb-16 -ml-16 md:-ml-32 lg:-ml-40 w-[120%] md:w-[140%] lg:w-[165%] h-[300px] md:h-[360px] overflow-hidden z-10 shadow-[0_12px_24px_rgba(0,0,0,0.15)] rounded">
+            <div className="relative  md:mt-12 lg:mt-16 mb-12 md:mb-12 lg:mb-16 -ml-16 md:-ml-32 lg:-ml-40 w-[120%] md:w-[140%] lg:w-[165%] h-[300px] md:h-[360px] overflow-hidden z-10 shadow-[0_12px_24px_rgba(0,0,0,0.15)] rounded">
               <img
                 src="/3rd.jpg"
                 alt="Athlete training with EMS"

@@ -111,10 +111,10 @@ export default function Reviews({ reviews }) {
 
   return (
     <section className="bg-white">
-      <div className="mx-auto max-w-7xl px-6 py-12">
+      <div className="mx-auto max-w-7xl px-6 md:py-12">
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-        <div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold leading-tight text-green-600">What our clients say</h2>
+        <div className="text-center md:text-left">
+          <h2 className="text-2xl sm:text-4xl font-extrabold leading-tight text-green-600">What our clients say</h2>
           <p className="text-gray-600">Real experiences from people we’ve helped move better.</p>
         </div>
         <div className="flex items-center gap-4">
@@ -178,7 +178,7 @@ export default function Reviews({ reviews }) {
         ))}
       </div>
 
-      <div className="mt-8 flex justify-center">
+      <div className="mt-8 mb-6 md:mb-0 flex justify-center">
         <a
           href="/contact-us"
           aria-label="Write a Review"

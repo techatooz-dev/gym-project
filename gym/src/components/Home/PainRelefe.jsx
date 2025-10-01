@@ -50,7 +50,7 @@ export default function PainRelefe() {
           <div className="md:col-span-4">
             <div className="w-28 h-6 bg-sky-500 rounded-sm" />
           </div>
-          <div className=" -mt-43 md:col-start-5 md:col-span-8">
+          <div className="mt-4 md:-mt-43 md:col-start-5 md:col-span-8">
             <div className="bg-lime-500 rounded-[24px] p-6 md:p-7 text-white">
               <p className="text-sm sm:text-base leading-relaxed">
                 Through controlled electrical muscle stimulation, EMS not only reduces discomfort but also activates

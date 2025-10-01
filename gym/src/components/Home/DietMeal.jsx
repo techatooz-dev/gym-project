@@ -8,8 +8,8 @@ export default function DietMeal() {
   return (
     <section className="relative z-10 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-10 md:mb-14">
-          <h2 className={`${anton.className}  text-[96px] md-text-[46px] font-extrabold tracking-tight text-gray-900`}>
+        <div className="text-center -mt-10 md:mt-0 mb-10 md:mb-14">
+          <h2 className={`${anton.className} text-5xl md:text-[46px] lg:text-[96px] font-extrabold tracking-tight text-gray-900`}>
             DIET MEAL PLANS
           </h2>
         </div>

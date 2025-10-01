@@ -31,7 +31,7 @@ export default function Spraind() {
                 injured area and its supporting muscles, EMS promotes faster tissue repair and prevents stiffness, making the
                 ankle stronger during the early stages of recovery.
               </p>
-              <p className="text-slate-700 leading-relaxed mb-6">
+              <p className="text-slate-700 leading-relaxed md:mb-6">
                 In addition, EMS helps restore balance, stability, and joint function without adding heavy load or pressure on the
                 injured ankle. This safe and controlled approach allows patients to regain mobility and confidence step by step.
                 Over time, the sessions improve flexibility, strength, and coordination, ensuring not only quicker recovery but also

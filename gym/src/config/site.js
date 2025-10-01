@@ -11,7 +11,7 @@ export const site = {
   footerLogo: {
     src: "/white 2.png",
     alt: "ProEMSFitness footer logo",
-    width:160,
+    width:220,
     height: 120,
   },
   nav: [
