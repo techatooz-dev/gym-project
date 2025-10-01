@@ -118,6 +118,9 @@ export default function Navbar() {
                                                     <svg className="w-3.5 h-3.5 text-white transition-transform duration-200 group-hover:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                                                         <path d="M6 9l6 6 6-6" />
                                                     </svg>
+                                                    {isActive(link.href) && (
+                                                        <span className="hidden md:block absolute left-1/2 -translate-x-1/2 bottom-1 h-[3px] w-16 bg-sky-500 rounded"></span>
+                                                    )}
                                                 </Link>
                                                 <div
                                                     id="services-menu"
@@ -160,6 +163,9 @@ export default function Navbar() {
                                             className={`px-4 py-3 text-[13px] uppercase text-white/95 hover:text-white transition relative`}
                                         >
                                             {link.label}
+                                            {isActive(link.href) && (
+                                                <span className="hidden md:block absolute left-1/2 -translate-x-1/2 bottom-1 h-[3px] w-16 bg-sky-500 rounded"></span>
+                                            )}
                                         </Link>
                                     );
                                 })}
