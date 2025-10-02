@@ -1,3 +1,5 @@
+"use client";
+import { useEffect, useRef, useState } from "react";
 export default function Reviews({ reviews }) {
   const SAMPLE = [
     {
@@ -109,6 +111,50 @@ export default function Reviews({ reviews }) {
     );
   };
 
+  // carousel state
+  const containerRef = useRef(null);
+  const [index, setIndex] = useState(0);
+  const [visible, setVisible] = useState(4);
+
+  // determine visible cards by viewport width (match Tailwind breakpoints)
+  useEffect(() => {
+    const computeVisible = () => {
+      const w = typeof window !== "undefined" ? window.innerWidth : 0;
+      if (w >= 1280) return 4; // xl
+      if (w >= 1024) return 3; // lg
+      if (w >= 640) return 2;  // sm
+      return 1;
+    };
+    const onResize = () => {
+      const v = computeVisible();
+      setVisible(v);
+      // clamp index so last page aligns nicely
+      setIndex((i) => Math.min(i, Math.max(0, total - v)));
+    };
+    onResize();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, [total]);
+
+  const scrollToIndex = (i) => {
+    const node = containerRef.current;
+    if (!node) return;
+    const child = node.children?.[i];
+    if (child) {
+      node.scrollTo({ left: child.offsetLeft - 0, behavior: "smooth" });
+    }
+  };
+
+  useEffect(() => {
+    scrollToIndex(index);
+  }, [index]);
+
+  const canPrev = index > 0;
+  const canNext = index < Math.max(0, total - visible);
+
+  const prev = () => canPrev && setIndex((i) => i - 1);
+  const next = () => canNext && setIndex((i) => i + 1);
+
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-7xl px-6 md:py-12">
@@ -147,35 +193,65 @@ export default function Reviews({ reviews }) {
         })}
       </div>
 
-      {/* Grid: fixed 4x2 layout */}
-  <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {data.map((r) => (
-          <article
-            key={r.id}
-            className="group relative bg-gray-50 py-6 px-4 h-full flex flex-col ring-1 ring-gray-200 shadow-sm hover:shadow-md transition duration-200"
-          >
-            <div className="flex items-center gap-3">
-              <Avatar name={r.name} />
-              <div className="min-w-0">
-                <div className="font-semibold text-gray-900 flex items-center gap-2">
-                  {r.name}
-                  {r.verified && (
-                    <span className="inline-flex items-center text-blue-600 text-xs font-semibold">
-                      <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 mr-1 text-blue-600"><path d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm-1.2-6.2 5-5-1.4-1.4-3.6 3.6-1.6-1.6-1.4 1.4 3 3z"/></svg>
-                      Verified
-                    </span>
-                  )}
+      {/* Carousel: show 4 on desktop, slide by 1 on arrows */}
+      <div className="mt-15 relative">
+        <div
+          ref={containerRef}
+          className="clients-carousel flex -mx-3 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2"
+        >
+          {data.map((r) => (
+            <article
+              key={r.id}
+              className="snap-start flex-none px-3 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+            >
+              <div className="bg-gray-50 py-6 px-4 h-full flex flex-col border border-gray-200 shadow-sm hover:shadow-md transition duration-200">
+              <div className="flex items-center gap-3">
+                <Avatar name={r.name} />
+                <div className="min-w-0">
+                  <div className="font-semibold text-gray-900 flex items-center gap-2">
+                    {r.name}
+                    {r.verified && (
+                      <span className="inline-flex items-center text-blue-600 text-xs font-semibold">
+                        <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 mr-1 text-blue-600"><path d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm-1.2-6.2 5-5-1.4-1.4-3.6 3.6-1.6-1.6-1.4 1.4 3 3z"/></svg>
+                        Verified
+                      </span>
+                    )}
+                  </div>
+                  <div className="text-xs text-gray-500">{r.date}</div>
                 </div>
-                <div className="text-xs text-gray-500">{r.date}</div>
               </div>
-            </div>
-            <div className="mt-2"><Stars rating={r.rating} /></div>
-            <p className="mt-3 text-gray-900 leading-relaxed text-sm">
-              {r.text}
-            </p>
-            {/* Removed hover ring for border effect */}
-          </article>
-        ))}
+              <div className="mt-2"><Stars rating={r.rating} /></div>
+              <p className="mt-3 text-gray-900 leading-relaxed text-sm">
+                {r.text}
+              </p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        {/* Arrows */}
+        <button
+          type="button"
+          onClick={prev}
+          disabled={!canPrev}
+          aria-label="Previous review"
+          className="flex absolute -left-2 md:-left-3 top-1/2 -translate-y-1/2 h-10 w-10 items-center justify-center rounded-full bg-white ring-1 ring-gray-200 shadow disabled:opacity-40"
+        >
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden>
+            <path d="M15.53 4.47a.75.75 0 0 1 0 1.06L10.06 11l5.47 5.47a.75.75 0 1 1-1.06 1.06l-6-6a.75.75 0 0 1 0-1.06l6-6a.75.75 0 0 1 1.06 0Z" />
+          </svg>
+        </button>
+        <button
+          type="button"
+          onClick={next}
+          disabled={!canNext}
+          aria-label="Next review"
+          className="flex absolute -right-2 md:-right-3 top-1/2 -translate-y-1/2 h-10 w-10 items-center justify-center rounded-full bg-white ring-1 ring-gray-200 shadow disabled:opacity-40"
+        >
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden>
+            <path d="M8.47 19.53a.75.75 0 0 1 0-1.06L13.94 13 8.47 7.53a.75.75 0 1 1 1.06-1.06l6 6a.75.75 0 0 1 0 1.06l-6 6a.75.75 0 0 1-1.06 0Z" />
+          </svg>
+        </button>
       </div>
 
       <div className="mt-8 mb-6 md:mb-0 flex justify-center">
