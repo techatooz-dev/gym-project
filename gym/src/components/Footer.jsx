@@ -6,6 +6,10 @@ import { useState } from "react";
 
 export default function Footer() {
     const [email, setEmail] = useState("");
+    // Mobile-only accordion state (default closed)
+    const [mobileUsefulOpen, setMobileUsefulOpen] = useState(false);
+    const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+    const [mobileContactOpen, setMobileContactOpen] = useState(false);
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -36,8 +40,10 @@ export default function Footer() {
                     </p> */}
 
                     <div className="mb-6">
-                        <SectionHeading>Follow Us</SectionHeading>
-                        <div className="flex items-center gap-3 mt-3">
+                        <div className="flex justify-center md:justify-start">
+                            <SectionHeading>Follow Us</SectionHeading>
+                        </div>
+                        <div className="flex items-center gap-3 mt-3 justify-center md:justify-start">
                             <SocialIcon href="https://facebook.com" label="Facebook" icon={<FacebookIcon />} />
                             <SocialIcon href="https://twitter.com" label="Twitter" icon={<TwitterIcon />} />
                             <SocialIcon href="https://instagram.com" label="Instagram" icon={<InstagramIcon />} />
@@ -74,8 +80,27 @@ export default function Footer() {
 
                 {/* Column 2: Useful Links */}
                 <div>
-                    <SectionHeading>Useful Links</SectionHeading>
-                    <ul className="mt-5 space-y-2">
+                    {/* Mobile heading with toggle (+ / -) */}
+                    <button
+                        type="button"
+                        className="md:hidden w-full text-left font-semibold tracking-wide text-[15px] uppercase pb-2 relative after:absolute after:left-0 after:bottom-0 after:h-[3px] after:w-full after:bg-white/70 flex items-center justify-between"
+                        aria-expanded={mobileUsefulOpen}
+                        aria-controls="footer-useful-links"
+                        onClick={() => setMobileUsefulOpen((v) => !v)}
+                    >
+                        <span>Useful Links</span>
+                        <span aria-hidden className="text-white text-xl leading-none">{mobileUsefulOpen ? "−" : "+"}</span>
+                    </button>
+
+                    {/* Desktop heading (unchanged) */}
+                    <div className="hidden md:block">
+                        <SectionHeading>Useful Links</SectionHeading>
+                    </div>
+
+                    <ul
+                        id="footer-useful-links"
+                        className={`mt-5 space-y-2 ${mobileUsefulOpen ? "block" : "hidden"} md:block`}
+                    >
                         <BulletItem><FooterLink href="/">Home</FooterLink></BulletItem>
                         <BulletItem><FooterLink href="/why-choose-us">Why Choose Us</FooterLink></BulletItem>
                         <BulletItem><FooterLink href="/classes">Classes</FooterLink></BulletItem>
@@ -87,8 +112,27 @@ export default function Footer() {
 
                 {/* Column 3: Our Services */}
                 <div>
-                    <SectionHeading>Our Services</SectionHeading>
-                    <ul className="mt-5 space-y-2">
+                    {/* Mobile heading with toggle (+ / -) */}
+                    <button
+                        type="button"
+                        className="md:hidden w-full text-left font-semibold tracking-wide text-[15px] uppercase pb-2 relative after:absolute after:left-0 after:bottom-0 after:h-[3px] after:w-full after:bg-white/70 flex items-center justify-between"
+                        aria-expanded={mobileServicesOpen}
+                        aria-controls="footer-our-services"
+                        onClick={() => setMobileServicesOpen((v) => !v)}
+                    >
+                        <span>Our Services</span>
+                        <span aria-hidden className="text-white text-xl leading-none">{mobileServicesOpen ? "−" : "+"}</span>
+                    </button>
+
+                    {/* Desktop heading (unchanged) */}
+                    <div className="hidden md:block">
+                        <SectionHeading>Our Services</SectionHeading>
+                    </div>
+
+                    <ul
+                        id="footer-our-services"
+                        className={`mt-5 space-y-2 ${mobileServicesOpen ? "block" : "hidden"} md:block`}
+                    >
                         <BulletItem><FooterLink href="/ems-sessions">EMS Sessions</FooterLink></BulletItem>
                         <BulletItem><FooterLink href="/power-of-ems-training">Power EMS Training</FooterLink></BulletItem>
                         <BulletItem><FooterLink href="/physiotherapy-sessions">Physiotherapy Sessions</FooterLink></BulletItem>
@@ -102,8 +146,27 @@ export default function Footer() {
 
                 {/* Column 4: Contact */}
                 <div>
-                    <SectionHeading>Get In Touch</SectionHeading>
-                    <ul className="mt-5 space-y-5 leading-relaxed">
+                    {/* Mobile heading with toggle (+ / -) */}
+                    <button
+                        type="button"
+                        className="md:hidden w-full text-left font-semibold tracking-wide text-[15px] uppercase pb-2 relative after:absolute after:left-0 after:bottom-0 after:h-[3px] after:w-full after:bg-white/70 flex items-center justify-between"
+                        aria-expanded={mobileContactOpen}
+                        aria-controls="footer-contact"
+                        onClick={() => setMobileContactOpen((v) => !v)}
+                    >
+                        <span>Get In Touch</span>
+                        <span aria-hidden className="text-white text-xl leading-none">{mobileContactOpen ? "−" : "+"}</span>
+                    </button>
+
+                    {/* Desktop heading (unchanged) */}
+                    <div className="hidden md:block">
+                        <SectionHeading>Get In Touch</SectionHeading>
+                    </div>
+
+                    <ul
+                        id="footer-contact"
+                        className={`mt-5 space-y-5 leading-relaxed ${mobileContactOpen ? "block" : "hidden"} md:block`}
+                    >
                         <li className="flex items-start gap-3"><span className="contact-icon mt-0.5 inline-flex h-10 w-10 flex-none shrink-0 items-center justify-center rounded-md bg-[#76C043] text-white"><ClockIcon /></span> <p>9 AM – 9 PM | Monday – Saturday</p></li>
                         <li className="flex items-start gap-3"><span className="contact-icon mt-0.5 inline-flex h-10 w-10 flex-none shrink-0 items-center justify-center rounded-md bg-[#76C043] text-white"><PhoneIcon /></span> <p>0321-7847385 , 0321-4980835</p></li>
                         <li className="flex items-start gap-3"><span className="contact-icon mt-0.5 inline-flex h-10 w-10 flex-none shrink-0 items-center justify-center rounded-md bg-[#76C043] text-white"><EmailIcon /></span> <p><a href="mailto:info@proemsfit.com" className="hover:underline">info@proemsfit.com</a></p></li>
