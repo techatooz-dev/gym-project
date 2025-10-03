@@ -11,12 +11,25 @@ export default function Footer() {
     const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
     const [mobileContactOpen, setMobileContactOpen] = useState(false);
 
-    function handleSubmit(e) {
+    const [newsStatus, setNewsStatus] = useState("");
+
+    async function handleSubmit(e) {
         e.preventDefault();
         if (!email) return;
-        // Placeholder action – integrate with your backend / service (Mailchimp, etc.)
-        console.log("Newsletter signup:", email);
-        setEmail("");
+        setNewsStatus("");
+        try {
+            const res = await fetch('/api/newsletter', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email }),
+            });
+            const data = await res.json();
+            if (!res.ok) throw new Error(data?.message || 'Subscription failed');
+            setNewsStatus('Thanks! We\'ll be in touch.');
+            setEmail("");
+        } catch (err) {
+            setNewsStatus(err.message || 'Subscription failed');
+        }
     }
 
     return (
@@ -74,7 +87,10 @@ export default function Footer() {
                             >
                                 <ArrowIcon className="group-hover:translate-x-0.5 transition-transform" />
                             </button>
-                        </form>
+                                                </form>
+                                                {newsStatus && (
+                                                    <p className="mt-2 text-sm text-white/90">{newsStatus}</p>
+                                                )}
                     </div>
                 </div>
 

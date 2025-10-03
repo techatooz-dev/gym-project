@@ -13,23 +13,52 @@ function GetInTouch() {
     message: ''
   })
 
+  const [submitting, setSubmitting] = useState(false)
+  const [status, setStatus] = useState({ type: '', message: '' })
+
   function handleChange(e) {
     const { name, value } = e.target
+    if (name === 'phone') {
+      let digits = value.replace(/\D/g, '')
+      // Convert +92 / 92 prefixes to local 03… format
+      if (digits.startsWith('92')) {
+        digits = '0' + digits.slice(2)
+      }
+      digits = digits.slice(0, 11)
+      setFormData(prev => ({ ...prev, phone: digits }))
+      return
+    }
     setFormData(prev => ({ ...prev, [name]: value }))
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
-    // Simple front-end validation for required fields (Name, Email, Phone, Message)
     const { name, email, phone, message } = formData
     if (!name || !email || !phone || !message) {
-      alert('Please fill in required fields (Name, Email, Phone, Message).')
+      setStatus({ type: 'error', message: 'Please fill in required fields.' })
       return
     }
-    // For now just log the data
-    // In production, integrate with API / email service
-    // eslint-disable-next-line no-console
-    console.log('Contact Form Submission:', formData)
+    if (!/^0\d{10}$/.test(phone)) {
+      setStatus({ type: 'error', message: 'Phone number must be exactly 11 digits.' })
+      return
+    }
+    setSubmitting(true)
+    setStatus({ type: '', message: '' })
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+      const data = await res.json()
+      if (!res.ok) throw new Error(data?.message || 'Failed to submit')
+      setStatus({ type: 'success', message: data?.message || 'Email sent successfully!' })
+      setFormData({ name: '', organization: '', email: '', phone: '', dob: '', country: '', appointmentType: 'initial', message: '' })
+    } catch (err) {
+      setStatus({ type: 'error', message: err.message || 'Failed to send email.' })
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   const baseInput = 'w-full bg-[#f3f3f3] focus:bg-white transition-colors placeholder:text-neutral-500 text-sm md:text-[15px] rounded-md px-4 py-3 outline-none focus:ring-2 focus:ring-[#9BCB49]/60 border border-transparent focus:border-[#9BCB49]'
@@ -74,12 +103,13 @@ function GetInTouch() {
               <div>
                 <label className={labelCls}>Date Of Birth</label>
                 <input
-                  type="text"
+                  type="date"
                   name="dob"
                   value={formData.dob}
                   onChange={handleChange}
-                  placeholder="mm/dd/yyyy"
+                  // Native date inputs ignore placeholder in many browsers
                   className={baseInput}
+                  max={new Date().toISOString().split('T')[0]}
                 />
               </div>
               <div>
@@ -110,8 +140,11 @@ function GetInTouch() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="Phone number*"
+                  placeholder="Phone number"
                   className={baseInput}
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  maxLength={11}
                 />
               </div>
               <div>
@@ -161,12 +194,16 @@ function GetInTouch() {
             />
           </div>
 
+          {status.message ? (
+            <p className={`text-sm ${status.type === 'error' ? 'text-red-600' : 'text-green-600'}`}>{status.message}</p>
+          ) : null}
           <div className="flex justify-end pt-2">
             <button
               type="submit"
-              className="bg-[#6EA820] hover:bg-[#5e9319] text-[13px] tracking-wide font-semibold text-neutral-900/90 px-8 py-2.5 rounded-sm transition-colors"
+              disabled={submitting}
+              className={`bg-[#6EA820] hover:bg-[#5e9319] text-[13px] tracking-wide font-semibold text-neutral-900/90 px-8 py-2.5 rounded-sm transition-colors ${submitting ? 'opacity-70 cursor-not-allowed' : ''}`}
             >
-              SUBMIT
+              {submitting ? 'SENDING…' : 'SUBMIT'}
             </button>
           </div>
         </form>

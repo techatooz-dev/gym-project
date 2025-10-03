@@ -256,8 +256,9 @@ export default function Reviews({ reviews }) {
 
       <div className="mt-8 mb-6 md:mb-0 flex justify-center">
         <a
-          href="/contact-us"
+          href="https://www.google.com/search?q=Pro+EMS+Fitness+%26+Rehabilitation+center+Reviews&oq=pr&gs_lcrp=EgZjaHJvbWUqCAgBEEUYJxg7MgYIABBFGDkyCAgBEEUYJxg7MgYIAhBFGDsyBggDECMYJzINCAQQABiRAhiABBiKBTIWCAUQLhjHARiRAhixAxjRAxiABBiKBTIMCAYQABhDGIAEGIoFMgwIBxAuGEMYgAQYigUyCggIEAAYsQMYgAQyFggJEC4YgwEYxwEYsQMY0QMYgAQYigXSAQkzNjczajBqMTWoAgywAgHxBSKxPVwn6JaY&sourceid=chrome&ie=UTF-8&lqi=Ci9Qcm8gRU1TIEZpdG5lc3MgJiBSZWhhYmlsaXRhdGlvbiBjZW50ZXIgUmV2aWV3cyICOAFI96en4aS2gIAIWkEQABABEAIQAxAEEAUYABgBGAIYAxgEGAUiJ3BybyBlbXMgZml0bmVzcyAmIHJlaGFiaWxpdGF0aW9uIGNlbnRlcpIBD3BoeXNpb3RoZXJhcGlzdJoBJENoZERTVWhOTUc5blMwVkpRMEZuU1VNeU4zQnVNV2xuUlJBQqoBUBABMh8QASIb3ZpqLAPhkhiti5guwfS9lxvOvPU_ZiuLHZKZMisQAiIncHJvIGVtcyBmaXRuZXNzICYgcmVoYWJpbGl0YXRpb24gY2VudGVy-gEECAAQQg#lkt=LocalPoiReviews&rlimm=13002721116199341087"
           aria-label="Write a Review"
+          target="_blank"
           className="inline-flex items-center px-7 py-3 bg-[#76C043] text-white font-semibold shadow-sm hover:bg-[#5ea932] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#76C043] focus-visible:ring-offset-white transition"
         >
           Write a Review
