@@ -54,7 +54,7 @@ export default function DietMeal() {
 
         <div className="flex justify-center mt-10">
           <Link
-            href="https://bookappointment.techatooz.com"
+            href="https://bookappointment.proemsfit.com"
             target="_blank"
             className="inline-block px-8 py-3  text-black font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
           style={{ backgroundColor: "#8BC34A" }} >

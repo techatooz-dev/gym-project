@@ -175,7 +175,7 @@ export default function Navbar() {
 
                     {/* Book Appointment (desktop) */}
                     <div className="hidden md:flex items-center ml-4">
-                        <Link href="https://bookappointment.techatooz.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 rounded-l-none rounded-r-2xl bg-sky-500 hover:bg-sky-600 text-white font-semibold text-sm shadow-sm transition">
+                        <Link href="https://bookappointment.proemsfit.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 rounded-l-none rounded-r-2xl bg-sky-500 hover:bg-sky-600 text-white font-semibold text-sm shadow-sm transition">
                             Book Appointment
                         </Link>
                     </div>
@@ -183,7 +183,7 @@ export default function Navbar() {
                     {/* Mobile action (right): Book */}
                     <div className="md:hidden flex items-center gap-2 ml-auto">
                         <Link
-                            href="https://bookappointment.techatooz.com"
+                            href="https://bookappointment.proemsfit.com"
                             target="_blank"
                             className="inline-flex items-center gap-1.5 px-3 py-2 rounded-md bg-sky-500 hover:bg-sky-600 text-white text-xs font-semibold shadow-sm"
                             aria-label="Book Appointment"
